@@ -213,7 +213,7 @@ public:
   /**
    * Report that an MPDU was negative acknowledged
   */
-  void WifiDlOfdmaExample::NotifyTxNAcked (Ptr<const WifiMacQueueItem> mpdu)
+  void WifiDlOfdmaExample::NotifyTxNAcked (Ptr<const WifiMacQueueItem> mpdu);
   /**
    * Report that the lifetime of an MSDU expired.
    */
@@ -605,7 +605,7 @@ WifiDlOfdmaExample::Setup (void)
     Ptr<RegularWifiMac> regularWifiMac = DynamicCast<RegularWifiMac>(devSta->GetMac());
     regularWifiMac->ConfigureContentionWindow(1024, 4096);
   }
-  
+
   Ptr<RegularWifiMac> regularMac = DynamicCast<RegularWifiMac>(dev->GetMac());
   // Configure max A-MSDU size and max A-MPDU size on the stations
   for (uint32_t i = 0; i < m_staNodes.GetN (); i++)
