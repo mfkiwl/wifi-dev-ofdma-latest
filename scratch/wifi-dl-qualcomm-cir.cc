@@ -211,6 +211,10 @@ public:
    */
   void NotifyTxFailed (WifiMacDropReason reason, Ptr<const WifiMacQueueItem> mpdu);
   /**
+   * Report that an MPDU was negative acknowledged
+  */
+  void WifiDlOfdmaExample::NotifyTxNAcked (Ptr<const WifiMacQueueItem> mpdu)
+  /**
    * Report that the lifetime of an MSDU expired.
    */
   void NotifyMsduExpired (Ptr<const WifiMacQueueItem> item);
@@ -594,6 +598,15 @@ WifiDlOfdmaExample::Setup (void)
   dev->GetMac ()->GetAttribute ("BE_Txop", ptr);
   ptr.Get<QosTxop> ()->SetTxopLimit (MicroSeconds (m_txopLimit));
 
+  // Increasing the contention window size for the stations to provide the AP
+  // with more frequent access to the channel to solicit UL/DL Txs
+  for ( uint32_t i = 0; i < m_staDevices.GetN(); i++ ) {
+    Ptr<WifiNetDevice> devSta = DynamicCast<WifiNetDevice> (m_staDevices.Get(i));
+    Ptr<RegularWifiMac> regularWifiMac = DynamicCast<RegularWifiMac>(devSta->GetMac());
+    regularWifiMac->ConfigureContentionWindow(1024, 4096);
+  }
+  
+  Ptr<RegularWifiMac> regularMac = DynamicCast<RegularWifiMac>(dev->GetMac());
   // Configure max A-MSDU size and max A-MPDU size on the stations
   for (uint32_t i = 0; i < m_staNodes.GetN (); i++)
     {
@@ -878,7 +891,7 @@ WifiDlOfdmaExample::EstablishBaAgreement (Mac48Address bssid)
   //std::cout << "bssid = " << bssid << "\n";
   std::cout << "Establish BA Agreement for client " << m_currentSta << "\n";
   NS_LOG_FUNCTION (this << bssid << m_currentSta);
-
+  
   // Now that the current station is associated with the AP, let's trigger the creation
   // of an entry in the ARP cache (of both the AP and the STA) and the establishment of
   // a Block Ack agreement between the AP and the STA (and viceversa). This is done by
@@ -1051,7 +1064,7 @@ WifiDlOfdmaExample::StartStatistics (void)
   //ptr.Get<QosTxop> ()->GetLow ()->TraceConnectWithoutContext ("ForwardDown", MakeCallback (&WifiDlOfdmaExample::NotifyPsduForwardedDown, this));
   // Trace TX failures on the AP
   DynamicCast<RegularWifiMac> (dev->GetMac ())->TraceConnectWithoutContext ("DroppedMpdu", MakeCallback (&WifiDlOfdmaExample::NotifyTxFailed, this));
-  //DynamicCast<RegularWifiMac> (dev->GetMac ())->TraceConnectWithoutContext("NAckedMpdu", MakeCallback (&WifiDlOfdmaExample::NotifyTxFailed, this));
+  DynamicCast<RegularWifiMac> (dev->GetMac ())->TraceConnectWithoutContext("NAckedMpdu", MakeCallback (&WifiDlOfdmaExample::NotifyTxNAcked, this));
   // Retrieve the number of bytes received by each station until the end of the warmup period
   for (uint32_t i = 0; i < m_staDevices.GetN (); i++)
     {
@@ -1104,7 +1117,7 @@ WifiDlOfdmaExample::StopStatistics (void)
   //ptr.Get<QosTxop> ()->GetLow ()->TraceDisconnectWithoutContext ("ForwardDown", MakeCallback (&WifiDlOfdmaExample::NotifyPsduForwardedDown, this));
   // Stop tracing TX failures on the AP
   DynamicCast<RegularWifiMac> (dev->GetMac ())->TraceDisconnectWithoutContext ("DroppedMpdu", MakeCallback (&WifiDlOfdmaExample::NotifyTxFailed, this));
-  //DynamicCast<RegularWifiMac> (dev->GetMac ())->TraceDisConnectWithoutContext("NAckedMpdu", MakeCallback (&WifiDlOfdmaExample::NotifyTxFailed, this));
+  DynamicCast<RegularWifiMac> (dev->GetMac ())->TraceDisConnectWithoutContext("NAckedMpdu", MakeCallback (&WifiDlOfdmaExample::NotifyTxNAcked, this));
   // Retrieve the number of bytes received by each station until the end of the simulation period
   for (uint32_t i = 0; i < m_staDevices.GetN (); i++)
     {
@@ -1154,6 +1167,15 @@ WifiDlOfdmaExample::StopStatistics (void)
 
 void
 WifiDlOfdmaExample::NotifyTxFailed (WifiMacDropReason reason, Ptr<const WifiMacQueueItem> mpdu)
+{
+  WifiMacHeader hdr = mpdu->GetHeader();
+  auto it = m_dlStats.find (hdr.GetAddr1 ());
+  NS_ASSERT (it != m_dlStats.end ());
+  it->second.failed++;
+}
+
+void
+WifiDlOfdmaExample::NotifyTxNAcked (Ptr<const WifiMacQueueItem> mpdu)
 {
   WifiMacHeader hdr = mpdu->GetHeader();
   auto it = m_dlStats.find (hdr.GetAddr1 ());

@@ -149,6 +149,15 @@ public:
    */
   HeCapabilities GetHeCapabilities (void) const;
 
+  /**
+   * \param cwMin the minimum contention window size
+   * \param cwMax the maximum contention window size
+   *
+   * This method is called to set the minimum and the maximum
+   * contention window size.
+   */
+  void ConfigureContentionWindow (uint32_t cwMin, uint32_t cwMax);
+  
 protected:
   void DoInitialize () override;
   void DoDispose () override;
@@ -204,15 +213,6 @@ protected:
    * \return a smart pointer to QosTxop
    */
   Ptr<QosTxop> GetBKQueue (void) const;
-
-  /**
-   * \param cwMin the minimum contention window size
-   * \param cwMax the maximum contention window size
-   *
-   * This method is called to set the minimum and the maximum
-   * contention window size.
-   */
-  void ConfigureContentionWindow (uint32_t cwMin, uint32_t cwMax);
 
   /**
    * This method acts as the MacRxMiddle receive callback and is
