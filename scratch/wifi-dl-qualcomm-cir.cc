@@ -213,7 +213,7 @@ public:
   /**
    * Report that an MPDU was negative acknowledged
   */
-  void WifiDlOfdmaExample::NotifyTxNAcked (Ptr<const WifiMacQueueItem> mpdu);
+  void NotifyTxNAcked (Ptr<const WifiMacQueueItem> mpdu);
   /**
    * Report that the lifetime of an MSDU expired.
    */
@@ -606,7 +606,6 @@ WifiDlOfdmaExample::Setup (void)
     regularWifiMac->ConfigureContentionWindow(1024, 4096);
   }
 
-  Ptr<RegularWifiMac> regularMac = DynamicCast<RegularWifiMac>(dev->GetMac());
   // Configure max A-MSDU size and max A-MPDU size on the stations
   for (uint32_t i = 0; i < m_staNodes.GetN (); i++)
     {
@@ -1117,7 +1116,7 @@ WifiDlOfdmaExample::StopStatistics (void)
   //ptr.Get<QosTxop> ()->GetLow ()->TraceDisconnectWithoutContext ("ForwardDown", MakeCallback (&WifiDlOfdmaExample::NotifyPsduForwardedDown, this));
   // Stop tracing TX failures on the AP
   DynamicCast<RegularWifiMac> (dev->GetMac ())->TraceDisconnectWithoutContext ("DroppedMpdu", MakeCallback (&WifiDlOfdmaExample::NotifyTxFailed, this));
-  DynamicCast<RegularWifiMac> (dev->GetMac ())->TraceDisConnectWithoutContext("NAckedMpdu", MakeCallback (&WifiDlOfdmaExample::NotifyTxNAcked, this));
+  DynamicCast<RegularWifiMac> (dev->GetMac ())->TraceDisconnectWithoutContext("NAckedMpdu", MakeCallback (&WifiDlOfdmaExample::NotifyTxNAcked, this));
   // Retrieve the number of bytes received by each station until the end of the simulation period
   for (uint32_t i = 0; i < m_staDevices.GetN (); i++)
     {
