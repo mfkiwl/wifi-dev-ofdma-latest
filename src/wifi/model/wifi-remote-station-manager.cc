@@ -645,6 +645,7 @@ WifiTxVector
 WifiRemoteStationManager::GetAckTxVector (Mac48Address to, const WifiTxVector& dataTxVector) const
 {
   NS_ASSERT (!to.IsGroup ());
+  //std::cout << "wifi-remote-station-manager.cc staId = " << (GetStaId(to, dataTxVector)) << "\n";
   WifiMode ackMode = GetControlAnswerMode (dataTxVector.GetMode (GetStaId (to, dataTxVector)));
   WifiTxVector v;
   v.SetMode (ackMode);
@@ -661,6 +662,7 @@ WifiTxVector
 WifiRemoteStationManager::GetBlockAckTxVector (Mac48Address to, const WifiTxVector& dataTxVector) const
 {
   NS_ASSERT (!to.IsGroup ());
+  //std::cout << "wifi-remote-station-manager.cc staId = " << (GetStaId(to, dataTxVector)) << "\n";
   WifiMode blockAckMode = GetControlAnswerMode (dataTxVector.GetMode (GetStaId (to, dataTxVector)));
   WifiTxVector v;
   v.SetMode (blockAckMode);
@@ -923,6 +925,7 @@ WifiRemoteStationManager::ReportRxOk (Mac48Address address, RxSignalInfo rxSigna
       return;
     }
   WifiRemoteStation *station = Lookup (address);
+  //std::cout << "wifi-remote-station-manager.cc staId = " << (GetStaId(address, txVector)) << "\n";
   DoReportRxOk (station, rxSignalInfo.snr, txVector.GetMode (GetStaId (address, txVector)));
   station->m_rssiAndUpdateTimePair = std::make_pair (rxSignalInfo.rssi, Simulator::Now ());
 }

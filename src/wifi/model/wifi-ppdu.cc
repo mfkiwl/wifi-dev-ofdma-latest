@@ -48,6 +48,7 @@ WifiPpdu::WifiPpdu (const WifiConstPsduMap & psdus, const WifiTxVector& txVector
 {
   NS_LOG_FUNCTION (this << psdus << txVector << uid);
   m_psdus = psdus;
+  //std::cout << "wifi-ppdu.cc staId = " << psdus.begin()->first << "\n";
 }
 
 WifiPpdu::~WifiPpdu ()

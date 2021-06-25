@@ -543,6 +543,7 @@ PhyEntity::DoStartReceivePayload (Ptr<Event> event)
   Ptr<const WifiPpdu> ppdu = event->GetPpdu ();
   NS_LOG_DEBUG ("Receiving PSDU");
   uint16_t staId = GetStaId (ppdu);
+  //std::cout << "phy-entity.cc staId = " << staId << "\n";
   m_signalNoiseMap.insert ({std::make_pair (ppdu->GetUid (), staId), SignalNoiseDbm ()});
   m_statusPerMpduMap.insert ({std::make_pair (ppdu->GetUid (), staId), std::vector<bool> ()});
   ScheduleEndOfMpdus (event);

@@ -360,6 +360,7 @@ WifiPhyStateHelper::SwitchToTx (Time txDuration, WifiConstPsduMap psdus, double 
   NS_LOG_FUNCTION (this << txDuration << psdus << txPowerDbm << txVector);
   for (auto const& psdu : psdus)
     {
+      //std::cout << "wifi-phy-state-helper.cc staId = " << psdu.first << "\n";
       m_txTrace (psdu.second->GetPacket (), txVector.GetMode (psdu.first), txVector.GetPreambleType (), txVector.GetTxPowerLevel ());
     }
   Time now = Simulator::Now ();

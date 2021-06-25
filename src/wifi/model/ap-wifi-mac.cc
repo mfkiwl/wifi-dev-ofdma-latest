@@ -761,6 +761,7 @@ ApWifiMac::SendAssocResp (Mac48Address to, bool success, bool isReassoc)
       if (!found)
         {
           aid = GetNextAssociationId ();
+          std::cout << "Given aid = " << aid << " to associating station, to = " << to <<"\n";
           m_staList.insert (std::make_pair (aid, to));
           m_assocLogger (aid, to);
           m_addressIdMap.insert (std::make_pair (to, aid));

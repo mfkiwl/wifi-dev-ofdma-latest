@@ -677,6 +677,7 @@ RrMultiUserScheduler::ComputeDlMuInfo (void)
       NS_ASSERT (candidateIt != m_candidates.end ());
 
       uint16_t staId = candidateIt->first->aid;
+      //std::cout << "Attempting to get WifiMode for station = " << staId << "\n";
       // AssignRuIndices will be called below to set RuSpec
       dlMuInfo.txParams.m_txVector.SetHeMuUserInfo (staId,
                                                     {{(i < nRusAssigned ? ruType : HeRu::RU_26_TONE), 1, false},

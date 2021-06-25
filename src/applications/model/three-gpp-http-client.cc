@@ -47,6 +47,7 @@ NS_OBJECT_ENSURE_REGISTERED (ThreeGppHttpClient);
 ThreeGppHttpClient::ThreeGppHttpClient ()
   : m_state (NOT_STARTED),
   m_socket (0),
+  m_receivedBytes(0),
   m_objectBytesToBeReceived (0),
   m_objectClientTs (MilliSeconds (0)),
   m_objectServerTs (MilliSeconds (0)),
@@ -142,6 +143,11 @@ ThreeGppHttpClient::GetSocket () const
   return m_socket;
 }
 
+uint64_t 
+ThreeGppHttpClient::GetTotalRx()
+{
+  return m_receivedBytes;
+}
 
 ThreeGppHttpClient::State_t
 ThreeGppHttpClient::GetState () const
@@ -330,6 +336,7 @@ ThreeGppHttpClient::ReceivedDataCallback (Ptr<Socket> socket)
           break; // EOF
         }
 
+      m_receivedBytes = m_receivedBytes + packet->GetSize();
 #ifdef NS3_LOG_ENABLE
       // Some log messages.
       if (InetSocketAddress::IsMatchingType (from))
@@ -741,7 +748,7 @@ ThreeGppHttpClient::EnterParsingTime ()
       const Time parsingTime = m_httpVariables->GetParsingTime ();
       NS_LOG_INFO (this << " The parsing of this main object"
                         << " will complete in "
-                        << parsingTime.As (Time::S) << ".");
+                        << parsingTime.GetSeconds () << " seconds.");
       m_eventParseMainObject = Simulator::Schedule (
           parsingTime, &ThreeGppHttpClient::ParseMainObject, this);
       SwitchToState (PARSING_MAIN_OBJECT);
@@ -804,7 +811,7 @@ ThreeGppHttpClient::EnterReadingTime ()
     {
       const Time readingTime = m_httpVariables->GetReadingTime ();
       NS_LOG_INFO (this << " Client will finish reading this web page in "
-                        << readingTime.As (Time::S) << ".");
+                        << readingTime.GetSeconds () << " seconds.");
 
       // Schedule a request of another main object once the reading time expires.
       m_eventRequestMainObject = Simulator::Schedule (
@@ -827,24 +834,24 @@ ThreeGppHttpClient::CancelAllPendingEvents ()
   if (!Simulator::IsExpired (m_eventRequestMainObject))
     {
       NS_LOG_INFO (this << " Canceling RequestMainObject() which is due in "
-                        << Simulator::GetDelayLeft (m_eventRequestMainObject).As (Time::S)
-                        << ".");
+                        << Simulator::GetDelayLeft (m_eventRequestMainObject).GetSeconds ()
+                        << " seconds.");
       Simulator::Cancel (m_eventRequestMainObject);
     }
 
   if (!Simulator::IsExpired (m_eventRequestEmbeddedObject))
     {
       NS_LOG_INFO (this << " Canceling RequestEmbeddedObject() which is due in "
-                        << Simulator::GetDelayLeft (m_eventRequestEmbeddedObject).As (Time::S)
-                        << ".");
+                        << Simulator::GetDelayLeft (m_eventRequestEmbeddedObject).GetSeconds ()
+                        << " seconds.");
       Simulator::Cancel (m_eventRequestEmbeddedObject);
     }
 
   if (!Simulator::IsExpired (m_eventParseMainObject))
     {
       NS_LOG_INFO (this << " Canceling ParseMainObject() which is due in "
-                        << Simulator::GetDelayLeft (m_eventParseMainObject).As (Time::S)
-                        << ".");
+                        << Simulator::GetDelayLeft (m_eventParseMainObject).GetSeconds ()
+                        << " seconds.");
       Simulator::Cancel (m_eventParseMainObject);
     }
 }

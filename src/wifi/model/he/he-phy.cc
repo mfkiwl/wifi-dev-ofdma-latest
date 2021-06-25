@@ -577,6 +577,7 @@ HePhy::IsConfigSupported (Ptr<const WifiPpdu> ppdu) const
 {
   const WifiTxVector& txVector = ppdu->GetTxVector ();
   uint16_t staId = GetStaId (ppdu);
+  //std::cout << "he-phy.cc staId = " << staId << "\n";
   WifiMode txMode = txVector.GetMode (staId);
   uint8_t nss = txVector.GetNssMax ();
   if (txVector.GetPreambleType () == WIFI_PREAMBLE_HE_MU)

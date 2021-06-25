@@ -406,6 +406,8 @@ InterferenceHelper::CalculatePayloadChunkSuccessRate (double snir, Time duration
     {
       return 1.0;
     }
+  //std::cout << "interference-helper.cc staId = " << staId << "\n";
+
   WifiMode mode = txVector.GetMode (staId);
   uint64_t rate = mode.GetDataRate (txVector, staId);
   uint64_t nbits = static_cast<uint64_t> (rate * duration.GetSeconds ());

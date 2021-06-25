@@ -161,6 +161,11 @@ public:
   std::string GetStateString () const;
 
   /**
+   * Returns the total number of bytes received by the client from the server.
+   */
+  uint64_t GetTotalRx();
+
+  /**
    * Returns the given state in string format.
    * \param state An arbitrary state of an application.
    * \return The given state equivalently expressed in string format.
@@ -350,6 +355,8 @@ private:
   State_t      m_state;
   /// The socket for sending and receiving packets to/from the web server.
   Ptr<Socket>  m_socket;
+  /// Total bytes received
+  u_int64_t    m_receivedBytes;
   /// According to the content length specified by the ThreeGppHttpHeader.
   uint32_t     m_objectBytesToBeReceived;
   /// The packet constructed of one or more parts with ThreeGppHttpHeader.
