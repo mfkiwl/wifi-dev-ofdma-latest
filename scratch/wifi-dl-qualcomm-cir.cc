@@ -19,7 +19,7 @@
  *          Sébastien Deronne <sebastien.deronne@gmail.com>
  */
 
-// ./waf --run "wifi-dl-qualcomm-cir --simulationTime=10 --nStations=5 --mcs=11 --enablePcap=false --dlAckType=2 --channelWidth=20 --guardInterval=800 --radius=1"
+// ./waf --run "wifi-dl-qualcomm-cir --simulationTime=10 --nStations=4 --enablePcap=false --dlAckType=2 --channelWidth=20 --guardInterval=800 --radius=5"
 
 #include "ns3/command-line.h"
 #include "ns3/config.h"
@@ -172,6 +172,8 @@ public:
   /**
    * Setup nodes, devices and internet stacks.
    */
+  uint32_t GetMcsIndexFromSnr(double snr);
+
   void Setup (void);
   /**
    * Run simulation and print results.
@@ -438,6 +440,10 @@ WifiDlOfdmaExample::Config (int argc, char *argv[])
   if ( m_mcs == 0 )
     m_mcs = 1 + ( std::rand () % 10 + 1 );
 
+  Ptr<FriisPropagationLossModel> lossModel = CreateObject<FriisPropagationLossModel> ();
+  double rxPowerDbm = lossModel->DoCalcRxPower(0, m_radius);
+  m_mcs = GetMcsIndexFromSnr(rxPowerDbm);
+
   uint64_t phyRate = HePhy::GetHeMcs (m_mcs).GetDataRate (m_channelWidth, m_guardInterval, 1);
   // Estimate the A-MPDU size as the number of bytes transmitted at the PHY rate in
   // an interval equal to the maximum PPDU duration
@@ -498,6 +504,31 @@ WifiDlOfdmaExample::Config (int argc, char *argv[])
       std::cout << "No OFDMA" << std::endl;
     }
   std::cout << std::endl;
+}
+
+// TODO: Add support for MCS 11 based on assigned RU being 242 tone.
+uint32_t
+WifiDlOfdmaExample::GetMcsIndexFromSnr(double snr) {
+  if ( snr >= -57) 
+      return 10;
+  else if ( snr >= -59 && snr < -57 )
+      return 9;
+  else if ( snr >= -64 && snr < -59 )
+      return 8;
+  else if ( snr >= -65 && snr < -64 )
+      return 7;
+  else if ( snr >= -66 && snr < -65 )
+      return 6;
+  else if ( snr >= -70 && snr < -66 )
+      return 5;
+  else if ( snr >= -74 && snr < -70 )
+      return 4;
+  else if ( snr >= -77 && snr < -74 )
+      return 3;
+  else if ( snr >= -79 && snr < -77 )
+      return 2;
+  else
+      return 1;
 }
 
 void

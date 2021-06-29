@@ -271,6 +271,54 @@ FriisPropagationLossModel::DoCalcRxPower (double txPowerDbm,
   return txPowerDbm - std::max (lossDb, m_minLoss);
 }
 
+double 
+FriisPropagationLossModel::DoCalcRxPower (double txPowerDbm,
+                                          double distance)
+{
+  /*
+   * Friis free space equation:
+   * where Pt, Gr, Gr and P are in Watt units
+   * L is in meter units.
+   *
+   *    P     Gt * Gr * (lambda^2)
+   *   --- = ---------------------
+   *    Pt     (4 * pi * d)^2 * L
+   *
+   * Gt: tx gain (unit-less)
+   * Gr: rx gain (unit-less)
+   * Pt: tx power (W)
+   * d: distance (m)
+   * L: system loss
+   * lambda: wavelength (m)
+   *
+   * Here, we ignore tx and rx gain and the input and output values 
+   * are in dB or dBm:
+   *
+   *                           lambda^2
+   * rx = tx +  10 log10 (-------------------)
+   *                       (4 * pi * d)^2 * L
+   *
+   * rx: rx power (dB)
+   * tx: tx power (dB)
+   * d: distance (m)
+   * L: system loss (unit-less)
+   * lambda: wavelength (m)
+   */
+  if (distance < 3*m_lambda)
+    {
+      NS_LOG_WARN ("distance not within the far field region => inaccurate propagation loss value");
+    }
+  if (distance <= 0)
+    {
+      return txPowerDbm - m_minLoss;
+    }
+  double numerator = m_lambda * m_lambda;
+  double denominator = 16 * M_PI * M_PI * distance * distance * m_systemLoss;
+  double lossDb = -10 * log10 (numerator / denominator);
+  NS_LOG_DEBUG ("distance=" << distance<< "m, loss=" << lossDb <<"dB");
+  return txPowerDbm - std::max (lossDb, m_minLoss);
+}
+
 int64_t
 FriisPropagationLossModel::DoAssignStreams (int64_t stream)
 {

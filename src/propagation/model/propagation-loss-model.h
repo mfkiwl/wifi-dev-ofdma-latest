@@ -303,6 +303,8 @@ public:
    */
   double GetSystemLoss (void) const;
 
+  double DoCalcRxPower (double txPowerDbm, double distance);
+
 private:
   /**
    * \brief Copy constructor
@@ -321,6 +323,7 @@ private:
   virtual double DoCalcRxPower (double txPowerDbm,
                                 Ptr<MobilityModel> a,
                                 Ptr<MobilityModel> b) const;
+
   virtual int64_t DoAssignStreams (int64_t stream);
 
   /**
