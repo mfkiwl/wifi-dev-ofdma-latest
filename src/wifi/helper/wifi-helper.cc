@@ -331,7 +331,7 @@ WifiPhyHelper::GetRadiotapHeader (
   header.SetFrameFlags (frameFlags);
 
   uint64_t rate = 0;
-  std::cout << "wifi-helper.cc staId = " << staId << "\n";
+  //std::cout << "wifi-helper.cc staId = " << staId << "\n";
 
   if (txVector.GetMode (staId).GetModulationClass () != WIFI_MOD_CLASS_HT
       && txVector.GetMode (staId).GetModulationClass () != WIFI_MOD_CLASS_VHT

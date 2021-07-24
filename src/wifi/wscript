@@ -133,6 +133,7 @@ def build(bld):
         'helper/yans-wifi-helper.cc',
         'helper/spectrum-wifi-helper.cc',
         'helper/wifi-mac-helper.cc',
+        'helper/Hungarian.cc',
         ]
 
     obj_test = bld.create_ns3_module_test_library('wifi')
@@ -302,6 +303,7 @@ def build(bld):
         'helper/yans-wifi-helper.h',
         'helper/spectrum-wifi-helper.h',
         'helper/wifi-mac-helper.h',
+        'helper/Hungarian.h',
         ]
 
     if bld.env['ENABLE_GSL']:

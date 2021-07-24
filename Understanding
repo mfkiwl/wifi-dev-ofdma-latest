@@ -1,0 +1,58 @@
+NotifyStationAssociated()
+Everytime a HE station is associated with the AP, the scheduler is informed via this method so that the scheduler can add the station to each of the 4 ACs. Hence, the scheduler maintains a global list of all stations associated with the AP. A station cannot be classified based on it's AC, only the traffic that it generates can do that, and a station is sometimes capable of generating traffic of different kinds.
+
+One thing to realise is that with EDCA, all 4 AC queues in a station/AP contend for the channel independently with different channel access parameters, EDCA parameters so to say, so it is possible that a lower priority AC gains access to the channel when a higher priority AC also has frames to send. The standard says that this is considered a virtual (internal) collision and in such a scenario the lower priority AC should backoff allowing the higher AC to transmit. However, in the simulation it seems to have been dealt like this,
+if txOpSharing is enabled, then if a lower priority AC gains channel access, we actually add the TIDs of this AC along with the higher priority ACs to the the tids vector, and this results in A-MPDUs with different TIDs being transmitted in the DL MU PPDU for this TXOP. If this is disabled, then only those stations which have frames with TID equal to the TID of the first frame in the AC queue that gained channel access are listed as candidate receivers.
+
+NotifyAccessGranteed() in multi-user-scheduler.cc calls SelectTxFormat() followed by ComputeDlOfdmaInfo() in rr-multi-user-scheduler.cc
+
+SelectTxFormat checks if m_enableUlOfdma is true and if the last Tx format was DL_MU_TX, if so, it tries to send a Basic Trigger Frame (by called TrySendingBasicTf) to the same stations that were last involved in the DL Tx. Hence, it actually uses the m_candidates global list that was generated last. (Do not remove this list from scheduling logic)
+If the above is not true then it tries to send a Dl MU PPDU by calling TrySendingDlMuPpdu.
+Both of the above methods (TrySendingBasicTf and TrySendingDlMuPpdu) return TxFormats, TrySendingDlMuPpdu also ensures that is prepares a list of candidate stations in m_candidates to be used by ComputeDlInfo method later when preparing the TxVector for the DL transmission.
+
+
+TrySendingDlPpdu()
+First of all, we find out which AC gained channel access by looking at the category of the EDCA queue that was granted channel access.
+If no HE stations are associated with this AC, then we return a SU TxFormat.
+Otherwise we proceed
+We get a count of min(total number of stations in the network, total stations associated with the AC)
+If we are not using the central 26 tones then we assign their count to 0.
+We store the ruType that would be assigned to the stations in the DL transmission based on the bandwidth and station count.
+We get the current Traffic Identifier (currTid) from the AC list corresponding to the AC that gained channel access (called primary AC)
+We then peek and get the first mpdu from the EDCA queue (the one that gained channel access)
+If this mpdu is not null, we use the Tid in it's MAC header as currTid.
+
+If TxOpSharing is enabled (which is enabled by default) then allow A-MPDUs of different TIDs in a DL MU PPDU. Based on this, the tids vector either contains only the currTid (txOpSharing disabled), or more than this (txOpSharingEnabled), in this case we iterate over the list of ACs from current primaryAc to highest priority. For each AC, we push it's higher Tid and lower Tid in the vector list of tids. 
+NOTE: wifiAcList is a map holding AcIndex and WifiAc, WifiAc is an object that just holds the higher and lower TID corresponding to an AC, it also has some methods for returning the other if one is known.
+
+We now initialize the global m_txParams and it's m_txVector with some standard paramters for MU transmission. The m_txVector specifies a set of parameters for the PHY transmission.
+
+Then the actualTimeAvailable is computed, this represents the time available of TXOP, not sure about the logic for it's initialization. But seems that if the frame being transmitted is the first frame of the queue that gained channel access, then it is assigned some minimum value, otherwise the value in the global variable m_availableTime initialized by the NotifyAccessGranted() method.
+
+We then iterate over the list of all stations associated with the AP, if a station has a frame addressed to it in the current AC or a higher priority AC (higher is only checked if TXOPSharing is enabled) then we add that station to the list of candidate stations. Here, actually currTid (of TXOP sharing is disabled) is used to find the AC and then check if THAT AC has a frame to send to this station with tid of the frame equal to the currTid.
+
+GetBaAgreementEstablished method usually always returns true, this is because the first time the frame exchange method in he-frame-exchange-manager.cc is called, if the MU scheduler has not been initialized or if it has been initialized but the first MPDU in the queue does not have Block Agreement Established, then txFormat becomes SU_TX and the StartFrameExchange method in ht-frame-exchange-manager.cc is called, this method in turns calls SendAddBaRequest() which calls the CreateAgreement() method in the block-ack-manager.cc BlockAckManager object. The CreateAgreement() method updates the agreements data structure, it is this data structure that is checked by GetBaAgreementEstablished when it returns true or false.
+
+AssignRuIndices()
+It first finds out the type of RUs assigned to the stations, which for round robin has two cases, either only one type of RU would be assigned to all stations or 2 types of RUs would be assigned to all stations, 2 types is for the case where central 26 tones RUs are being assigned.
+The method internally creates two vectors that store RuSpec objects which store the information carried by the RU Allocation subfield of the User Info field of Trigger frames.
+The first vector ruSet and second vectors central26ToneRus stores RU Specs of type {ruType, ruIndex, primary80MHz} for non-central 26 tones and central 26 tones respectively.
+The GetRusOfType returns vector which is assigned to ruSet, we then iterate over this vector from beginning to end and assign the RuSpec objects inside it to all the stations via the SetRu method call. (NOTE THE ORDER OF ASSIGNMENT HERE)
+Similarly for central26ToneRus.
+
+Old verson PF scheduler used m_staInfo to keep a list of candidate receivers, keep it along with m_candidates.
+The scheduler is proportionally fair scheduling the first few stations and for the rest, Tx are suffering failures, why?
+Lower MCS values causing the TXOP limit to be exceeded, using mcs = 11
+1. For the last few moments of the simulation, dataStaPair contains only 1 packet corresponding to STA 4, why are other stations not being listed as candidates? - This is a pointless observation, STAs are scheduled as and when required by the PF scheduler.
+2. Is the SetRU function assigning the RUs to the stations in the correct order? (There was a problem in this, the minRuAlloc[i].a element represents that index in the dataStaPair array that is assigned Ru minRuAlloc[i].b, however because of the use of std::size_t variable type in the reordering for loops, wrong stations were being assigned RUs, fixing this has increased the throughput, but still TxFailures are happening and now also for STA 1 and STA 6).
+
+3. Too much complexity in the simulation code, try to make a very simple bare bones simulation and test.
+Understand every parameter implemented in the code otherwise it increases the possibility of you running into a bug that is caused by
+some parameters for the simulation that you aren't even aware exist.
+
+Tx Failures as a result of DroppedMpdu or NAcked are present even though I am only using DL UDP flows. Why are these failures happening?
+I have removed the path loss model. Also in my opinion now, the mapping for the RUs is happening correctly.
+The Tx Failures are actually MPDU Drops, happening because STA 1 and STA 6 are being scheduled late so their MSDU lifetimes are expiring.
+Why are STA 1 and 6 not being served by the PF scheduler? - They are being served, just a bit later than the other STAs, after making the MSDU lifetime to a very large value, the PF scheduler is now working perfectly.
+
+Create a clear demarcation of the scenarios in which the PF scheduler would work without any problems. Would it work for TCP also? Which channel bandwidths would it not work for? Does it still support the QoS standard? Does it work fine with Frame Aggregation? Does it work fine with TXOP sharing enabled?

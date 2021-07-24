@@ -20,6 +20,35 @@
  */
 
 // ./waf --run "wifi-dl-qualcomm-cir --simulationTime=10 --nStations=4 --enablePcap=false --dlAckType=2 --channelWidth=20 --guardInterval=800 --radius=5"
+// I had increased the size of the contention window to simulate MU EDCA parameters, 
+// as a result for scenarios with large number of stations, HTTP traffic was not
+// being initiated by the client.
+// However, one advantage of this was that the AP was getting access to the channel almost always
+// reducing the number of collisions due to the stations trying to transmit TCP Acks in the UL
+// The big problem here is that the model ONLY schedules UL transmissions after a DL transmission
+// has been done, so it does not allow space for a scenario where the AP could decide to spontaneosly
+// solicit UL transmissions from AP based on their BSRs. This in turn means that after received HTTP object
+// The client is able to transmit the upper layer ACKs because of the UL transmission solicited by the AP
+// However, for a subsequent GET request, it has to wait until it wins contention to the channel to
+// to perform an UL transmission to the HTTP server on the AP, this could be increasing the waiting time of the
+// packet in the queue. (Hypothesis)
+// 
+// I had also added the Friis Path loss model for MCS selection based on the distance.
+// 
+// Things to do:
+// 1. Add the PF scheduler apart from the RR scheduler.
+// 2. Add the Path loss model created by Abhishek.
+// 3. Create a new scenario for simulation where we will not be using HTTP traffic, reason for this..?
+//    The scenario would have bulk traffic instead of HTTP
+// 4. Think about adding a fading model to the underlying channel.
+// 5. Implement perfect/imperfect CSI scenarios for MCS calculation.
+// 6. Try to reproduce that scenario where GetMode method was producing an exception,
+//    I am using some sort of workaround right now.
+// 
+// Keep reading relevant papers, subscribe to relevant people involved in this on Google Scholar
+// 
+
+//./waf --run "wifi-dl-qualcomm-cir --simulationTime=10 --dlAckType=2 --channelWidth=40 --guardInterval=800 --radius=5"
 
 #include "ns3/command-line.h"
 #include "ns3/config.h"
@@ -194,12 +223,12 @@ public:
 
   void StartHttpServer(ThreeGppHttpServerHelper server);
 
-  void StartBulkClient(BulkSendHelper client);
+  void startBulkSendClient(BulkSendHelper client);
   /**
    * Start generating traffic.
    */
-  //void StartTraffic (void);
-  void StartTraffic(ThreeGppHttpServerHelper server);
+  void StartTraffic (void);
+  //void StartTraffic(ThreeGppHttpServerHelper server);
   /**
    * Start collecting statistics.
    */
@@ -211,6 +240,8 @@ public:
   /**
    * Report that an MPDU was not correctly received.
    */
+  void ShowThroughput(void);
+
   void NotifyTxFailed (WifiMacDropReason reason, Ptr<const WifiMacQueueItem> mpdu);
   /**
    * Report that an MPDU was negative acknowledged
@@ -350,7 +381,7 @@ WifiDlOfdmaExample::WifiDlOfdmaExample ()
     m_radius (10),
     m_enableDlOfdma (true),
     m_forceDlOfdma (true),
-    m_enableUlOfdma (true),
+    m_enableUlOfdma (false),
     m_enableBsrp(false),
     m_useCentral26TonesRus(false),
     m_ulPsduSize (1600),
@@ -370,7 +401,7 @@ WifiDlOfdmaExample::WifiDlOfdmaExample ()
     m_dlAckSeqType (1),
     m_continueTxop (false),
     m_baBufferSize (64),
-    m_transport ("Tcp"),
+    m_transport ("Udp"),
     m_queueDisc ("default"),
     m_enablePcap (true),
     m_warmup (2.0),
@@ -621,8 +652,8 @@ WifiDlOfdmaExample::Setup (void)
   // Configure max A-MSDU size and max A-MPDU size on the AP
   Ptr<WifiNetDevice> dev = DynamicCast<WifiNetDevice> (m_apDevices.Get (0));
   Ptr<RegularWifiMac> regularMac = DynamicCast<RegularWifiMac>(dev->GetMac());
-  regularMac->SetAttribute ("BE_MaxAmsduSize", UintegerValue (m_maxAmsduSize));
-  regularMac->SetAttribute ("BE_MaxAmpduSize", UintegerValue (m_maxAmpduSize));
+  //regularMac->SetAttribute ("BE_MaxAmsduSize", UintegerValue (m_maxAmsduSize));
+  //regularMac->SetAttribute ("BE_MaxAmpduSize", UintegerValue (m_maxAmpduSize));
   m_channelCenterFrequency = dev->GetPhy ()->GetFrequency ();
   // Configure TXOP Limit on the AP
   PointerValue ptr;
@@ -631,18 +662,18 @@ WifiDlOfdmaExample::Setup (void)
 
   // Increasing the contention window size for the stations to provide the AP
   // with more frequent access to the channel to solicit UL/DL Txs
-  for ( uint32_t i = 0; i < m_staDevices.GetN(); i++ ) {
-    Ptr<WifiNetDevice> devSta = DynamicCast<WifiNetDevice> (m_staDevices.Get(i));
-    Ptr<RegularWifiMac> regularWifiMac = DynamicCast<RegularWifiMac>(devSta->GetMac());
-    regularWifiMac->ConfigureContentionWindow(1024, 4096);
-  }
+  // for ( uint32_t i = 0; i < m_staDevices.GetN(); i++ ) {
+  //   Ptr<WifiNetDevice> devSta = DynamicCast<WifiNetDevice> (m_staDevices.Get(i));
+  //   Ptr<RegularWifiMac> regularWifiMac = DynamicCast<RegularWifiMac>(devSta->GetMac());
+  //   regularWifiMac->ConfigureContentionWindow(1024, 4096);
+  // }
 
   // Configure max A-MSDU size and max A-MPDU size on the stations
   for (uint32_t i = 0; i < m_staNodes.GetN (); i++)
     {
       dev = DynamicCast<WifiNetDevice> (m_staDevices.Get (i));
-      dev->GetMac ()->SetAttribute ("BE_MaxAmsduSize", UintegerValue (m_maxAmsduSize));
-      dev->GetMac ()->SetAttribute ("BE_MaxAmpduSize", UintegerValue (m_maxAmpduSize));
+      //dev->GetMac ()->SetAttribute ("BE_MaxAmsduSize", UintegerValue (m_maxAmsduSize));
+      //dev->GetMac ()->SetAttribute ("BE_MaxAmpduSize", UintegerValue (m_maxAmpduSize));
       m_dlStats[dev->GetMac ()->GetAddress ()] = DlStats ();
       m_ulStats[dev->GetMac ()->GetAddress ()] = UlStats ();
     }
@@ -655,10 +686,66 @@ WifiDlOfdmaExample::Setup (void)
   positionAlloc->Add (Vector (0.0, 0.0, 0.0));  // position of the AP
   mobility.SetPositionAllocator (positionAlloc);
   mobility.Install (m_apNodes);
-
+ 
   mobility.SetPositionAllocator ("ns3::UniformDiscPositionAllocator",
                                  "rho", DoubleValue (m_radius));
   mobility.Install (m_staNodes);
+
+//Ptr<ListPositionAllocator> positionAlloc1 = CreateObject<ListPositionAllocator> ();
+//int lower=1;
+//int upper=10;
+std::ofstream myfile1;
+myfile1.open("d.txt");
+//for (uint32_t i =  1; i <= m_staNodes.GetN(); i++)
+  //  {
+      
+//	double x= (rand()%(upper-lower+1))+lower;
+//	double y= (rand()%(upper-lower+1))+lower;
+//	double z= (rand()%(upper-lower+1))+lower;
+	//double dd=sqrt(x*x+y*y+z*z);
+	//myfile<<dd<<" ";
+//      positionAlloc1->Add (Vector (x,y,z));  // position of the AP
+
+    
+    
+    //d+=5;
+  //  }
+//mobility.SetPositionAllocator (positionAlloc1);
+//mobility.Install(m_staNodes);
+
+
+  for (uint32_t i =  1; i <= m_staNodes.GetN(); i++)
+{
+	myfile1<<mobility.GetDistanceSquaredBetween(m_staNodes.Get(i-1),m_apNodes.Get(0))<<" ";
+
+}
+
+myfile1.close();
+std::ofstream myfile;
+
+  myfile.open("wt.txt");
+for (uint32_t i =  1; i <= m_staNodes.GetN(); i++)
+    {
+      
+myfile<<"0"<<" ";
+   std::cout<<"0"<<" ";
+    
+
+    }
+std::cout<<"\n";
+myfile<<"\n";
+for (uint32_t i =  1; i <= m_staNodes.GetN(); i++)
+    {
+      
+myfile<<"0"<<" ";
+	std::cout<<"0"<<" ";
+
+    
+    }
+std::cout<<"\n";
+myfile<<"\n";
+
+myfile.close();
 
   /* Internet stack */
   InternetStackHelper stack;
@@ -667,8 +754,8 @@ WifiDlOfdmaExample::Setup (void)
 
   Ipv4AddressHelper address;
   address.SetBase ("192.168.1.0", "255.255.255.0");
-
-  m_apInterface = address.Assign (m_apDevices);
+  Ipv4InterfaceContainer ApInterface;
+  ApInterface = address.Assign (m_apDevices);
   m_staInterfaces = address.Assign (m_staDevices);
 
   /* Traffic Control layer */
@@ -680,49 +767,28 @@ WifiDlOfdmaExample::Setup (void)
     }
 
   /* Transport and application layer */
-  
-  ThreeGppHttpClientHelper client (m_apInterface.GetAddress(0));
-  m_httpClientApps.Add(client.Install(m_staNodes.Get(0)));
-  m_httpClientApps.Add(client.Install(m_staNodes.Get(1)));
-  m_httpClientApps.Add(client.Install(m_staNodes.Get(2)));
-  m_httpClientApps.Stop (Seconds (m_warmup + m_simulationTime));
-
-
-  for (int i = 0; i < 3; ++i)
-  {
-  	Ptr<ThreeGppHttpClient> httpClient = m_httpClientApps.Get (i)->GetObject<ThreeGppHttpClient> ();
-	
-    httpClient->TraceConnectWithoutContext ("RxMainObject", MakeCallback (&ClientMainObjectReceived));
-    httpClient->TraceConnectWithoutContext ("RxEmbeddedObject", MakeCallback (&ClientEmbeddedObjectReceived));
-    httpClient->TraceConnectWithoutContext ("Rx", MakeCallback (&ClientRx));
-  }
-
   std::string socketType = (m_transport.compare ("Tcp") == 0 ? "ns3::TcpSocketFactory" : "ns3::UdpSocketFactory");
   Config::SetDefault ("ns3::TcpSocket::SegmentSize", UintegerValue (m_payloadSize));
 
   PacketSinkHelper packetSinkHelper (socketType, InetSocketAddress (Ipv4Address::GetAny (), m_port));
-  for (int i = 3; i < m_nStations; ++i)
-  {
-  	m_sinkApps.Add(packetSinkHelper.Install (m_staNodes.Get(i))); // i
-  }
-
-  m_sinkApps.Stop (Seconds (m_warmup + m_simulationTime)); // let the server be active for a long time
+  m_sinkApps = packetSinkHelper.Install (m_staNodes);
+  m_sinkApps.Stop (Seconds (m_warmup + m_simulationTime + 100)); // let the server be active for a long time
 
   m_rxStart.assign (m_nStations, 0.0);
   m_rxStop.assign (m_nStations, 0.0);
 
   for (uint16_t i = 0; i < m_nStations; i++)
     {
+      std::cout<<"Arrived here 1\n";
       m_appLatencyMap.insert (std::make_pair (i, std::vector<Time> ()));
     }
 
+//call for establishba agreement for all sta nodes
   Config::ConnectWithoutContext ("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Mac/$ns3::StaWifiMac/Assoc",
                                  MakeCallback (&WifiDlOfdmaExample::EstablishBaAgreement, this));
 
   if (m_enablePcap)
     {
-      //AsciiTraceHelper ascii;
-      //phy.EnableAscii(ascii.CreateFileStream("AP_ascii.tr"), m_apDevices);
       //phy.EnablePcap ("STA_pcap", m_staDevices);
       //phy.EnablePcap ("AP_pcap", m_apDevices);
     }
@@ -937,48 +1003,130 @@ WifiDlOfdmaExample::EstablishBaAgreement (Mac48Address bssid)
   ApplicationContainer pingApps = ping.Install (m_apNodes);
   pingApps.Stop (pingDuration);
 
+  std::cout<<"Arrived there\n";
   // Install a client application on the current station. In case of TCP traffic,
   // this will trigger the establishment of a TCP connection. The client application
   // is initially quiet (i.e., it does not transmit packets -- this is achieved
   // by setting the duration of the "On" interval to zero).
-  if ( m_currentSta >= 3 ) { // only for stations 2, 3 [ON/OFF]
-    uint16_t offInterval = 10;  // milliseconds
-    std::stringstream ss;
-    ss << "ns3::ConstantRandomVariable[Constant=" << std::fixed << static_cast<double> (offInterval / 1000.) << "]";
+  uint16_t offInterval = 10;  // milliseconds
+  std::stringstream ss;
+  ss << "ns3::ConstantRandomVariable[Constant=" << std::fixed << static_cast<double> (offInterval / 1000.) << "]";
 
-    std::string socketType = (m_transport.compare ("Tcp") == 0 ? "ns3::TcpSocketFactory" : "ns3::UdpSocketFactory");
-    OnOffHelper client (socketType, Ipv4Address::GetAny ());
-    client.SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=0]"));
-    client.SetAttribute ("OffTime", StringValue (ss.str ()));
+  std::string socketType = (m_transport.compare ("Tcp") == 0 ? "ns3::TcpSocketFactory" : "ns3::UdpSocketFactory");
+  std::cout<<"Arrived tthere\n";
+if(m_currentSta<= m_nStations){
 
-    if ( m_currentSta >= 12 ) // Gaming
-      client.SetAttribute ("DataRate", DataRateValue (DataRate (1.5 * 1e6)));
-    else // Video Call + Security Camera
-      client.SetAttribute ("DataRate", DataRateValue (DataRate (3 * 1e6)));
+    std::cout<<"Arrived ttthere\n";
+    //std::cout<<"currrrrrrrrrrrrrrrrrrrent STA OnOff="<< m_currentSta;
 
-    client.SetAttribute ("PacketSize", UintegerValue (m_payloadSize));
+  OnOffHelper client (socketType, Ipv4Address::GetAny ());
+  client.SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=0]"));
+  client.SetAttribute ("OffTime", StringValue (ss.str ()));
+  client.SetAttribute ("DataRate", DataRateValue (DataRate (m_dataRate * 1e6)));
 
-    InetSocketAddress dest (m_staInterfaces.GetAddress (m_currentSta), m_port);
-    // dest.SetTos (0xb8); //AC_VI
-    client.SetAttribute ("Remote", AddressValue (dest));
+//client.SetAttribute ("PacketSize", UintegerValue (payloadData.at(m_currentSta)));
+client.SetAttribute ("PacketSize", UintegerValue (1400));
+//client.SetAttribute ("PacketSize", UintegerValue (400));
+//client.SetAttribute ("MaxBytes", UintegerValue (1400));
 
-    // Make sure that the client application is started at a time that is an integer
-    // multiple of the offInterval. In fact, the client application will wake every
-    // offInterval milliseconds to check if a packet can be sent. Given that the duration
-    // of the "On" interval will be modified for all the client applications
-    // simultaneously, this ensures that all the client applications will actually
-    // start sending packets at the same time.
-    uint64_t startTime = std::ceil (Simulator::Now ().ToDouble (Time::MS) / offInterval) * offInterval;
+  InetSocketAddress dest (m_staInterfaces.GetAddress (m_currentSta), m_port);
+  // dest.SetTos (0xb8); //AC_VI
+  client.SetAttribute ("Remote", AddressValue (dest));
+ uint64_t startTime = std::ceil (Simulator::Now ().ToDouble (Time::MS) / offInterval) * offInterval;
 
-    Simulator::Schedule (MilliSeconds (static_cast<uint64_t> (startTime) + 110) - Simulator::Now (),
-                        &WifiDlOfdmaExample::StartClient, this, client);
-  }
-  if ( m_currentSta == 0 ) {
+  Simulator::Schedule (MilliSeconds (static_cast<uint64_t> (startTime)) - Simulator::Now (),
+                       &WifiDlOfdmaExample::StartClient, this, client);
+}
+else{
+	//std::cout<<"\n currrrrrrrrrrrrrrrrrrrent STA Bulk="<<m_currentSta;
+	BulkSendHelper client (socketType, Ipv4Address::GetAny ());
+	InetSocketAddress dest (m_staInterfaces.GetAddress (m_currentSta), m_port);
+  	// dest.SetTos (0xb8); //AC_VI
+	client.SetAttribute ("Remote", AddressValue (dest));
+	//client.SetAttribute ("PacketSize", UintegerValue (1400));
+	//client.SetAttribute ("MaxBytes", UintegerValue (4000));
+	uint64_t startTime = std::ceil (Simulator::Now ().ToDouble (Time::MS) / offInterval) * offInterval;
 
-    //ThreeGppHttpServerHelper server(m_apInterface.GetAddress(0));
-    //Simulator::Schedule (Seconds(m_warmup + 0.5), &WifiDlOfdmaExample::StartHttpServer, this, server);
-  }
+  	Simulator::Schedule (MilliSeconds (static_cast<uint64_t> (startTime) + 110) - Simulator::Now (),
+                       &WifiDlOfdmaExample::startBulkSendClient, this, client);
+}
 
+
+//////////////////////////////////////////////////////////////////////////////////
+
+//right now it is static,when user sends it via terminal or read from file,simply pass the payload size in this function as this function is called for every sta, only 2 lines will be used. no need to write if else case
+
+//client.SetAttribute ("PacketSize", UintegerValue (payloadData.at(m_currentSta)));
+//client.SetAttribute ("MaxBytes", UintegerValue (payloadData.at(m_currentSta)));
+
+
+
+
+/*
+uint32_t payload1=1;
+uint32_t payload2=15;
+uint32_t payload3=47;
+uint32_t payload4=330;
+uint32_t payload5=550;
+
+//uint32_t payload6=200;
+//uint32_t payload7=250;
+
+
+if(m_currentSta==0){
+        client.SetAttribute ("PacketSize", UintegerValue (payload1));
+//client.SetAttribute ("MaxBytes", UintegerValue (payload1));
+}
+else if(m_currentSta==1){
+        client.SetAttribute ("PacketSize", UintegerValue (payload2));
+//client.SetAttribute ("MaxBytes", UintegerValue (payload2));
+}
+else if(m_currentSta==2){
+        client.SetAttribute ("PacketSize", UintegerValue (payload3));
+//client.SetAttribute ("MaxBytes", UintegerValue (payload3));
+}
+else if(m_currentSta==3){
+        client.SetAttribute ("PacketSize", UintegerValue (payload4));
+//client.SetAttribute ("MaxBytes", UintegerValue (payload4));
+}
+else if(m_currentSta==4){
+        client.SetAttribute ("PacketSize", UintegerValue (payload5));
+//client.SetAttribute ("MaxBytes", UintegerValue (payload5));
+}
+*/
+
+/*
+else if(m_currentSta==5){
+        client.SetAttribute ("PacketSize", UintegerValue (payload6));
+//client.SetAttribute ("MaxBytes", UintegerValue (payload6));
+}
+else if(m_currentSta==6){
+        client.SetAttribute ("PacketSize", UintegerValue (payload7));
+//client.SetAttribute ("MaxBytes", UintegerValue (payload7));
+}
+*/
+
+
+//client.SetAttribute ("PacketSize", UintegerValue (m_payloadSize));
+//client.SetAttribute ("MaxBytes", UintegerValue (1400));
+/////////////////////////////////////////////////////////////////////////////////
+
+ // InetSocketAddress dest (m_staInterfaces.GetAddress (m_currentSta), m_port);
+  // dest.SetTos (0xb8); //AC_VI
+ // client.SetAttribute ("Remote", AddressValue (dest));
+
+  // Make sure that the client application is started at a time that is an integer
+  // multiple of the offInterval. In fact, the client application will wake every
+  // offInterval milliseconds to check if a packet can be sent. Given that the duration
+  // of the "On" interval will be modified for all the client applications
+  // simultaneously, this ensures that all the client applications will actually
+  // start sending packets at the same time.
+/* 
+ uint64_t startTime = std::ceil (Simulator::Now ().ToDouble (Time::MS) / offInterval) * offInterval;
+
+  Simulator::Schedule (MilliSeconds (static_cast<uint64_t> (startTime) + 110) - Simulator::Now (),
+                       &WifiDlOfdmaExample::StartClient, this, client);
+*/
   // continue with the next station, if any is remaining
   if (++m_currentSta < m_nStations)
     {
@@ -986,91 +1134,128 @@ WifiDlOfdmaExample::EstablishBaAgreement (Mac48Address bssid)
     }
   else
     {
-      ThreeGppHttpServerHelper server(m_apInterface.GetAddress(0));
-      Simulator::Schedule (pingDuration, &WifiDlOfdmaExample::StartTraffic, this, server);
-      //Simulator::Schedule (pingDuration, &WifiDlOfdmaExample::StartTraffic, this);
-      // Simulator::Schedule (pingDuration, &WifiDlOfdmaExample::StartStatistics, this);
+      Simulator::Schedule (pingDuration, &WifiDlOfdmaExample::StartTraffic, this);
     }
 }
 
-// Install the On/Off App on the AP corresponding to all the packet sink apps on stations
-// (HTTP server already installed)
+void 
+WifiDlOfdmaExample::startBulkSendClient (BulkSendHelper client){
+  NS_LOG_FUNCTION (this << m_currentSta);
+
+  m_bulkSourceApps.Add (client.Install (m_apNodes));
+  m_bulkSourceApps.Start(Seconds(0.0));
+  m_bulkSourceApps.Stop (Seconds (m_warmup + m_simulationTime)); // let clients be active for a long time
+}
+
 void
 WifiDlOfdmaExample::StartClient (OnOffHelper client)
 {
   NS_LOG_FUNCTION (this << m_currentSta);
 
   m_onOffSourceApps.Add (client.Install (m_apNodes));
-  m_onOffSourceApps.Stop (Seconds (m_warmup + m_simulationTime)); // let clients be active for a long time
+  
+  //Ptr<OnOffApplication> clientApp = m_onOffSourceApps.Get(m_onOffSourceApps.GetN() - 1)->GetObject<OnOffApplication> ();
+  //clientApp->TraceConnectWithoutContext("TxWithAddresses", MakeCallback(&PacketTransmitted));
+
+  m_onOffSourceApps.Stop (Seconds (m_warmup + m_simulationTime + 100)); // let clients be active for a long time
+  Config::Connect ("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Mac/$ns3::WifiMac/MacTx", MakeCallback (&WifiDlOfdmaExample::NotifyApplicationTx, this));
 }
 
 void
-WifiDlOfdmaExample::StartHttpServer(ThreeGppHttpServerHelper serverHelper) {
-
-  m_httpServerApp.Add(serverHelper.Install (m_apNodes));
-  m_httpServerApp.Stop (Seconds (m_warmup + m_simulationTime));
-  std::cout << "Server Installed on: " << m_apInterface.GetAddress(0) << "\n";
-  Ptr<ThreeGppHttpServer> httpServer = m_httpServerApp.Get (0)->GetObject<ThreeGppHttpServer> ();
-
-  // Example of connecting to the trace sources
-  //httpServer->TraceConnectWithoutContext ("ConnectionEstablished", MakeCallback (&ServerConnectionEstablished));
-  //httpServer->TraceConnectWithoutContext ("MainObject", MakeCallback (&MainObjectGenerated));
-  //httpServer->TraceConnectWithoutContext ("EmbeddedObject", MakeCallback (&EmbeddedObjectGenerated));
-  //httpServer->TraceConnectWithoutContext ("Tx", MakeCallback (&ServerTx));
-
-
-  PointerValue varPtr1;
-  httpServer->GetAttribute ("Variables", varPtr1);
-  Ptr<ThreeGppHttpVariables> httpVariables1 = varPtr1.Get<ThreeGppHttpVariables> ();
-  httpVariables1->SetMainObjectSizeMean (1024 * 100 * 10); // 100kB
-  httpVariables1->SetMainObjectSizeStdDev (4); // 40kB
-}
-
-void
-WifiDlOfdmaExample::StartBulkClient(BulkSendHelper client) {
-
-    m_bulkSourceApps.Add(client.Install (m_apNodes));
-    m_bulkSourceApps.Stop (Seconds (m_warmup + m_simulationTime));
-}
-
-//void
-//WifiDlOfdmaExample::StartTraffic(void) 
-void
-WifiDlOfdmaExample::StartTraffic (ThreeGppHttpServerHelper serverHelper)
+WifiDlOfdmaExample::StartTraffic (void)
 {
-  m_httpServerApp.Add(serverHelper.Install (m_apNodes));
-  m_httpServerApp.Stop (Seconds (m_warmup + m_simulationTime));
-  std::cout << "Server Installed on: " << m_apInterface.GetAddress(0) << "\n";
-  Ptr<ThreeGppHttpServer> httpServer = m_httpServerApp.Get (0)->GetObject<ThreeGppHttpServer> ();
-
-  // Example of connecting to the trace sources
-  httpServer->TraceConnectWithoutContext ("ConnectionEstablished", MakeCallback (&ServerConnectionEstablished));
-  httpServer->TraceConnectWithoutContext ("MainObject", MakeCallback (&MainObjectGenerated));
-  httpServer->TraceConnectWithoutContext ("EmbeddedObject", MakeCallback (&EmbeddedObjectGenerated));
-  httpServer->TraceConnectWithoutContext ("Tx", MakeCallback (&ServerTx));
-
-
-  PointerValue varPtr1;
-  httpServer->GetAttribute ("Variables", varPtr1);
-  Ptr<ThreeGppHttpVariables> httpVariables1 = varPtr1.Get<ThreeGppHttpVariables> ();
-  httpVariables1->SetMainObjectSizeMean (1024 * 100 * 10); // 100kB
-  httpVariables1->SetMainObjectSizeStdDev (4); // 40kB
-
-  std::cout << "Traffic Started ...\n";
   NS_LOG_FUNCTION (this);
 
-  // 
-  uint32_t p = m_nStations - 3;
-  //uint32_t p = m_nStations;
-  for (uint32_t i = 0; i < p; i++)
+  for (uint32_t i = 0; i < m_staNodes.GetN (); i++)
     {
-      Ptr<Application> sourceApp = m_onOffSourceApps.Get (i);
-      sourceApp->SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=1]"));
-      sourceApp->SetAttribute ("OffTime", StringValue ("ns3::ConstantRandomVariable[Constant=0]"));
+      Ptr<Application> clientApp = m_onOffSourceApps.Get (i);
+      if(i< m_nStations){
+      clientApp->SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=1]"));
+      clientApp->SetAttribute ("OffTime", StringValue ("ns3::ConstantRandomVariable[Constant=0]"));
+      }    
     }
 
   Simulator::Schedule (Seconds (m_warmup), &WifiDlOfdmaExample::StartStatistics, this);
 }
+
+// // Install the On/Off App on the AP corresponding to all the packet sink apps on stations
+// // (HTTP server already installed)
+// void
+// WifiDlOfdmaExample::StartClient (OnOffHelper client)
+// {
+//   NS_LOG_FUNCTION (this << m_currentSta);
+
+//   m_onOffSourceApps.Add (client.Install (m_apNodes));
+//   m_onOffSourceApps.Stop (Seconds (m_warmup + m_simulationTime)); // let clients be active for a long time
+// }
+
+// void
+// WifiDlOfdmaExample::StartHttpServer(ThreeGppHttpServerHelper serverHelper) {
+
+//   m_httpServerApp.Add(serverHelper.Install (m_apNodes));
+//   m_httpServerApp.Stop (Seconds (m_warmup + m_simulationTime));
+//   std::cout << "Server Installed on: " << m_apInterface.GetAddress(0) << "\n";
+//   Ptr<ThreeGppHttpServer> httpServer = m_httpServerApp.Get (0)->GetObject<ThreeGppHttpServer> ();
+
+//   // Example of connecting to the trace sources
+//   //httpServer->TraceConnectWithoutContext ("ConnectionEstablished", MakeCallback (&ServerConnectionEstablished));
+//   //httpServer->TraceConnectWithoutContext ("MainObject", MakeCallback (&MainObjectGenerated));
+//   //httpServer->TraceConnectWithoutContext ("EmbeddedObject", MakeCallback (&EmbeddedObjectGenerated));
+//   //httpServer->TraceConnectWithoutContext ("Tx", MakeCallback (&ServerTx));
+
+
+//   PointerValue varPtr1;
+//   httpServer->GetAttribute ("Variables", varPtr1);
+//   Ptr<ThreeGppHttpVariables> httpVariables1 = varPtr1.Get<ThreeGppHttpVariables> ();
+//   httpVariables1->SetMainObjectSizeMean (1024 * 100 * 10); // 100kB
+//   httpVariables1->SetMainObjectSizeStdDev (4); // 40kB
+// }
+
+// void
+// WifiDlOfdmaExample::StartBulkClient(BulkSendHelper client) {
+
+//     m_bulkSourceApps.Add(client.Install (m_apNodes));
+//     m_bulkSourceApps.Stop (Seconds (m_warmup + m_simulationTime));
+// }
+
+// //void
+// //WifiDlOfdmaExample::StartTraffic(void) 
+// void
+// WifiDlOfdmaExample::StartTraffic (ThreeGppHttpServerHelper serverHelper)
+// {
+//   m_httpServerApp.Add(serverHelper.Install (m_apNodes));
+//   m_httpServerApp.Stop (Seconds (m_warmup + m_simulationTime));
+//   std::cout << "Server Installed on: " << m_apInterface.GetAddress(0) << "\n";
+//   Ptr<ThreeGppHttpServer> httpServer = m_httpServerApp.Get (0)->GetObject<ThreeGppHttpServer> ();
+
+//   // Example of connecting to the trace sources
+//   httpServer->TraceConnectWithoutContext ("ConnectionEstablished", MakeCallback (&ServerConnectionEstablished));
+//   httpServer->TraceConnectWithoutContext ("MainObject", MakeCallback (&MainObjectGenerated));
+//   httpServer->TraceConnectWithoutContext ("EmbeddedObject", MakeCallback (&EmbeddedObjectGenerated));
+//   httpServer->TraceConnectWithoutContext ("Tx", MakeCallback (&ServerTx));
+
+
+//   PointerValue varPtr1;
+//   httpServer->GetAttribute ("Variables", varPtr1);
+//   Ptr<ThreeGppHttpVariables> httpVariables1 = varPtr1.Get<ThreeGppHttpVariables> ();
+//   httpVariables1->SetMainObjectSizeMean (1024 * 100 * 10); // 100kB
+//   httpVariables1->SetMainObjectSizeStdDev (4); // 40kB
+
+//   std::cout << "Traffic Started ...\n";
+//   NS_LOG_FUNCTION (this);
+
+//   // 
+//   uint32_t p = m_nStations - 3;
+//   //uint32_t p = m_nStations;
+//   for (uint32_t i = 0; i < p; i++)
+//     {
+//       Ptr<Application> sourceApp = m_onOffSourceApps.Get (i);
+//       sourceApp->SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=1]"));
+//       sourceApp->SetAttribute ("OffTime", StringValue ("ns3::ConstantRandomVariable[Constant=0]"));
+//     }
+
+//   Simulator::Schedule (Seconds (m_warmup), &WifiDlOfdmaExample::StartStatistics, this);
+// }
 
 void
 WifiDlOfdmaExample::StartStatistics (void)
@@ -1096,21 +1281,27 @@ WifiDlOfdmaExample::StartStatistics (void)
   DynamicCast<RegularWifiMac> (dev->GetMac ())->TraceConnectWithoutContext ("DroppedMpdu", MakeCallback (&WifiDlOfdmaExample::NotifyTxFailed, this));
   DynamicCast<RegularWifiMac> (dev->GetMac ())->TraceConnectWithoutContext("NAckedMpdu", MakeCallback (&WifiDlOfdmaExample::NotifyTxNAcked, this));
   // Retrieve the number of bytes received by each station until the end of the warmup period
+  // for (uint32_t i = 0; i < m_staDevices.GetN (); i++)
+  //   {
+  //     {
+  //     if ( i < 3 ) {
+  //       m_rxStart[i] = DynamicCast<ThreeGppHttpClient> (m_httpClientApps.Get (i))->GetTotalRx ();
+  //     }
+  //     else {
+  //       m_rxStart[i] = DynamicCast<PacketSink> (m_sinkApps.Get (i - 3))->GetTotalRx ();
+  //     }
+  //     //m_rxStart[i] = DynamicCast<PacketSink> (m_sinkApps.Get (i))->GetTotalRx ();
+  //   }
+
+  //     std::cout << m_rxStart[i] << "bytes received by sink application " << i << " before the end of the warmup period\n";
+  //   }
   for (uint32_t i = 0; i < m_staDevices.GetN (); i++)
     {
-      {
-      if ( i < 3 ) {
-        m_rxStart[i] = DynamicCast<ThreeGppHttpClient> (m_httpClientApps.Get (i))->GetTotalRx ();
-      }
-      else {
-        m_rxStart[i] = DynamicCast<PacketSink> (m_sinkApps.Get (i - 3))->GetTotalRx ();
-      }
-      //m_rxStart[i] = DynamicCast<PacketSink> (m_sinkApps.Get (i))->GetTotalRx ();
-    }
-
+      m_rxStart[i] = DynamicCast<PacketSink> (m_sinkApps.Get (i))->GetTotalRx ();
+    
       std::cout << m_rxStart[i] << "bytes received by sink application " << i << " before the end of the warmup period\n";
     }
-
+    
   // Trace PSDUs forwarded down to the PHY on each station
   for (uint32_t i = 0; i < m_staDevices.GetN (); i++)
     {
@@ -1119,10 +1310,25 @@ WifiDlOfdmaExample::StartStatistics (void)
       //ptr.Get<QosTxop> ()->GetLow ()->TraceConnectWithoutContext ("ForwardDown", MakeCallback (&WifiDlOfdmaExample::NotifyPsduForwardedDown, this));
     }
 
-  Config::Connect ("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Mac/$ns3::WifiMac/MacTx", MakeCallback (&WifiDlOfdmaExample::NotifyApplicationTx, this));
+  //Config::Connect ("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Mac/$ns3::WifiMac/MacTx", MakeCallback (&WifiDlOfdmaExample::NotifyApplicationTx, this));
   Config::Connect ("/NodeList/*/DeviceList/*/$ns3::WifiNetDevice/Mac/$ns3::WifiMac/MacRx", MakeCallback (&WifiDlOfdmaExample::NotifyApplicationRx, this));
 
   Simulator::Schedule (Seconds (m_simulationTime), &WifiDlOfdmaExample::StopStatistics, this);
+}
+
+void
+WifiDlOfdmaExample::ShowThroughput(void) {
+  for (uint32_t i = 0; i < m_staNodes.GetN (); i++)
+    {
+      double tput = ((m_rxStop[i] - 0.0) * 8.) / (Simulator::Now ().GetDouble() * 1e3 * 1e6);
+      // if (i < 10) {
+      //     tput = ((m_rxStop[i] - 0.0) * 8.) / (m_simulationTime * 1e6);
+      //     BSCtotalTput[i] += tput;
+      // } else {
+      //     tput = ((m_rxStop[i] - m_rxStart[i]) * 8.) / (m_simulationTime * 1e6);
+      // }
+      std::cout << "STA_" << i << ": " << tput << "\n";
+    }
 }
 
 void
@@ -1149,24 +1355,29 @@ WifiDlOfdmaExample::StopStatistics (void)
   DynamicCast<RegularWifiMac> (dev->GetMac ())->TraceDisconnectWithoutContext ("DroppedMpdu", MakeCallback (&WifiDlOfdmaExample::NotifyTxFailed, this));
   DynamicCast<RegularWifiMac> (dev->GetMac ())->TraceDisconnectWithoutContext("NAckedMpdu", MakeCallback (&WifiDlOfdmaExample::NotifyTxNAcked, this));
   // Retrieve the number of bytes received by each station until the end of the simulation period
+  // for (uint32_t i = 0; i < m_staDevices.GetN (); i++)
+  //   {
+  //     {
+  //     if ( i < 3 ) {
+  //       m_rxStop[i] = DynamicCast<ThreeGppHttpClient> (m_httpClientApps.Get (i))->GetTotalRx ();
+  //     }
+  //     else {
+  //       m_rxStop[i] = DynamicCast<PacketSink> (m_sinkApps.Get (i - 3))->GetTotalRx ();
+  //     }
+  //     //m_rxStop[i] = DynamicCast<PacketSink> (m_sinkApps.Get (i))->GetTotalRx ();
+  //   }
+
+  //     std::cout << m_rxStop[i] << " bytes received by sink application " << i << " at the end of the simulation\n";
+  //   }
+
   for (uint32_t i = 0; i < m_staDevices.GetN (); i++)
     {
-      {
-      if ( i < 3 ) {
-        m_rxStop[i] = DynamicCast<ThreeGppHttpClient> (m_httpClientApps.Get (i))->GetTotalRx ();
-      }
-      else {
-        m_rxStop[i] = DynamicCast<PacketSink> (m_sinkApps.Get (i - 3))->GetTotalRx ();
-      }
-      //m_rxStop[i] = DynamicCast<PacketSink> (m_sinkApps.Get (i))->GetTotalRx ();
-    }
+      m_rxStop[i] = DynamicCast<PacketSink> (m_sinkApps.Get (i))->GetTotalRx ();
 
       std::cout << m_rxStop[i] << " bytes received by sink application " << i << " at the end of the simulation\n";
     }
 
   // (Brutally) stop AP applications
-  m_httpServerApp.Get(0)->Dispose();
-
   /*
   std::cout << "No http traffic";
 
@@ -1224,6 +1435,7 @@ WifiDlOfdmaExample::NotifyMsduExpired (Ptr<const WifiMacQueueItem> item)
 void
 WifiDlOfdmaExample::NotifyMsduDequeuedFromEdcaQueue (Ptr<const WifiMacQueueItem> item)
 {
+
   // std::cout << "**********************Notify ******************\n";
   Ptr<WifiNetDevice> dev = DynamicCast<WifiNetDevice> (m_apDevices.Get (0));
   PointerValue ptr;
@@ -1287,6 +1499,7 @@ WifiDlOfdmaExample::NotifyMsduDequeuedFromEdcaQueue (Ptr<const WifiMacQueueItem>
 void
 WifiDlOfdmaExample::NotifyPsduForwardedDown (WifiPsduMap psduMap, WifiTxVector txVector)
 {
+  
   /*
   Ptr<WifiNetDevice> dev = DynamicCast<WifiNetDevice> (m_apDevices.Get (0));
   Mac48Address apAddress = dev->GetMac ()->GetAddress ();
@@ -1466,6 +1679,8 @@ WifiDlOfdmaExample::TxopDuration (Time startTime, Time duration)
 void
 WifiDlOfdmaExample::NotifyApplicationTx (std::string context, Ptr<const Packet> p)
 {
+  ShowThroughput();
+
   if (p->GetSize () < m_payloadSize)
     {
       return;
@@ -1476,6 +1691,7 @@ WifiDlOfdmaExample::NotifyApplicationTx (std::string context, Ptr<const Packet> 
 void
 WifiDlOfdmaExample::NotifyApplicationRx (std::string context, Ptr<const Packet> p)
 {
+  
   if (p->GetSize () < m_payloadSize)
     {
       return;
