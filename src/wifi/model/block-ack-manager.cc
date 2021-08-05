@@ -542,6 +542,7 @@ BlockAckManager::NotifyGotBlockAck (const CtrlBAckResponseHeader& blockAck, Mac4
                       nFailedMpdus++;
                       if (!m_txFailedCallback.IsNull ())
                         {
+                          //std::cout << "MPDU negatively ACKed\n";
                           m_txFailedCallback (*queueIt);
                         }
                       InsertInRetryQueue (*queueIt);

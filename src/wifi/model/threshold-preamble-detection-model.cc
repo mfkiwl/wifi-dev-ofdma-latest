@@ -38,12 +38,12 @@ ThresholdPreambleDetectionModel::GetTypeId (void)
     .AddConstructor<ThresholdPreambleDetectionModel> ()
     .AddAttribute ("Threshold",
                    "Preamble is successfully detection if the SNR is at or above this value (expressed in dB).",
-                   DoubleValue (4),
+                   DoubleValue (1),
                    MakeDoubleAccessor (&ThresholdPreambleDetectionModel::m_threshold),
                    MakeDoubleChecker<double> ())
     .AddAttribute ("MinimumRssi",
                    "Preamble is dropped if the RSSI is below this value (expressed in dBm).",
-                   DoubleValue (-82),
+                   DoubleValue (-150),
                    MakeDoubleAccessor (&ThresholdPreambleDetectionModel::m_rssiMin),
                    MakeDoubleChecker<double> ())
   ;

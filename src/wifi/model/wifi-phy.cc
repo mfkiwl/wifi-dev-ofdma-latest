@@ -815,6 +815,7 @@ void
 WifiPhy::SetPostReceptionErrorModel (const Ptr<ErrorModel> em)
 {
   NS_LOG_FUNCTION (this << em);
+  std::cout << "Post reception error model set\n";
   m_postReceptionErrorModel = em;
 }
 

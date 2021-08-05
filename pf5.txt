@@ -1,0 +1,187 @@
+Waf: Entering directory `/home/harshaldev/wifi-dev-ofdma-latest/build'
+[1511/2523] Compiling src/wifi/model/he/pf-multi-user-scheduler.cc
+[2397/2523] Linking build/lib/libns3-dev-wifi-debug.so
+[2398/2523] Linking build/lib/libns3-dev-wave-debug.so
+[2399/2523] Linking build/lib/libns3-dev-dsr-debug.so
+[2400/2523] Linking build/lib/libns3-dev-mesh-debug.so
+[2401/2523] Linking build/lib/libns3-dev-aodv-debug.so
+[2402/2523] Linking build/src/dsdv/examples/ns3-dev-dsdv-manet-debug
+[2403/2523] Linking build/src/energy/examples/ns3-dev-rv-battery-model-test-debug
+[2404/2523] Linking build/src/energy/examples/ns3-dev-basic-energy-model-test-debug
+[2405/2523] Linking build/src/olsr/examples/ns3-dev-simple-point-to-point-olsr-debug
+[2406/2523] Linking build/src/olsr/examples/ns3-dev-olsr-hna-debug
+[2407/2523] Linking build/src/tap-bridge/examples/ns3-dev-tap-csma-debug
+[2408/2523] Linking build/src/tap-bridge/examples/ns3-dev-tap-wifi-virtual-machine-debug
+[2409/2523] Linking build/src/tap-bridge/examples/ns3-dev-tap-wifi-dumbbell-debug
+[2410/2523] Linking build/src/aodv/examples/ns3-dev-aodv-debug
+[2411/2523] Linking build/src/internet-apps/examples/ns3-dev-traceroute-example-debug
+[2412/2523] Linking build/src/wifi/examples/ns3-dev-wifi-phy-test-debug
+[2413/2523] Linking build/lib/libns3-dev-netanim-debug.so
+[2414/2523] Linking build/src/dsr/examples/ns3-dev-dsr-debug
+[2415/2523] Linking build/src/wave/examples/ns3-dev-wave-simple-80211p-debug
+[2416/2523] Linking build/lib/libns3-dev-test-debug.so
+[2417/2523] Linking build/src/mesh/examples/ns3-dev-mesh-debug
+[2418/2523] Linking build/src/wave/examples/ns3-dev-wave-simple-device-debug
+[2419/2523] Linking build/src/wave/examples/ns3-dev-vanet-routing-compare-debug
+[2420/2523] Linking build/src/wifi/examples/ns3-dev-wifi-test-interference-helper-debug
+[2421/2523] Linking build/src/wifi/examples/ns3-dev-wifi-manager-example-debug
+[2422/2523] Linking build/src/wifi/examples/ns3-dev-wifi-trans-example-debug
+[2423/2523] Linking build/src/wifi/examples/ns3-dev-wifi-phy-configuration-debug
+[2424/2523] Linking build/src/wifi/examples/ns3-dev-wifi-bianchi-debug
+[2425/2523] Linking build/examples/stats/ns3-dev-wifi-example-sim-debug
+[2426/2523] Linking build/examples/routing/ns3-dev-manet-routing-compare-debug
+[2427/2523] Linking build/examples/wireless/ns3-dev-wifi-adhoc-debug
+[2428/2523] Linking build/examples/wireless/ns3-dev-wifi-clear-channel-cmu-debug
+[2429/2523] Linking build/examples/wireless/ns3-dev-wifi-ap-debug
+[2430/2523] Linking build/examples/wireless/ns3-dev-wifi-wired-bridging-debug
+[2431/2523] Linking build/examples/wireless/ns3-dev-wifi-multirate-debug
+[2432/2523] Linking build/src/netanim/examples/ns3-dev-dumbbell-animation-debug
+[2433/2523] Linking build/src/netanim/examples/ns3-dev-grid-animation-debug
+[2434/2523] Linking build/src/netanim/examples/ns3-dev-star-animation-debug
+[2435/2523] Linking build/src/netanim/examples/ns3-dev-wireless-animation-debug
+[2436/2523] Linking build/src/netanim/examples/ns3-dev-uan-animation-debug
+[2437/2523] Linking build/src/netanim/examples/ns3-dev-colors-link-description-debug
+[2438/2523] Linking build/src/netanim/examples/ns3-dev-resources-counters-debug
+[2439/2523] Linking build/examples/wireless/ns3-dev-mixed-wired-wireless-debug
+[2440/2523] Linking build/examples/wireless/ns3-dev-wifi-simple-adhoc-debug
+[2441/2523] Linking build/examples/wireless/ns3-dev-wifi-simple-adhoc-grid-debug
+[2442/2523] Linking build/examples/wireless/ns3-dev-wifi-simple-infra-debug
+[2443/2523] Linking build/examples/wireless/ns3-dev-wifi-simple-interference-debug
+[2444/2523] Linking build/examples/wireless/ns3-dev-wifi-blockack-debug
+[2445/2523] Linking build/examples/wireless/ns3-dev-wifi-dsss-validation-debug
+[2446/2523] Linking build/examples/wireless/ns3-dev-wifi-ofdm-validation-debug
+[2447/2523] Linking build/examples/wireless/ns3-dev-wifi-ofdm-ht-validation-debug
+[2448/2523] Linking build/examples/wireless/ns3-dev-wifi-ofdm-vht-validation-debug
+[2449/2523] Linking build/examples/wireless/ns3-dev-wifi-hidden-terminal-debug
+[2450/2523] Linking build/examples/wireless/ns3-dev-wifi-ht-network-debug
+[2451/2523] Linking build/examples/wireless/ns3-dev-wifi-vht-network-debug
+[2452/2523] Linking build/examples/wireless/ns3-dev-wifi-timing-attributes-debug
+[2453/2523] Linking build/examples/wireless/ns3-dev-wifi-sleep-debug
+[2454/2523] Linking build/examples/wireless/ns3-dev-wifi-power-adaptation-distance-debug
+[2455/2523] Linking build/examples/wireless/ns3-dev-wifi-power-adaptation-interference-debug
+[2456/2523] Linking build/examples/wireless/ns3-dev-wifi-rate-adaptation-distance-debug
+[2457/2523] Linking build/examples/wireless/ns3-dev-wifi-aggregation-debug
+[2458/2523] Linking build/examples/wireless/ns3-dev-wifi-txop-aggregation-debug
+[2459/2523] Linking build/examples/wireless/ns3-dev-wifi-simple-ht-hidden-stations-debug
+[2460/2523] Linking build/examples/wireless/ns3-dev-wifi-80211n-mimo-debug
+[2461/2523] Linking build/examples/wireless/ns3-dev-wifi-mixed-network-debug
+[2462/2523] Linking build/examples/wireless/ns3-dev-wifi-tcp-debug
+[2463/2523] Linking build/examples/wireless/ns3-dev-wifi-80211e-txop-debug
+[2464/2523] Linking build/examples/wireless/ns3-dev-wifi-spectrum-per-example-debug
+[2465/2523] Linking build/examples/wireless/ns3-dev-wifi-spectrum-per-interference-debug
+[2466/2523] Linking build/examples/wireless/ns3-dev-wifi-spectrum-saturation-example-debug
+[2467/2523] Linking build/examples/wireless/ns3-dev-wifi-ofdm-he-validation-debug
+[2468/2523] Linking build/examples/wireless/ns3-dev-wifi-he-network-debug
+[2469/2523] Linking build/examples/wireless/ns3-dev-wifi-multi-tos-debug
+[2470/2523] Linking build/examples/wireless/ns3-dev-wifi-backward-compatibility-debug
+[2471/2523] Linking build/examples/wireless/ns3-dev-wifi-spatial-reuse-debug
+[2472/2523] Linking build/examples/wireless/ns3-dev-wifi-error-models-comparison-debug
+[2473/2523] Linking build/examples/tcp/ns3-dev-star-debug
+[2474/2523] Linking build/examples/energy/ns3-dev-energy-model-example-debug
+[2475/2523] Linking build/examples/energy/ns3-dev-energy-model-with-harvesting-example-debug
+[2476/2523] Linking build/examples/matrix-topology/ns3-dev-matrix-topology-debug
+[2477/2523] Linking build/examples/tutorial/ns3-dev-third-debug
+[2478/2523] Linking build/scratch/scratch-simulator
+[2479/2523] Linking build/scratch/wifi-dl-ofdma
+[2480/2523] Linking build/scratch/subdir/subdir
+[2481/2523] Linking build/scratch/wifi-pf-dl
+[2482/2523] Linking build/scratch/wifi-dl-qualcomm-cir
+[2483/2523] Linking build/utils/ns3-dev-test-runner-debug
+[2484/2523] Linking build/utils/ns3-dev-print-introspected-doxygen-debug
+Waf: Leaving directory `/home/harshaldev/wifi-dev-ofdma-latest/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (14.352s)
+Channel bw = 20 MHz
+MCS = 5
+Number of stations = 13
+Number of Bulk Send Stations = 0
+Number of OnOff Stations = 13
+Data rate = 6.35294 Mbps
+EDCA queue max size = 1222 MSDUs
+MSDU lifetime = INFINITE
+BA buffer size = 64
+Ack sequence = 3
+
+0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 
+Station no. 0 is associated with the AP
+Given aid = 1 to associating station, to = 00:00:00:00:00:01
+Installing On Off App on AP
+Station no. 1 is associated with the AP
+Given aid = 2 to associating station, to = 00:00:00:00:00:02
+Installing On Off App on AP
+Station no. 2 is associated with the AP
+Given aid = 3 to associating station, to = 00:00:00:00:00:03
+Installing On Off App on AP
+Station no. 3 is associated with the AP
+Given aid = 4 to associating station, to = 00:00:00:00:00:04
+Installing On Off App on AP
+Station no. 4 is associated with the AP
+Given aid = 5 to associating station, to = 00:00:00:00:00:05
+Installing On Off App on AP
+Station no. 5 is associated with the AP
+Given aid = 6 to associating station, to = 00:00:00:00:00:06
+Installing On Off App on AP
+Station no. 6 is associated with the AP
+Given aid = 7 to associating station, to = 00:00:00:00:00:07
+Installing On Off App on AP
+Station no. 7 is associated with the AP
+Given aid = 8 to associating station, to = 00:00:00:00:00:08
+Installing On Off App on AP
+Station no. 8 is associated with the AP
+Given aid = 9 to associating station, to = 00:00:00:00:00:09
+Installing On Off App on AP
+Station no. 9 is associated with the AP
+Given aid = 10 to associating station, to = 00:00:00:00:00:0a
+Installing On Off App on AP
+Station no. 10 is associated with the AP
+Given aid = 11 to associating station, to = 00:00:00:00:00:0b
+Installing On Off App on AP
+Station no. 11 is associated with the AP
+Given aid = 12 to associating station, to = 00:00:00:00:00:0c
+Installing On Off App on AP
+Station no. 12 is associated with the AP
+Given aid = 13 to associating station, to = 00:00:00:00:00:0d
+Installing On Off App on AP
+Starting Traffic for On Off Apps
+============== START STATISTICS ============== 
+============== STOP STATISTICS ============== 
+Total STA:13
+Bulk Send STAs:0
+On Off STAs:13
+Throughput (Mbps)
+-----------------
+STA_0: 1.3008  total Bytes tx:983000   total Bytes rx:1796000
+STA_1: 1.3008  total Bytes tx:983000   total Bytes rx:1796000
+STA_2: 1.3008  total Bytes tx:983000   total Bytes rx:1796000
+STA_3: 1.2976  total Bytes tx:983000   total Bytes rx:1794000
+STA_4: 1.304  total Bytes tx:981000   total Bytes rx:1796000
+STA_5: 1.3008  total Bytes tx:986000   total Bytes rx:1799000
+STA_6: 1.3056  total Bytes tx:982000   total Bytes rx:1798000
+STA_7: 1.2976  total Bytes tx:985000   total Bytes rx:1796000
+STA_8: 1.3056  total Bytes tx:982000   total Bytes rx:1798000
+STA_9: 1.3152  total Bytes tx:974000   total Bytes rx:1796000
+STA_10: 1.304  total Bytes tx:974000   total Bytes rx:1789000
+STA_11: 1.832  total Bytes tx:633000   total Bytes rx:1778000
+STA_12: 0.7536  total Bytes tx:140000   total Bytes rx:611000
+
+
+Total throughput: 16.9184
+
+Dropped MPDU
+-----------
+STA_0: 0 STA_1: 0 STA_2: 0 STA_3: 0 STA_4: 0 STA_5: 0 STA_6: 0 STA_7: 0 STA_8: 0 STA_9: 0 STA_10: 0 STA_11: 0 STA_12: 0 
+
+Total MPDU dropped: 0
+
+Negatively Acknowledged
+-----------
+STA_0: 18 STA_1: 14 STA_2: 23 STA_3: 8 STA_4: 12 STA_5: 8 STA_6: 8 STA_7: 7 STA_8: 5 STA_9: 13 STA_10: 11 STA_11: 6 STA_12: 21 
+
+Total Negatively Acknowledged: 154
+
+Latencies (ms)
+--------------------
+STA_0: 2.65751 STA_1: 3.86051 STA_2: 3.15013 STA_3: 4.81005 STA_4: 3.45878 STA_5: 3.97563 STA_6: 3.86927 STA_7: 5.48149 STA_8: 5.44698 STA_9: 8.19891 STA_10: 14.6972 STA_11: 101.75 STA_12: 3223.98 
+
+Average Latency (ms): 260.41

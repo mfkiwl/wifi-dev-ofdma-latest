@@ -1,0 +1,98 @@
+Waf: Entering directory `/home/harshaldev/wifi-dev-ofdma-latest/build'
+Waf: Leaving directory `/home/harshaldev/wifi-dev-ofdma-latest/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.508s)
+Channel bw = 20 MHz
+MCS = 6
+Number of stations = 13
+Number of Bulk Send Stations = 0
+Number of OnOff Stations = 13
+Data rate = 7.14706 Mbps
+EDCA queue max size = 1378 MSDUs
+MSDU lifetime = INFINITE
+BA buffer size = 64
+Ack sequence = 3
+
+0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 
+Station no. 0 is associated with the AP
+Given aid = 1 to associating station, to = 00:00:00:00:00:01
+Installing On Off App on AP
+Station no. 1 is associated with the AP
+Given aid = 2 to associating station, to = 00:00:00:00:00:02
+Installing On Off App on AP
+Station no. 2 is associated with the AP
+Given aid = 3 to associating station, to = 00:00:00:00:00:03
+Installing On Off App on AP
+Station no. 3 is associated with the AP
+Given aid = 4 to associating station, to = 00:00:00:00:00:04
+Installing On Off App on AP
+Station no. 4 is associated with the AP
+Given aid = 5 to associating station, to = 00:00:00:00:00:05
+Installing On Off App on AP
+Station no. 5 is associated with the AP
+Given aid = 6 to associating station, to = 00:00:00:00:00:06
+Installing On Off App on AP
+Station no. 6 is associated with the AP
+Given aid = 7 to associating station, to = 00:00:00:00:00:07
+Installing On Off App on AP
+Station no. 7 is associated with the AP
+Given aid = 8 to associating station, to = 00:00:00:00:00:08
+Installing On Off App on AP
+Station no. 8 is associated with the AP
+Given aid = 9 to associating station, to = 00:00:00:00:00:09
+Installing On Off App on AP
+Station no. 9 is associated with the AP
+Given aid = 10 to associating station, to = 00:00:00:00:00:0a
+Installing On Off App on AP
+Station no. 10 is associated with the AP
+Given aid = 11 to associating station, to = 00:00:00:00:00:0b
+Installing On Off App on AP
+Station no. 11 is associated with the AP
+Given aid = 12 to associating station, to = 00:00:00:00:00:0c
+Installing On Off App on AP
+Station no. 12 is associated with the AP
+Given aid = 13 to associating station, to = 00:00:00:00:00:0d
+Installing On Off App on AP
+Starting Traffic for On Off Apps
+============== START STATISTICS ============== 
+============== STOP STATISTICS ============== 
+Total STA:13
+Bulk Send STAs:0
+On Off STAs:13
+Throughput (Mbps)
+-----------------
+STA_0: 1.6128  total Bytes tx:1077000   total Bytes rx:2085000
+STA_1: 1.6128  total Bytes tx:1068000   total Bytes rx:2076000
+STA_2: 1.6128  total Bytes tx:1070000   total Bytes rx:2078000
+STA_3: 1.6128  total Bytes tx:1076000   total Bytes rx:2084000
+STA_4: 1.6128  total Bytes tx:1072000   total Bytes rx:2080000
+STA_5: 1.6128  total Bytes tx:1072000   total Bytes rx:2080000
+STA_6: 1.6128  total Bytes tx:1069000   total Bytes rx:2077000
+STA_7: 1.6128  total Bytes tx:1067000   total Bytes rx:2075000
+STA_8: 1.6128  total Bytes tx:1072000   total Bytes rx:2080000
+STA_9: 1.6128  total Bytes tx:1072000   total Bytes rx:2080000
+STA_10: 1.6128  total Bytes tx:1067000   total Bytes rx:2075000
+STA_11: 1.6128  total Bytes tx:1067000   total Bytes rx:2075000
+STA_12: 1.6128  total Bytes tx:1067000   total Bytes rx:2075000
+
+
+Total throughput: 20.9664
+
+Dropped MPDU
+-----------
+STA_0: 0 STA_1: 0 STA_2: 0 STA_3: 0 STA_4: 0 STA_5: 0 STA_6: 0 STA_7: 0 STA_8: 0 STA_9: 0 STA_10: 0 STA_11: 0 STA_12: 0 
+
+Total MPDU dropped: 0
+
+Negatively Acknowledged
+-----------
+STA_0: 84 STA_1: 60 STA_2: 96 STA_3: 66 STA_4: 70 STA_5: 54 STA_6: 66 STA_7: 74 STA_8: 60 STA_9: 62 STA_10: 64 STA_11: 100 STA_12: 96 
+
+Total Negatively Acknowledged: 952
+
+Latencies (ms)
+--------------------
+STA_0: 289.106 STA_1: 229.535 STA_2: 351.003 STA_3: 197.21 STA_4: 255.027 STA_5: 166.143 STA_6: 266.767 STA_7: 264.654 STA_8: 188.43 STA_9: 211.578 STA_10: 262.467 STA_11: 347.702 STA_12: 318.436 
+
+Average Latency (ms): 257.543

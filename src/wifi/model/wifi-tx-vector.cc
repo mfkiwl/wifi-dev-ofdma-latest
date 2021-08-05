@@ -107,6 +107,26 @@ WifiTxVector::GetModeInitialized (void) const
   return m_modeInitialized;
 }
 
+/*
+I was going through the code base once again trying to figure out where
+the staId of 65535 is coming from and I noticed that the definition of 
+the method GetMode in wifi-tx-vector.h carriers the following signature: 
+
+WifiMode GetMode (uint16_t staId = SU_STA_ID) const;
+
+where SU_STA_ID expands to 65535. Now, at line 594 of rr-multi-user-scheduler.cc we have the line:
+
+m_txParams.m_txVector.SetHeMuUserInfo (staIt->aid,
+                                                         {{currRuType, 1, false},
+                                                          suTxVector.GetMode (),
+                                                          suTxVector.GetNss ()});
+
+Which temporarily sets the mode for a temporary txVector as the value returned by GetMode(). 
+During this call, if m_modeInitialized is set to true, then  this abort message is thrown. 
+That being said, I am unable to pinpoint the sequence of method calls that set m_modeIntiailized
+to true.
+*/
+
 WifiMode
 WifiTxVector::GetMode (uint16_t staId) const
 {

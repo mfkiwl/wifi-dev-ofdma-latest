@@ -240,6 +240,7 @@ InterferenceHelper::SetNoiseFigure (double value)
 void
 InterferenceHelper::SetErrorRateModel (const Ptr<ErrorRateModel> rate)
 {
+  //std::cout << "Error rate model set\n";
   m_errorRateModel = rate;
 }
 
@@ -593,7 +594,7 @@ InterferenceHelper::CalculatePhyHeaderSnrPer (Ptr<Event> event, uint16_t channel
    * all SNIR changes in the SNIR vector.
    */
   double per = CalculatePhyHeaderPer (event, &ni, channelWidth, band, header);
-  
+  //std::cout << "Calculated Per\n";
   return PhyEntity::SnrPer (snr, per);
 }
 

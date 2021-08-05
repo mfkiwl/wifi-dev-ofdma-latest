@@ -1,0 +1,70 @@
+Waf: Entering directory `/home/harshaldev/wifi-dev-ofdma-latest/build'
+Waf: Leaving directory `/home/harshaldev/wifi-dev-ofdma-latest/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.528s)
+Channel bw = 20 MHz
+MCS = 5
+Number of stations = 6
+Number of Bulk Send Stations = 0
+Number of OnOff Stations = 6
+Data rate = 13.7647 Mbps
+EDCA queue max size = 564 MSDUs
+MSDU lifetime = INFINITE
+BA buffer size = 64
+Ack sequence = 3
+
+0 0 0 0 0 0 
+0 0 0 0 0 0 
+Station no. 0 is associated with the AP
+Given aid = 1 to associating station, to = 00:00:00:00:00:01
+Installing On Off App on AP
+Station no. 1 is associated with the AP
+Given aid = 2 to associating station, to = 00:00:00:00:00:02
+Installing On Off App on AP
+Station no. 2 is associated with the AP
+Given aid = 3 to associating station, to = 00:00:00:00:00:03
+Installing On Off App on AP
+Station no. 3 is associated with the AP
+Given aid = 4 to associating station, to = 00:00:00:00:00:04
+Installing On Off App on AP
+Station no. 4 is associated with the AP
+Given aid = 5 to associating station, to = 00:00:00:00:00:05
+Installing On Off App on AP
+Station no. 5 is associated with the AP
+Given aid = 6 to associating station, to = 00:00:00:00:00:06
+Installing On Off App on AP
+Starting Traffic for On Off Apps
+============== START STATISTICS ============== 
+============== STOP STATISTICS ============== 
+Total STA:6
+Bulk Send STAs:0
+On Off STAs:6
+Throughput (Mbps)
+-----------------
+STA_0: 6.4656  total Bytes tx:2368000   total Bytes rx:6409000
+STA_1: 6.4672  total Bytes tx:2369000   total Bytes rx:6411000
+STA_2: 6.4576  total Bytes tx:2371000   total Bytes rx:6407000
+STA_3: 6.4896  total Bytes tx:2355000   total Bytes rx:6411000
+STA_4: 6.4832  total Bytes tx:2355000   total Bytes rx:6407000
+STA_5: 6.4272  total Bytes tx:1852000   total Bytes rx:5869000
+
+
+Total throughput: 38.7904
+
+Dropped MPDU
+-----------
+STA_0: 0 STA_1: 0 STA_2: 0 STA_3: 0 STA_4: 0 STA_5: 0 
+
+Total MPDU dropped: 0
+
+Negatively Acknowledged
+-----------
+STA_0: 30 STA_1: 15 STA_2: 14 STA_3: 15 STA_4: 4 STA_5: 0 
+
+Total Negatively Acknowledged: 78
+
+Latencies (ms)
+--------------------
+STA_0: 9.65029 STA_1: 10.0374 STA_2: 7.21655 STA_3: 9.75281 STA_4: 20.5811 STA_5: 466.982 
+
+Average Latency (ms): 87.37

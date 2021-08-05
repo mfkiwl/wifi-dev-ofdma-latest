@@ -1,0 +1,100 @@
+Waf: Entering directory `/home/harshaldev/wifi-dev-ofdma-latest/build'
+[2474/2523] Compiling scratch/wifi-pf-dl.cc
+[2484/2523] Linking build/scratch/wifi-pf-dl
+Waf: Leaving directory `/home/harshaldev/wifi-dev-ofdma-latest/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (3.411s)
+Channel bw = 20 MHz
+MCS = 7
+Number of stations = 13
+Number of Bulk Send Stations = 0
+Number of OnOff Stations = 13
+Data rate = 7.94118 Mbps
+EDCA queue max size = 1508 MSDUs
+MSDU lifetime = INFINITE
+BA buffer size = 64
+Ack sequence = 3
+
+0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 
+Station no. 0 is associated with the AP
+Given aid = 1 to associating station, to = 00:00:00:00:00:01
+Installing On Off App on AP
+Station no. 1 is associated with the AP
+Given aid = 2 to associating station, to = 00:00:00:00:00:02
+Installing On Off App on AP
+Station no. 2 is associated with the AP
+Given aid = 3 to associating station, to = 00:00:00:00:00:03
+Installing On Off App on AP
+Station no. 3 is associated with the AP
+Given aid = 4 to associating station, to = 00:00:00:00:00:04
+Installing On Off App on AP
+Station no. 4 is associated with the AP
+Given aid = 5 to associating station, to = 00:00:00:00:00:05
+Installing On Off App on AP
+Station no. 5 is associated with the AP
+Given aid = 6 to associating station, to = 00:00:00:00:00:06
+Installing On Off App on AP
+Station no. 6 is associated with the AP
+Given aid = 7 to associating station, to = 00:00:00:00:00:07
+Installing On Off App on AP
+Station no. 7 is associated with the AP
+Given aid = 8 to associating station, to = 00:00:00:00:00:08
+Installing On Off App on AP
+Station no. 8 is associated with the AP
+Given aid = 9 to associating station, to = 00:00:00:00:00:09
+Installing On Off App on AP
+Station no. 9 is associated with the AP
+Given aid = 10 to associating station, to = 00:00:00:00:00:0a
+Installing On Off App on AP
+Station no. 10 is associated with the AP
+Given aid = 11 to associating station, to = 00:00:00:00:00:0b
+Installing On Off App on AP
+Station no. 11 is associated with the AP
+Given aid = 12 to associating station, to = 00:00:00:00:00:0c
+Installing On Off App on AP
+Station no. 12 is associated with the AP
+Given aid = 13 to associating station, to = 00:00:00:00:00:0d
+Installing On Off App on AP
+Starting Traffic for On Off Apps
+============== START STATISTICS ============== 
+============== STOP STATISTICS ============== 
+Total STA:13
+Bulk Send STAs:0
+On Off STAs:13
+Throughput (Mbps)
+-----------------
+STA_0: 1.792  total Bytes tx:1196000   total Bytes rx:2316000
+STA_1: 1.792  total Bytes tx:1191000   total Bytes rx:2311000
+STA_2: 1.792  total Bytes tx:1189000   total Bytes rx:2309000
+STA_3: 1.792  total Bytes tx:1191000   total Bytes rx:2311000
+STA_4: 1.792  total Bytes tx:1187000   total Bytes rx:2307000
+STA_5: 1.792  total Bytes tx:1186000   total Bytes rx:2306000
+STA_6: 1.792  total Bytes tx:1194000   total Bytes rx:2314000
+STA_7: 1.792  total Bytes tx:1186000   total Bytes rx:2306000
+STA_8: 1.792  total Bytes tx:1187000   total Bytes rx:2307000
+STA_9: 1.792  total Bytes tx:1191000   total Bytes rx:2311000
+STA_10: 1.792  total Bytes tx:1191000   total Bytes rx:2311000
+STA_11: 1.792  total Bytes tx:1186000   total Bytes rx:2306000
+STA_12: 1.792  total Bytes tx:1186000   total Bytes rx:2306000
+
+
+Total throughput: 23.296
+
+Dropped MPDU
+-----------
+STA_0: 0 STA_1: 0 STA_2: 0 STA_3: 0 STA_4: 0 STA_5: 0 STA_6: 0 STA_7: 0 STA_8: 0 STA_9: 0 STA_10: 0 STA_11: 0 STA_12: 0 
+
+Total MPDU dropped: 0
+
+Negatively Acknowledged
+-----------
+STA_0: 88 STA_1: 64 STA_2: 78 STA_3: 60 STA_4: 60 STA_5: 90 STA_6: 80 STA_7: 68 STA_8: 56 STA_9: 68 STA_10: 84 STA_11: 80 STA_12: 60 
+
+Total Negatively Acknowledged: 936
+
+Latencies (ms)
+--------------------
+STA_0: 286.698 STA_1: 199.337 STA_2: 294.774 STA_3: 201.265 STA_4: 245.87 STA_5: 294.584 STA_6: 257.166 STA_7: 270.289 STA_8: 203.967 STA_9: 219.298 STA_10: 282.571 STA_11: 265.232 STA_12: 256.407 
+
+Average Latency (ms): 252.112

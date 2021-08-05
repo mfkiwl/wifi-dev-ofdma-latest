@@ -1241,6 +1241,7 @@ HtFrameExchangeManager::SendBlockAck (const RecipientBlockAckAgreement& agreemen
 {
   NS_LOG_FUNCTION (this << durationId << blockAckTxVector << rxSnr);
 
+  //std::cout << "Sending Block ACK\n";
   WifiMacHeader hdr;
   hdr.SetType (WIFI_MAC_CTL_BACKRESP);
   hdr.SetAddr1 (agreement.GetPeer ());

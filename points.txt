@@ -1,0 +1,6 @@
+1. Why are so many NACKs being received? When there is no path loss or error loss model. Also MCS is low, 7, 6, 5 allowing 26 tone RUs.
+NACK order PF > NO OFDMA > RR
+2. Why is the latency so high? Almost of the order of 150-200 ms in all 3 scenarios.
+3. Latency order No OFDMA < RR < PF
+4. Throughput order NO OFDMA > RR > PF
+5. PF scheduler not allowing all the stations to get a chance to transmit the same amount of data. Some terminal stations mostly struggling with this.

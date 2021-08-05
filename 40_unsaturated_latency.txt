@@ -1,0 +1,112 @@
+Waf: Entering directory `/home/harshaldev/wifi-dev-ofdma-latest/build'
+[2475/2525] Compiling scratch/wifi-pf-dl.cc
+[2479/2525] Compiling scratch/bare-bones-ofdma.cc
+[2485/2525] Linking build/scratch/bare-bones-ofdma
+[2486/2525] Linking build/scratch/wifi-pf-dl
+Waf: Leaving directory `/home/harshaldev/wifi-dev-ofdma-latest/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (3.438s)
+Channel bw = 40 MHz
+MCS = 11
+Number of stations = 40
+Number of Bulk Send Stations = 0
+Number of OnOff Stations = 40
+Data rate = 7.3125 Mbps
+EDCA queue max size = 13360 MSDUs
+MSDU lifetime = INFINITE
+BA buffer size = 256
+Ack sequence = 3
+
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Station no. 0 is associated with the AP
+Given aid = 1 to associating station, to = 00:00:00:00:00:01
+Installing On Off App on AP
+Station no. 1 is associated with the AP
+Given aid = 2 to associating station, to = 00:00:00:00:00:02
+Installing On Off App on AP
+Station no. 2 is associated with the AP
+Given aid = 3 to associating station, to = 00:00:00:00:00:03
+Installing On Off App on AP
+Station no. 3 is associated with the AP
+Given aid = 4 to associating station, to = 00:00:00:00:00:04
+Installing On Off App on AP
+Station no. 4 is associated with the AP
+Given aid = 5 to associating station, to = 00:00:00:00:00:05
+Installing On Off App on AP
+Station no. 5 is associated with the AP
+Given aid = 6 to associating station, to = 00:00:00:00:00:06
+Installing On Off App on AP
+Station no. 6 is associated with the AP
+Given aid = 7 to associating station, to = 00:00:00:00:00:07
+Installing On Off App on AP
+Station no. 7 is associated with the AP
+Given aid = 8 to associating station, to = 00:00:00:00:00:08
+Installing On Off App on AP
+Station no. 8 is associated with the AP
+Given aid = 9 to associating station, to = 00:00:00:00:00:09
+Installing On Off App on AP
+Station no. 9 is associated with the AP
+Given aid = 10 to associating station, to = 00:00:00:00:00:0a
+Installing On Off App on AP
+Station no. 10 is associated with the AP
+Given aid = 11 to associating station, to = 00:00:00:00:00:0b
+Installing On Off App on AP
+Station no. 11 is associated with the AP
+Given aid = 12 to associating station, to = 00:00:00:00:00:0c
+Installing On Off App on AP
+Station no. 12 is associated with the AP
+Given aid = 13 to associating station, to = 00:00:00:00:00:0d
+Installing On Off App on AP
+Station no. 13 is associated with the AP
+Given aid = 14 to associating station, to = 00:00:00:00:00:0e
+Installing On Off App on AP
+Station no. 14 is associated with the AP
+Given aid = 15 to associating station, to = 00:00:00:00:00:0f
+Installing On Off App on AP
+Station no. 15 is associated with the AP
+Given aid = 16 to associating station, to = 00:00:00:00:00:10
+Installing On Off App on AP
+Station no. 16 is associated with the AP
+Given aid = 17 to associating station, to = 00:00:00:00:00:11
+Installing On Off App on AP
+Station no. 17 is associated with the AP
+Given aid = 18 to associating station, to = 00:00:00:00:00:12
+Installing On Off App on AP
+Station no. 18 is associated with the AP
+Given aid = 19 to associating station, to = 00:00:00:00:00:13
+Installing On Off App on AP
+Station no. 19 is associated with the AP
+Given aid = 20 to associating station, to = 00:00:00:00:00:14
+Installing On Off App on AP
+Station no. 20 is associated with the AP
+Given aid = 21 to associating station, to = 00:00:00:00:00:15
+Installing On Off App on AP
+Station no. 21 is associated with the AP
+Given aid = 22 to associating station, to = 00:00:00:00:00:16
+Installing On Off App on AP
+Station no. 22 is associated with the AP
+Given aid = 23 to associating station, to = 00:00:00:00:00:17
+Installing On Off App on AP
+Station no. 23 is associated with the AP
+Given aid = 24 to associating station, to = 00:00:00:00:00:18
+Installing On Off App on AP
+Station no. 24 is associated with the AP
+Given aid = 25 to associating station, to = 00:00:00:00:00:19
+Installing On Off App on AP
+Station no. 25 is associated with the AP
+Given aid = 26 to associating station, to = 00:00:00:00:00:1a
+Installing On Off App on AP
+Station no. 26 is associated with the AP
+Given aid = 27 to associating station, to = 00:00:00:00:00:1b
+Installing On Off App on AP
+Station no. 27 is associated with the AP
+Given aid = 28 to associating station, to = 00:00:00:00:00:1c
+Installing On Off App on AP
+Station no. 28 is associated with the AP
+Given aid = 29 to associating station, to = 00:00:00:00:00:1d
+Installing On Off App on AP
+Station no. 29 is associated with the AP
+Given aid = 30 to associating station, to = 00:00:00:00:00:1e
+Installing On Off App on AP
+Station no. 30 is assoc

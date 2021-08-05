@@ -1,0 +1,70 @@
+Waf: Entering directory `/home/harshaldev/wifi-dev-ofdma-latest/build'
+Waf: Leaving directory `/home/harshaldev/wifi-dev-ofdma-latest/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.514s)
+Channel bw = 20 MHz
+MCS = 5
+Number of stations = 6
+Number of Bulk Send Stations = 0
+Number of OnOff Stations = 6
+Data rate = 13.7647 Mbps
+EDCA queue max size = 564 MSDUs
+MSDU lifetime = INFINITE
+BA buffer size = 64
+No OFDMA
+
+0 0 0 0 0 0 
+0 0 0 0 0 0 
+Station no. 0 is associated with the AP
+Given aid = 1 to associating station, to = 00:00:00:00:00:01
+Installing On Off App on AP
+Station no. 1 is associated with the AP
+Given aid = 2 to associating station, to = 00:00:00:00:00:02
+Installing On Off App on AP
+Station no. 2 is associated with the AP
+Given aid = 3 to associating station, to = 00:00:00:00:00:03
+Installing On Off App on AP
+Station no. 3 is associated with the AP
+Given aid = 4 to associating station, to = 00:00:00:00:00:04
+Installing On Off App on AP
+Station no. 4 is associated with the AP
+Given aid = 5 to associating station, to = 00:00:00:00:00:05
+Installing On Off App on AP
+Station no. 5 is associated with the AP
+Given aid = 6 to associating station, to = 00:00:00:00:00:06
+Installing On Off App on AP
+Starting Traffic for On Off Apps
+============== START STATISTICS ============== 
+============== STOP STATISTICS ============== 
+Total STA:6
+Bulk Send STAs:0
+On Off STAs:6
+Throughput (Mbps)
+-----------------
+STA_0: 7.4304  total Bytes tx:2580000   total Bytes rx:7224000
+STA_1: 7.4304  total Bytes tx:2571000   total Bytes rx:7215000
+STA_2: 7.3616  total Bytes tx:2596000   total Bytes rx:7197000
+STA_3: 7.3616  total Bytes tx:2598000   total Bytes rx:7199000
+STA_4: 7.3616  total Bytes tx:2604000   total Bytes rx:7205000
+STA_5: 7.4304  total Bytes tx:2590000   total Bytes rx:7234000
+
+
+Total throughput: 44.376
+
+Dropped MPDU
+-----------
+STA_0: 0 STA_1: 0 STA_2: 0 STA_3: 0 STA_4: 0 STA_5: 0 
+
+Total MPDU dropped: 0
+
+Negatively Acknowledged
+-----------
+STA_0: 22 STA_1: 49 STA_2: 49 STA_3: 21 STA_4: 14 STA_5: 35 
+
+Total Negatively Acknowledged: 190
+
+Latencies (ms)
+--------------------
+STA_0: 81.8514 STA_1: 80.8901 STA_2: 76.2719 STA_3: 81.6458 STA_4: 81.8962 STA_5: 74.7392 
+
+Average Latency (ms): 79.5491

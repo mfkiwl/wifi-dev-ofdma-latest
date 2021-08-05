@@ -23,7 +23,6 @@
 
 #include "multi-user-scheduler.h"
 #include <list>
-#include "ns3/Hungarian.h"
 
 namespace ns3 {
 
@@ -120,28 +119,12 @@ private:
     double credits;               //!< credits accumulated by the station
   };
 
-  struct DlPerStaInfo
-  {
-    uint16_t aid;                //!< association ID
-    uint8_t tid;                 //!< TID
-  };
-
-  struct CandInfo 
-  {
-    uint16_t aid;                 //!< station's AID
-    Mac48Address address;         //!< station's MAC Address
-    Ptr<const WifiMacQueueItem> mpdu;
-  };
-
   /**
    * Information stored for candidate stations
    */
   typedef std::pair<std::list<MasterInfo>::iterator, Ptr<const WifiMacQueueItem>> CandidateInfo;
 
-  bool loopOutput;
   uint8_t m_nStations;                                  //!< Number of stations/slots to fill
-  uint16_t m_startStation;
-  std::list<std::pair<Mac48Address, DlPerStaInfo>> m_staInfo;
   bool m_enableTxopSharing;                             //!< allow A-MPDUs of different TIDs in a DL MU PPDU
   bool m_forceDlOfdma;                                  //!< return DL_OFDMA even if no DL MU PPDU was built
   bool m_enableUlOfdma;                                 //!< enable the scheduler to also return UL_OFDMA
@@ -149,54 +132,12 @@ private:
   bool m_useCentral26TonesRus;                          //!< whether to allocate central 26-tone RUs
   uint32_t m_ulPsduSize;                                //!< the size in byte of the solicited PSDU
   std::map<AcIndex, std::list<MasterInfo>> m_staList;   //!< Per-AC list of stations (next to serve first)
-  std::list<CandInfo> m_simpleCandidates;
   std::list<CandidateInfo> m_candidates;                //!< Candidate stations for MU TX
   Time m_maxCredits;                                    //!< Max amount of credits a station can have
   Ptr<WifiMacQueueItem> m_trigger;                      //!< Trigger Frame to send
   Time m_tbPpduDuration;                                //!< Duration of the solicited TB PPDUs
   WifiTxParameters m_txParams;                          //!< TX parameters
   TriggerFrameType m_ulTriggerType;                     //!< Trigger Frame type for UL MU
-
-  // PF Scheduler
-  struct match
-  {
-    int a;
-    int b;
-    match(int x, int y)
-          : a(x), b(y){}
-    
-  };
-  struct map
-  {
-    int a;
-    HeRu::RuType b;
-    map(int x,HeRu::RuType  y)
-          : a(x), b(y){}
-  };
-  struct alloc
-  {
-    bool a;
-    std::vector<match>b;
-  };
-
-  std::list<std::pair<uint32_t, uint16_t>> dataStaPair;
-  std::vector<match> minRuAlloc;
-  std::vector<int> randomMCS;
-  std::vector<map> mappedRuAllocated;
-  std::list<std::pair<Mac48Address, DlPerStaInfo>> staAllocated;
-  std::map<uint16_t,double> dataTransmitted;
-  std::map<uint16_t,double> totalTime;
-  double MAX_COST=11111.0;
-  std::vector<std::vector<double> > costMatrix;
-    std::vector<int> assignment;
-  std::map<uint16_t,double>mapw;
-
-  int bestMCS=-1;
-  double timeReq(int dataSize,int rusize,int mcs_QAM);
-  double timeReq1(int dataSize,int rusize,int mcs);
-  double getDataRate(int mcs, int ru);
-  void MUTAX();
-  void ProportionalFair(std::vector<int> currRUset,int currMCS);
 };
 
 } //namespace ns3

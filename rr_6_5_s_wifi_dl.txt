@@ -1,0 +1,98 @@
+Waf: Entering directory `/home/harshaldev/wifi-dev-ofdma-latest/build'
+Waf: Leaving directory `/home/harshaldev/wifi-dev-ofdma-latest/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.500s)
+Channel bw = 20 MHz
+MCS = 5
+Number of stations = 6
+Channel Saturated = 1
+Data rate = 11.7 Mbps
+EDCA queue max size = 10000 MSDUs
+MSDU lifetime = 107000 ms
+BA buffer size = 256
+Ack sequence = 3
+
+0 0 0 0 0 0 
+0 0 0 0 0 0 
+Station no. 0 is associated with the AP
+Given aid = 1 to associating station, to = 00:00:00:00:00:01
+Installing On Off App on AP
+Station no. 1 is associated with the AP
+Given aid = 2 to associating station, to = 00:00:00:00:00:02
+Installing On Off App on AP
+Station no. 2 is associated with the AP
+Given aid = 3 to associating station, to = 00:00:00:00:00:03
+Installing On Off App on AP
+Station no. 3 is associated with the AP
+Given aid = 4 to associating station, to = 00:00:00:00:00:04
+Installing On Off App on AP
+Station no. 4 is associated with the AP
+Given aid = 5 to associating station, to = 00:00:00:00:00:05
+Installing On Off App on AP
+Station no. 5 is associated with the AP
+Given aid = 6 to associating station, to = 00:00:00:00:00:06
+Installing On Off App on AP
+============== START STATISTICS ============== 
+============== STOP STATISTICS ============== 
+Throughput (Mbps)
+-----------------
+STA_0: 5.536  total Bytes tx:1382000   total Bytes rx:4842000
+STA_1: 5.536  total Bytes tx:1381000   total Bytes rx:4841000
+STA_2: 5.536  total Bytes tx:1380000   total Bytes rx:4840000
+STA_3: 5.536  total Bytes tx:1379000   total Bytes rx:4839000
+STA_4: 5.536  total Bytes tx:1379000   total Bytes rx:4839000
+STA_5: 5.536  total Bytes tx:1379000   total Bytes rx:4839000
+
+
+Total throughput: 33.216
+
+Dropped MPDU (in AP Queue)
+-----------
+STA_0: 0 STA_1: 0 STA_2: 0 STA_3: 0 STA_4: 0 STA_5: 0 
+
+Total MPDU dropped (in AP Queue): 0
+
+Dropped MPDU (in STA Queue)
+-----------
+STA_0: 0 STA_1: 0 STA_2: 0 STA_3: 0 STA_4: 0 STA_5: 0 
+
+Total MPDU dropped (in STA Queue): 0
+
+Negatively Acknowledged
+-----------
+STA_0: 0 STA_1: 0 STA_2: 0 STA_3: 0 STA_4: 0 STA_5: 0 
+
+Total Negatively Acknowledged: 0
+
+
+Total MAC layer drops: 0
+
+STA PHY drops with reason
+-----------
+
+STA_0
+UNKNOWN 0 UNSUPPORTED_SETTINGS 0 CHANNEL_SWITCHING 0 RXING 0 TXING 10380 SLEEPING 0 BUSY_DECODING_PREAMBLE 0 PREAMBLE_DETECT_FAILURE 0 RECEPTION_ABORTED_BY_TX 0 L_SIG_FAILURE 0 HT_SIG_FAILURE 0 SIG_A_FAILURE 0 SIG_B_FAILURE 0 PREAMBLE_DETECTION_PACKET_SWITCH 0 FRAME_CAPTURE_PACKET_SWITCH 0 OBSS_PD_CCA_RESET 0 HE_TB_PPDU_TOO_LATE 0 FILTERED 0 
+STA_1
+UNKNOWN 0 UNSUPPORTED_SETTINGS 0 CHANNEL_SWITCHING 0 RXING 0 TXING 10380 SLEEPING 0 BUSY_DECODING_PREAMBLE 0 PREAMBLE_DETECT_FAILURE 0 RECEPTION_ABORTED_BY_TX 0 L_SIG_FAILURE 0 HT_SIG_FAILURE 0 SIG_A_FAILURE 0 SIG_B_FAILURE 0 PREAMBLE_DETECTION_PACKET_SWITCH 0 FRAME_CAPTURE_PACKET_SWITCH 0 OBSS_PD_CCA_RESET 0 HE_TB_PPDU_TOO_LATE 0 FILTERED 0 
+STA_2
+UNKNOWN 0 UNSUPPORTED_SETTINGS 0 CHANNEL_SWITCHING 0 RXING 0 TXING 10380 SLEEPING 0 BUSY_DECODING_PREAMBLE 0 PREAMBLE_DETECT_FAILURE 0 RECEPTION_ABORTED_BY_TX 0 L_SIG_FAILURE 0 HT_SIG_FAILURE 0 SIG_A_FAILURE 0 SIG_B_FAILURE 0 PREAMBLE_DETECTION_PACKET_SWITCH 0 FRAME_CAPTURE_PACKET_SWITCH 0 OBSS_PD_CCA_RESET 0 HE_TB_PPDU_TOO_LATE 0 FILTERED 0 
+STA_3
+UNKNOWN 0 UNSUPPORTED_SETTINGS 0 CHANNEL_SWITCHING 0 RXING 0 TXING 10380 SLEEPING 0 BUSY_DECODING_PREAMBLE 0 PREAMBLE_DETECT_FAILURE 0 RECEPTION_ABORTED_BY_TX 0 L_SIG_FAILURE 0 HT_SIG_FAILURE 0 SIG_A_FAILURE 0 SIG_B_FAILURE 0 PREAMBLE_DETECTION_PACKET_SWITCH 0 FRAME_CAPTURE_PACKET_SWITCH 0 OBSS_PD_CCA_RESET 0 HE_TB_PPDU_TOO_LATE 0 FILTERED 0 
+STA_4
+UNKNOWN 0 UNSUPPORTED_SETTINGS 0 CHANNEL_SWITCHING 0 RXING 0 TXING 10380 SLEEPING 0 BUSY_DECODING_PREAMBLE 0 PREAMBLE_DETECT_FAILURE 0 RECEPTION_ABORTED_BY_TX 0 L_SIG_FAILURE 0 HT_SIG_FAILURE 0 SIG_A_FAILURE 0 SIG_B_FAILURE 0 PREAMBLE_DETECTION_PACKET_SWITCH 0 FRAME_CAPTURE_PACKET_SWITCH 0 OBSS_PD_CCA_RESET 0 HE_TB_PPDU_TOO_LATE 0 FILTERED 0 
+STA_5
+UNKNOWN 0 UNSUPPORTED_SETTINGS 0 CHANNEL_SWITCHING 0 RXING 0 TXING 10380 SLEEPING 0 BUSY_DECODING_PREAMBLE 0 PREAMBLE_DETECT_FAILURE 0 RECEPTION_ABORTED_BY_TX 0 L_SIG_FAILURE 0 HT_SIG_FAILURE 0 SIG_A_FAILURE 0 SIG_B_FAILURE 0 PREAMBLE_DETECTION_PACKET_SWITCH 0 FRAME_CAPTURE_PACKET_SWITCH 0 OBSS_PD_CCA_RESET 0 HE_TB_PPDU_TOO_LATE 0 FILTERED 0 
+
+Total STA PHY layer drops: 62280
+
+
+Total AP MAC Tx Drops: 0
+
+
+Total AP PHY Tx Drops: 0
+
+Latencies (ms)
+--------------------
+STA_0: 2394.76 STA_1: 2396.7 STA_2: 2397.54 STA_3: 2398.04 STA_4: 2398.01 STA_5: 2398.03 
+
+Average Latency (ms): 2397.18

@@ -702,14 +702,20 @@ PhyEntity::GetReceptionStatus (Ptr<const WifiPsdu> psdu, Ptr<Event> event, uint1
   SignalNoiseDbm signalNoise;
   signalNoise.signal = WToDbm (event->GetRxPowerW (channelWidthAndBand.second));
   signalNoise.noise = WToDbm (event->GetRxPowerW (channelWidthAndBand.second) / snrPer.snr);
-  if (GetRandomValue () > snrPer.per
+
+  double randomVal = GetRandomValue();
+  if (randomVal > snrPer.per
       && !(m_wifiPhy->m_postReceptionErrorModel && m_wifiPhy->m_postReceptionErrorModel->IsCorrupt (psdu->GetPacket ()->Copy ())))
     {
+      //if ( randomVal > snrPer.per )
+        //std::cout << "randomVal = " << randomVal << " > snrPer.per " << snrPer.per << "\n";
+
       NS_LOG_DEBUG ("Reception succeeded: " << psdu);
       return std::make_pair (true, signalNoise);
     }
   else
     {
+      //std::cout << "Packet drop due to error model.\n";
       NS_LOG_DEBUG ("Reception failed: " << psdu);
       return std::make_pair (false, signalNoise);
     }
