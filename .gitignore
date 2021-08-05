@@ -12,6 +12,7 @@
 *.log
 *.mob
 *.pcap
+*.txt
 *.plt
 *.routes
 *.tr
