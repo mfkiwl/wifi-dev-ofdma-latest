@@ -11,6 +11,7 @@
 *.dat
 *.log
 *.mob
+*.output
 *.pcap
 *.plt
 *.routes
