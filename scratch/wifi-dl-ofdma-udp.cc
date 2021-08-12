@@ -144,7 +144,7 @@ private:
   double m_simulationTime;  // seconds
   uint32_t m_scheduler;
   bool m_saturateChannel;
-  uint8_t m_nStations;     // not including AP
+  uint16_t m_nStations;     // not including AP //The type of this must be changes to uint8_t when using PF, and make sure when you do that the stations are not too many
   double m_radius;          // meters
   bool m_enableDlOfdma;
   uint16_t m_channelWidth;  // channel bandwidth
@@ -291,12 +291,30 @@ WifiDlOfdma::Config (int argc, char *argv[])
 
   if (m_saturateChannel) {
     m_macQueueSize = 10000; // Keep the queue sufficiently large
-    m_msduLifetime = (m_warmup + m_simulationTime + 100) * 1000; // MSDU must not expire for the duration of the simulation
+    //m_msduLifetime = (m_warmup + m_simulationTime + 100) * 1000; // MSDU must not expire for the duration of the simulation
   }
   else {
     if ( m_dataRate == 0 )
       m_dataRate = m_dataRate / 3;
-  }  
+    else {
+
+      if ( m_dataRate == 1.5 && !m_enableDlOfdma ) { // 60 Mbps, OFDM
+        m_macQueueSize = 100 * m_macQueueSize; // With 4 RUs, 60 Mbps is being achieved, so 4 times the Queue Size + Lowered Overhead of OFDM should keep the Queue from filling up
+      }
+      else if ( m_dataRate == 2.5 ) { // 100 Mbps
+        m_macQueueSize = 20 * m_macQueueSize; // With 18 RUs, 100 Mbps is being achieved, so 18x (20x for safety) + Lowered Overhead of OFDM should keep the Queue from filling up
+      }
+      else if ( m_dataRate == 3.125 ) { // 125 Mbps
+        m_macQueueSize = 25 * m_macQueueSize; // For 125 Mbps we have a 20% increase in dataRate so increasing the Queue Size by 20% should be sufficient too.
+      }
+      else if ( m_dataRate == 4.875 ) { // 195 Mbps
+        m_macQueueSize = 40 * m_macQueueSize; // For 195 Mbps we have a 56% increase in dataRate so increasing the Queue Size by 60% should be sufficient too.
+      }
+    }  
+  }
+
+  m_macQueueSize = 1000; // Large Queue Size causes packet queing. 
+  m_msduLifetime = (m_warmup + m_simulationTime + 100) * 1000; // MSDU must not expire for the duration of the simulation  
 
   switch (m_channelWidth)
     {
@@ -356,7 +374,7 @@ WifiDlOfdma::Setup (void)
   //Ptr<ConstantSpeedPropagationDelayModel> delayModel = CreateObject<ConstantSpeedPropagationDelayModel> ();
   //spectrumChannel->SetPropagationDelayModel (delayModel);
   SpectrumWifiPhyHelper phy;
-  phy.SetPcapDataLinkType (WifiPhyHelper::DLT_IEEE802_11_RADIO);
+  phy.SetPcapDataLinkType (WifiPhyHelper::DLT_IEEE802_11);
   phy.SetChannel (spectrumChannel);
   phy.Set ("ChannelNumber", UintegerValue (m_channelNumber));
   phy.Set ("ChannelWidth", UintegerValue (m_channelWidth));

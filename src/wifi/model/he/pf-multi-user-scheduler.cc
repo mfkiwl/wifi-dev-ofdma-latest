@@ -483,7 +483,7 @@ PfMultiUserScheduler::NotifyStationAssociated (uint16_t aid, Mac48Address addres
         {
           staList.second.push_back (MasterInfo {aid, address, 0.0});
         }
-    }
+    } 
 }
 
 void

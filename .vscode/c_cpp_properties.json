@@ -3,7 +3,9 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/opt/ibm/ILOG/CPLEX_Studio201/cplex/include",
+                "/opt/ibm/ILOG/CPLEX_Studio201/concert/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",

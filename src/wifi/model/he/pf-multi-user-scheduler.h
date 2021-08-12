@@ -24,6 +24,7 @@
 #include "multi-user-scheduler.h"
 #include <list>
 #include "ns3/Hungarian.h"
+#include <ilcplex/ilocplex.h>
 
 namespace ns3 {
 

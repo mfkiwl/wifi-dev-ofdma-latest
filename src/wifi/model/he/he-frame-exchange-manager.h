@@ -223,6 +223,8 @@ private:
   EventId m_multiStaBaEvent;                          //!< Sending a Multi-STA BlockAck event
   MuSnrTag m_muSnrTag;                                //!< Tag to attach to Multi-STA BlockAck frames
   bool m_triggerFrameInAmpdu;                         //!< True if the received A-MPDU contains an MU-BAR
+  
+  TracedCallback<WifiConstPsduMap, WifiTxVector> m_forwardDown; // A tracer for when PSDU map is forwarded down, to allow us to infer information related to MPDU aggregation
 };
 
 } //namespace ns3

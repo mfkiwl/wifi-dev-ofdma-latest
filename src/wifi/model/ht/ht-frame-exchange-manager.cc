@@ -47,6 +47,10 @@ HtFrameExchangeManager::GetTypeId (void)
     .SetParent<QosFrameExchangeManager> ()
     .AddConstructor<HtFrameExchangeManager> ()
     .SetGroupName ("Wifi")
+    .AddTraceSource ("PsduForwardDown",
+                     "The PSDU forwarded down to the PHY along with the TX vector.",
+                     MakeTraceSourceAccessor (&HtFrameExchangeManager::m_forwardDown),
+                     "ns3::WifiTxVector::TracedCallback")
   ;
   return tid;
 }
@@ -840,6 +844,7 @@ HtFrameExchangeManager::SendPsdu (void)
   if (m_psdu->GetNMpdus () > 1)
     {
       ForwardPsduDown (m_psdu, m_txParams.m_txVector);
+      m_forwardDown(m_psdu, m_txParams.m_txVector);
     }
   else
     {

@@ -1,5 +1,16 @@
 ## -*- Mode: python; py-indent-offset: 4; indent-tabs-mode: nil; coding: utf-8; -*-
 
+def configure(conf):
+    conf.env['ENABLE_cplex'] = conf.check(mandatory=True, 
+    libpath=['/opt/ibm/ILOG/CPLEX_Studio201/cplex/lib/x86-64_linux/static_pic'],
+    includes=['/opt/ibm/ILOG/CPLEX_Studio201/cplex/include'],
+    lib='cplex', uselib_store='LIB_CPLEX')
+
+    conf.env['ENABLE_concert'] = conf.check(mandatory=True, 
+    libpath=['/opt/ibm/ILOG/CPLEX_Studio201/concert/lib/x86-64_linux/static_pic'],
+    includes=['/opt/ibm/ILOG/CPLEX_Studio201/concert/include'],
+    lib='concert', uselib_store='LIB_CONCERT')
+
 def build(bld):
     obj = bld.create_ns3_module('wifi', ['network', 'propagation', 'energy', 'spectrum', 'antenna', 'mobility'])
     obj.source = [
@@ -158,6 +169,12 @@ def build(bld):
         'test/wifi-mac-queue-test.cc',
         ]
 
+    #if (bld.env['ENABLE_cplex']):
+    obj.use.append("LIB_CPLEX")
+
+    #if (bld.env['ENABLE_concert']):    
+    obj.use.append("LIB_CONCERT")
+
     # Tests encapsulating example programs should be listed here
     if (bld.env['ENABLE_EXAMPLES']):
         obj_test.source.extend([
@@ -314,6 +331,14 @@ def build(bld):
 
     if (bld.env['ENABLE_EXAMPLES']):
         bld.recurse('examples')
+
+    #obj.env.append_value("CXXFLAGS", "-I/opt/ibm/ILOG/CPLEX_Studio201/cplex/include/ilcplex")
+    #obj.env.append_value("LINKFLAGS", ["-L/opt/ibm/ILOG/CPLEX_Studio201/cplex/lib/x86-64_linux/static_pic"])
+    #obj.env.append_value("LIB", ["cplex"])
+
+    #obj.env.append_value("CXXFLAGS", "-I/opt/ibm/ILOG/CPLEX_Studio201/concert/include/ilconcert")
+    #obj.env.append_value("LINKFLAGS", ["-L/opt/ibm/ILOG/CPLEX_Studio201/concert/lib/x86-64_linux/static_pic"])
+    #obj.env.append_value("LIB", ["concert"])
 
     bld.ns3_python_bindings()
 

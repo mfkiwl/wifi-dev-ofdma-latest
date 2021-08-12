@@ -50,6 +50,10 @@ HeFrameExchangeManager::GetTypeId (void)
     .SetParent<VhtFrameExchangeManager> ()
     .AddConstructor<HeFrameExchangeManager> ()
     .SetGroupName ("Wifi")
+    .AddTraceSource ("PsduMapForwardDown",
+                     "The PSDU map forwarded down to the PHY along with the TX vector.",
+                     MakeTraceSourceAccessor (&HeFrameExchangeManager::m_forwardDown),
+                     "ns3::WifiTxVector::TracedCallback")
   ;
   return tid;
 }
@@ -605,6 +609,7 @@ HeFrameExchangeManager::ForwardPsduMapDown (WifiConstPsduMap psduMap, WifiTxVect
       txVector.SetAggregation (true);
     }
 
+  m_forwardDown(psduMap, txVector);
   m_phy->Send (psduMap, txVector);
 }
 

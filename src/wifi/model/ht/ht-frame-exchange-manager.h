@@ -388,6 +388,8 @@ private:
 
   Ptr<WifiPsdu> m_psdu;                               //!< the A-MPDU being transmitted
   WifiTxParameters m_txParams;                        //!< the TX parameters for the current frame
+
+  TracedCallback<Ptr<const WifiPsdu>, WifiTxVector> m_forwardDown; // A tracer for when PSDU map is forwarded down, to allow us to infer information related to MPDU aggregation
 };
 
 } //namespace ns3
