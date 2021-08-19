@@ -37,6 +37,7 @@
 #include "ctrl-headers.h"
 #include "wifi-mac-trailer.h"
 #include "wifi-tx-parameters.h"
+#include <fstream>
 
 NS_LOG_COMPONENT_DEFINE ("MpduAggregator");
 
@@ -233,8 +234,25 @@ MpduAggregator::GetNextAmpdu (Ptr<WifiMacQueueItem> mpdu, WifiTxParameters& txPa
       /* here is performed MPDU aggregation */
       Ptr<WifiMacQueueItem> nextMpdu = mpdu;
 
+      //std::ofstream aggOutputFile;
+      //std::ostringstream oss;
+
+      
+      // oss << recipient << ".txt";
+      // if ( oss.str() == "00:00:00:00:00:24.txt" || oss.str() == "00:00:00:00:00:1a.txt" || oss.str() == "00:00:00:00:00:08.txt" )
+      //   aggOutputFile.open(oss.str(), std::ios_base::app | std::ios_base::out);
+
+      // if ( oss.str() == "00:00:00:00:00:24.txt" || oss.str() == "00:00:00:00:00:1a.txt" || oss.str() == "00:00:00:00:00:08.txt" )
+      //   aggOutputFile << "=========================== START ===================================\n";
+
       while (nextMpdu != 0)
         {
+          // if ( oss.str() == "00:00:00:00:00:24.txt" || oss.str() == "00:00:00:00:00:1a.txt" || oss.str() == "00:00:00:00:00:08.txt") {
+          //   aggOutputFile << "Adding packet with sequence number " << nextMpdu->GetHeader ().GetSequenceNumber ()
+          //                 << " to A-MPDU (destined to " << recipient << "), packet size = " << nextMpdu->GetSize ()
+          //                 << ", A-MPDU size = " << txParams.GetSize (recipient) << "\n";
+          // }
+
           // if we are here, nextMpdu can be aggregated to the A-MPDU.
           NS_LOG_DEBUG ("Adding packet with sequence number " << nextMpdu->GetHeader ().GetSequenceNumber ()
                         << " to A-MPDU, packet size = " << nextMpdu->GetSize ()
@@ -261,6 +279,14 @@ MpduAggregator::GetNextAmpdu (Ptr<WifiMacQueueItem> mpdu, WifiTxParameters& txPa
               nextMpdu = qosTxop->GetNextMpdu (peekedMpdu, txParams, availableTime, false, queueIt);
             }
         }
+
+      // if ( oss.str() == "00:00:00:00:00:24.txt" || oss.str() == "00:00:00:00:00:1a.txt" || oss.str() == "00:00:00:00:00:08.txt") {
+      //   aggOutputFile << "=========================== End ===================================\n";
+      //   aggOutputFile.close();
+      // }
+
+      // oss.str("");
+      // oss.clear();
 
       if (mpduList.size () == 1)
         {

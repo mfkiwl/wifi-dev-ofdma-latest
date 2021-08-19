@@ -1,0 +1,1590 @@
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_2 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_2 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_2 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_2 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_3 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_3 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_3 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_3 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_4 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_4 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_4 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_4 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_5 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_5 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_5 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_5 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_6 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_6 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_6 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_6 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_7 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_7 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_7 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_7 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_8 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_8 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_8 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_8 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_9 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_9 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_9 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_9 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_10 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_10 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_10 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_10 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_11 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_11 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_11 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_11 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_12 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_12 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_12 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_12 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_13 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_13 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_13 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_13 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_14 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_14 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_14 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_14 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_15 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_15 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_15 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_15 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_16 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_16 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_16 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_16 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_17 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_17 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_17 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_17 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_18 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_18 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_18 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_18 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_19 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_19 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_19 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_19 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_20 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_20 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_20 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_20 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_21 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_21 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_21 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_21 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_22 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_22 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_22 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_22 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_23 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_23 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_23 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_23 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_24 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_24 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_24 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_24 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_25 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_25 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_25 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_25 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_26 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_26 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_26 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_26 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_27 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_27 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_27 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_27 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_28 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_28 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_28 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_28 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_29 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_29 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_29 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_29 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_30 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_30 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_30 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_30 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_31 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_31 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_31 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_31 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_32 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_32 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_32 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_32 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_33 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_33 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_33 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_33 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_34 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_34 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_34 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_34 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_35 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_35 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_35 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_35 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_36 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_36 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_36 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_36 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_37 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_37 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_37 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_37 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_38 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_38 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_38 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_38 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_39 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_39 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_39 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_39 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_40 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_40 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_40 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_40 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 0 without aggregation
+STA_2 assigned a PSDU of size 0 without aggregation
+STA_3 assigned a PSDU of size 0 without aggregation
+STA_4 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 0 without aggregation
+STA_2 assigned a PSDU of size 0 without aggregation
+STA_3 assigned a PSDU of size 0 without aggregation
+STA_4 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 0 without aggregation
+STA_2 assigned a PSDU of size 0 without aggregation
+STA_3 assigned a PSDU of size 0 without aggregation
+STA_4 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 0 without aggregation
+STA_2 assigned a PSDU of size 0 without aggregation
+STA_3 assigned a PSDU of size 0 without aggregation
+STA_4 assigned a PSDU of size 0 without aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 0 without aggregation
+STA_2 assigned a PSDU of size 0 without aggregation
+STA_3 assigned a PSDU of size 0 without aggregation
+STA_5 assigned a PSDU of size 5 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 0 without aggregation
+STA_2 assigned a PSDU of size 0 without aggregation
+STA_3 assigned a PSDU of size 0 without aggregation
+STA_4 assigned a PSDU of size 2 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 2 after aggregation
+STA_2 assigned a PSDU of size 2 after aggregation
+STA_3 assigned a PSDU of size 2 after aggregation
+STA_5 assigned a PSDU of size 3 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 0 without aggregation
+STA_2 assigned a PSDU of size 0 without aggregation
+STA_3 assigned a PSDU of size 0 without aggregation
+STA_4 assigned a PSDU of size 3 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 0 without aggregation
+STA_2 assigned a PSDU of size 0 without aggregation
+STA_3 assigned a PSDU of size 0 without aggregation
+STA_6 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 2 after aggregation
+STA_2 assigned a PSDU of size 2 after aggregation
+STA_5 assigned a PSDU of size 4 after aggregation
+STA_4 assigned a PSDU of size 3 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 2 after aggregation
+STA_2 assigned a PSDU of size 2 after aggregation
+STA_7 assigned a PSDU of size 14 after aggregation
+STA_5 assigned a PSDU of size 2 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 5 after aggregation
+STA_2 assigned a PSDU of size 5 after aggregation
+STA_3 assigned a PSDU of size 9 after aggregation
+STA_4 assigned a PSDU of size 7 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 2 after aggregation
+STA_6 assigned a PSDU of size 11 after aggregation
+STA_2 assigned a PSDU of size 2 after aggregation
+STA_8 assigned a PSDU of size 21 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 3 after aggregation
+STA_3 assigned a PSDU of size 5 after aggregation
+STA_4 assigned a PSDU of size 5 after aggregation
+STA_7 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 0 without aggregation
+STA_9 assigned a PSDU of size 25 after aggregation
+STA_5 assigned a PSDU of size 11 after aggregation
+STA_10 assigned a PSDU of size 25 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 4 after aggregation
+STA_3 assigned a PSDU of size 5 after aggregation
+STA_6 assigned a PSDU of size 8 after aggregation
+STA_4 assigned a PSDU of size 5 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 0 without aggregation
+STA_7 assigned a PSDU of size 6 after aggregation
+STA_2 assigned a PSDU of size 9 after aggregation
+STA_11 assigned a PSDU of size 30 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_8 assigned a PSDU of size 14 after aggregation
+STA_12 assigned a PSDU of size 35 after aggregation
+STA_3 assigned a PSDU of size 6 after aggregation
+STA_6 assigned a PSDU of size 6 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_4 assigned a PSDU of size 10 after aggregation
+STA_13 assigned a PSDU of size 39 after aggregation
+STA_9 assigned a PSDU of size 14 after aggregation
+STA_5 assigned a PSDU of size 14 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_14 assigned a PSDU of size 44 after aggregation
+STA_1 assigned a PSDU of size 14 after aggregation
+STA_10 assigned a PSDU of size 19 after aggregation
+STA_15 assigned a PSDU of size 44 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_16 assigned a PSDU of size 9 after aggregation
+STA_17 assigned a PSDU of size 9 after aggregation
+STA_7 assigned a PSDU of size 9 after aggregation
+STA_2 assigned a PSDU of size 9 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_11 assigned a PSDU of size 21 after aggregation
+STA_18 assigned a PSDU of size 51 after aggregation
+STA_19 assigned a PSDU of size 51 after aggregation
+STA_16 assigned a PSDU of size 42 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_8 assigned a PSDU of size 22 after aggregation
+STA_20 assigned a PSDU of size 57 after aggregation
+STA_17 assigned a PSDU of size 48 after aggregation
+STA_21 assigned a PSDU of size 57 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_12 assigned a PSDU of size 28 after aggregation
+STA_7 assigned a PSDU of size 24 after aggregation
+STA_2 assigned a PSDU of size 24 after aggregation
+STA_3 assigned a PSDU of size 28 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_6 assigned a PSDU of size 32 after aggregation
+STA_22 assigned a PSDU of size 64 after aggregation
+STA_4 assigned a PSDU of size 28 after aggregation
+STA_23 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_24 assigned a PSDU of size 64 after aggregation
+STA_13 assigned a PSDU of size 35 after aggregation
+STA_25 assigned a PSDU of size 64 after aggregation
+STA_9 assigned a PSDU of size 35 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_5 assigned a PSDU of size 10 after aggregation
+STA_26 assigned a PSDU of size 10 after aggregation
+STA_27 assigned a PSDU of size 10 after aggregation
+STA_14 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_28 assigned a PSDU of size 64 after aggregation
+STA_1 assigned a PSDU of size 40 after aggregation
+STA_29 assigned a PSDU of size 64 after aggregation
+STA_10 assigned a PSDU of size 40 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_15 assigned a PSDU of size 47 after aggregation
+STA_30 assigned a PSDU of size 64 after aggregation
+STA_5 assigned a PSDU of size 42 after aggregation
+STA_31 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_26 assigned a PSDU of size 10 after aggregation
+STA_32 assigned a PSDU of size 10 after aggregation
+STA_27 assigned a PSDU of size 10 after aggregation
+STA_33 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_12 assigned a PSDU of size 38 after aggregation
+STA_7 assigned a PSDU of size 38 after aggregation
+STA_2 assigned a PSDU of size 38 after aggregation
+STA_3 assigned a PSDU of size 38 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_14 assigned a PSDU of size 51 after aggregation
+STA_34 assigned a PSDU of size 64 after aggregation
+STA_35 assigned a PSDU of size 64 after aggregation
+STA_36 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_37 assigned a PSDU of size 35 after aggregation
+STA_38 assigned a PSDU of size 35 after aggregation
+STA_26 assigned a PSDU of size 35 after aggregation
+STA_39 assigned a PSDU of size 35 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_32 assigned a PSDU of size 64 after aggregation
+STA_11 assigned a PSDU of size 64 after aggregation
+STA_18 assigned a PSDU of size 64 after aggregation
+STA_40 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_27 assigned a PSDU of size 64 after aggregation
+STA_33 assigned a PSDU of size 64 after aggregation
+STA_19 assigned a PSDU of size 64 after aggregation
+STA_16 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_8 assigned a PSDU of size 10 after aggregation
+STA_20 assigned a PSDU of size 10 after aggregation
+STA_17 assigned a PSDU of size 10 after aggregation
+STA_21 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_6 assigned a PSDU of size 64 after aggregation
+STA_22 assigned a PSDU of size 64 after aggregation
+STA_8 assigned a PSDU of size 64 after aggregation
+STA_20 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_4 assigned a PSDU of size 64 after aggregation
+STA_17 assigned a PSDU of size 64 after aggregation
+STA_23 assigned a PSDU of size 64 after aggregation
+STA_12 assigned a PSDU of size 40 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_7 assigned a PSDU of size 10 after aggregation
+STA_2 assigned a PSDU of size 10 after aggregation
+STA_3 assigned a PSDU of size 10 after aggregation
+STA_21 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_24 assigned a PSDU of size 64 after aggregation
+STA_13 assigned a PSDU of size 64 after aggregation
+STA_37 assigned a PSDU of size 64 after aggregation
+STA_25 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_38 assigned a PSDU of size 64 after aggregation
+STA_9 assigned a PSDU of size 64 after aggregation
+STA_26 assigned a PSDU of size 64 after aggregation
+STA_39 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_28 assigned a PSDU of size 10 after aggregation
+STA_7 assigned a PSDU of size 10 after aggregation
+STA_2 assigned a PSDU of size 10 after aggregation
+STA_3 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_21 assigned a PSDU of size 64 after aggregation
+STA_1 assigned a PSDU of size 64 after aggregation
+STA_29 assigned a PSDU of size 64 after aggregation
+STA_10 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_15 assigned a PSDU of size 64 after aggregation
+STA_30 assigned a PSDU of size 64 after aggregation
+STA_5 assigned a PSDU of size 64 after aggregation
+STA_31 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_14 assigned a PSDU of size 10 after aggregation
+STA_34 assigned a PSDU of size 10 after aggregation
+STA_28 assigned a PSDU of size 10 after aggregation
+STA_7 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_2 assigned a PSDU of size 63 after aggregation
+STA_3 assigned a PSDU of size 63 after aggregation
+STA_35 assigned a PSDU of size 64 after aggregation
+STA_36 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_32 assigned a PSDU of size 64 after aggregation
+STA_11 assigned a PSDU of size 64 after aggregation
+STA_18 assigned a PSDU of size 64 after aggregation
+STA_40 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_27 assigned a PSDU of size 10 after aggregation
+STA_33 assigned a PSDU of size 10 after aggregation
+STA_14 assigned a PSDU of size 10 after aggregation
+STA_34 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_28 assigned a PSDU of size 64 after aggregation
+STA_19 assigned a PSDU of size 64 after aggregation
+STA_7 assigned a PSDU of size 64 after aggregation
+STA_16 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_27 assigned a PSDU of size 64 after aggregation
+STA_33 assigned a PSDU of size 64 after aggregation
+STA_14 assigned a PSDU of size 64 after aggregation
+STA_34 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_6 assigned a PSDU of size 10 after aggregation
+STA_22 assigned a PSDU of size 10 after aggregation
+STA_8 assigned a PSDU of size 10 after aggregation
+STA_20 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_4 assigned a PSDU of size 64 after aggregation
+STA_17 assigned a PSDU of size 64 after aggregation
+STA_23 assigned a PSDU of size 64 after aggregation
+STA_12 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_24 assigned a PSDU of size 64 after aggregation
+STA_13 assigned a PSDU of size 64 after aggregation
+STA_37 assigned a PSDU of size 64 after aggregation
+STA_25 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_38 assigned a PSDU of size 10 after aggregation
+STA_9 assigned a PSDU of size 10 after aggregation
+STA_26 assigned a PSDU of size 10 after aggregation
+STA_39 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_6 assigned a PSDU of size 64 after aggregation
+STA_22 assigned a PSDU of size 64 after aggregation
+STA_8 assigned a PSDU of size 64 after aggregation
+STA_20 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_21 assigned a PSDU of size 64 after aggregation
+STA_1 assigned a PSDU of size 64 after aggregation
+STA_29 assigned a PSDU of size 64 after aggregation
+STA_10 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_15 assigned a PSDU of size 10 after aggregation
+STA_30 assigned a PSDU of size 10 after aggregation
+STA_38 assigned a PSDU of size 10 after aggregation
+STA_9 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_5 assigned a PSDU of size 64 after aggregation
+STA_31 assigned a PSDU of size 64 after aggregation
+STA_26 assigned a PSDU of size 64 after aggregation
+STA_39 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_2 assigned a PSDU of size 64 after aggregation
+STA_3 assigned a PSDU of size 64 after aggregation
+STA_35 assigned a PSDU of size 64 after aggregation
+STA_36 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_15 assigned a PSDU of size 10 after aggregation
+STA_30 assigned a PSDU of size 10 after aggregation
+STA_38 assigned a PSDU of size 10 after aggregation
+STA_9 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_32 assigned a PSDU of size 64 after aggregation
+STA_11 assigned a PSDU of size 64 after aggregation
+STA_18 assigned a PSDU of size 64 after aggregation
+STA_40 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_28 assigned a PSDU of size 64 after aggregation
+STA_19 assigned a PSDU of size 64 after aggregation
+STA_7 assigned a PSDU of size 64 after aggregation
+STA_16 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_15 assigned a PSDU of size 10 after aggregation
+STA_30 assigned a PSDU of size 10 after aggregation
+STA_38 assigned a PSDU of size 10 after aggregation
+STA_9 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_27 assigned a PSDU of size 64 after aggregation
+STA_33 assigned a PSDU of size 64 after aggregation
+STA_14 assigned a PSDU of size 64 after aggregation
+STA_34 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_15 assigned a PSDU of size 64 after aggregation
+STA_30 assigned a PSDU of size 64 after aggregation
+STA_38 assigned a PSDU of size 64 after aggregation
+STA_9 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_4 assigned a PSDU of size 10 after aggregation
+STA_17 assigned a PSDU of size 10 after aggregation
+STA_23 assigned a PSDU of size 10 after aggregation
+STA_12 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_24 assigned a PSDU of size 64 after aggregation
+STA_13 assigned a PSDU of size 64 after aggregation
+STA_37 assigned a PSDU of size 64 after aggregation
+STA_25 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_6 assigned a PSDU of size 64 after aggregation
+STA_22 assigned a PSDU of size 64 after aggregation
+STA_8 assigned a PSDU of size 64 after aggregation
+STA_20 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_4 assigned a PSDU of size 10 after aggregation
+STA_17 assigned a PSDU of size 10 after aggregation
+STA_23 assigned a PSDU of size 10 after aggregation
+STA_12 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_21 assigned a PSDU of size 64 after aggregation
+STA_1 assigned a PSDU of size 64 after aggregation
+STA_29 assigned a PSDU of size 64 after aggregation
+STA_10 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_5 assigned a PSDU of size 64 after aggregation
+STA_31 assigned a PSDU of size 64 after aggregation
+STA_26 assigned a PSDU of size 64 after aggregation
+STA_39 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_4 assigned a PSDU of size 10 after aggregation
+STA_17 assigned a PSDU of size 10 after aggregation
+STA_23 assigned a PSDU of size 10 after aggregation
+STA_12 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_2 assigned a PSDU of size 64 after aggregation
+STA_3 assigned a PSDU of size 64 after aggregation
+STA_35 assigned a PSDU of size 64 after aggregation
+STA_36 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_32 assigned a PSDU of size 64 after aggregation
+STA_11 assigned a PSDU of size 64 after aggregation
+STA_18 assigned a PSDU of size 64 after aggregation
+STA_40 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_4 assigned a PSDU of size 10 after aggregation
+STA_17 assigned a PSDU of size 10 after aggregation
+STA_28 assigned a PSDU of size 10 after aggregation
+STA_23 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_12 assigned a PSDU of size 64 after aggregation
+STA_19 assigned a PSDU of size 64 after aggregation
+STA_7 assigned a PSDU of size 64 after aggregation
+STA_16 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_27 assigned a PSDU of size 64 after aggregation
+STA_33 assigned a PSDU of size 64 after aggregation
+STA_4 assigned a PSDU of size 64 after aggregation
+STA_17 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_14 assigned a PSDU of size 10 after aggregation
+STA_34 assigned a PSDU of size 10 after aggregation
+STA_28 assigned a PSDU of size 10 after aggregation
+STA_23 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_15 assigned a PSDU of size 64 after aggregation
+STA_30 assigned a PSDU of size 64 after aggregation
+STA_38 assigned a PSDU of size 64 after aggregation
+STA_9 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_14 assigned a PSDU of size 64 after aggregation
+STA_34 assigned a PSDU of size 64 after aggregation
+STA_28 assigned a PSDU of size 64 after aggregation
+STA_23 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_24 assigned a PSDU of size 10 after aggregation
+STA_13 assigned a PSDU of size 10 after aggregation
+STA_37 assigned a PSDU of size 10 after aggregation
+STA_25 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_6 assigned a PSDU of size 64 after aggregation
+STA_22 assigned a PSDU of size 64 after aggregation
+STA_8 assigned a PSDU of size 64 after aggregation
+STA_20 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_21 assigned a PSDU of size 64 after aggregation
+STA_1 assigned a PSDU of size 64 after aggregation
+STA_29 assigned a PSDU of size 64 after aggregation
+STA_24 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_13 assigned a PSDU of size 10 after aggregation
+STA_10 assigned a PSDU of size 10 after aggregation
+STA_37 assigned a PSDU of size 10 after aggregation
+STA_25 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_5 assigned a PSDU of size 64 after aggregation
+STA_31 assigned a PSDU of size 64 after aggregation
+STA_26 assigned a PSDU of size 64 after aggregation
+STA_39 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_2 assigned a PSDU of size 64 after aggregation
+STA_3 assigned a PSDU of size 64 after aggregation
+STA_35 assigned a PSDU of size 64 after aggregation
+STA_36 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_13 assigned a PSDU of size 10 after aggregation
+STA_10 assigned a PSDU of size 10 after aggregation
+STA_37 assigned a PSDU of size 10 after aggregation
+STA_25 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_32 assigned a PSDU of size 64 after aggregation
+STA_11 assigned a PSDU of size 64 after aggregation
+STA_18 assigned a PSDU of size 64 after aggregation
+STA_40 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_12 assigned a PSDU of size 64 after aggregation
+STA_19 assigned a PSDU of size 64 after aggregation
+STA_7 assigned a PSDU of size 64 after aggregation
+STA_16 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_13 assigned a PSDU of size 10 after aggregation
+STA_10 assigned a PSDU of size 10 after aggregation
+STA_37 assigned a PSDU of size 10 after aggregation
+STA_25 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_27 assigned a PSDU of size 64 after aggregation
+STA_33 assigned a PSDU of size 64 after aggregation
+STA_4 assigned a PSDU of size 64 after aggregation
+STA_17 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_13 assigned a PSDU of size 64 after aggregation
+STA_10 assigned a PSDU of size 64 after aggregation
+STA_15 assigned a PSDU of size 64 after aggregation
+STA_37 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_30 assigned a PSDU of size 10 after aggregation
+STA_25 assigned a PSDU of size 10 after aggregation
+STA_38 assigned a PSDU of size 10 after aggregation
+STA_9 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_14 assigned a PSDU of size 64 after aggregation
+STA_34 assigned a PSDU of size 64 after aggregation
+STA_28 assigned a PSDU of size 64 after aggregation
+STA_23 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_30 assigned a PSDU of size 64 after aggregation
+STA_25 assigned a PSDU of size 64 after aggregation
+STA_38 assigned a PSDU of size 64 after aggregation
+STA_9 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_6 assigned a PSDU of size 10 after aggregation
+STA_22 assigned a PSDU of size 10 after aggregation
+STA_8 assigned a PSDU of size 10 after aggregation
+STA_20 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_21 assigned a PSDU of size 64 after aggregation
+STA_1 assigned a PSDU of size 64 after aggregation
+STA_29 assigned a PSDU of size 64 after aggregation
+STA_24 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_5 assigned a PSDU of size 64 after aggregation
+STA_31 assigned a PSDU of size 64 after aggregation
+STA_26 assigned a PSDU of size 64 after aggregation
+STA_39 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_6 assigned a PSDU of size 10 after aggregation
+STA_22 assigned a PSDU of size 10 after aggregation
+STA_8 assigned a PSDU of size 10 after aggregation
+STA_20 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_2 assigned a PSDU of size 64 after aggregation
+STA_3 assigned a PSDU of size 64 after aggregation
+STA_35 assigned a PSDU of size 64 after aggregation
+STA_36 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_6 assigned a PSDU of size 64 after aggregation
+STA_32 assigned a PSDU of size 64 after aggregation
+STA_11 assigned a PSDU of size 64 after aggregation
+STA_18 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_40 assigned a PSDU of size 10 after aggregation
+STA_22 assigned a PSDU of size 10 after aggregation
+STA_8 assigned a PSDU of size 10 after aggregation
+STA_20 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_12 assigned a PSDU of size 64 after aggregation
+STA_19 assigned a PSDU of size 64 after aggregation
+STA_7 assigned a PSDU of size 64 after aggregation
+STA_16 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_40 assigned a PSDU of size 64 after aggregation
+STA_22 assigned a PSDU of size 64 after aggregation
+STA_27 assigned a PSDU of size 64 after aggregation
+STA_33 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_8 assigned a PSDU of size 10 after aggregation
+STA_20 assigned a PSDU of size 10 after aggregation
+STA_4 assigned a PSDU of size 10 after aggregation
+STA_17 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_13 assigned a PSDU of size 64 after aggregation
+STA_10 assigned a PSDU of size 64 after aggregation
+STA_15 assigned a PSDU of size 64 after aggregation
+STA_37 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_8 assigned a PSDU of size 64 after aggregation
+STA_20 assigned a PSDU of size 64 after aggregation
+STA_4 assigned a PSDU of size 64 after aggregation
+STA_17 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_14 assigned a PSDU of size 10 after aggregation
+STA_34 assigned a PSDU of size 10 after aggregation
+STA_28 assigned a PSDU of size 10 after aggregation
+STA_23 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_30 assigned a PSDU of size 64 after aggregation
+STA_25 assigned a PSDU of size 64 after aggregation
+STA_38 assigned a PSDU of size 64 after aggregation
+STA_9 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_14 assigned a PSDU of size 64 after aggregation
+STA_34 assigned a PSDU of size 64 after aggregation
+STA_28 assigned a PSDU of size 64 after aggregation
+STA_23 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_21 assigned a PSDU of size 10 after aggregation
+STA_1 assigned a PSDU of size 10 after aggregation
+STA_29 assigned a PSDU of size 10 after aggregation
+STA_24 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_5 assigned a PSDU of size 64 after aggregation
+STA_31 assigned a PSDU of size 64 after aggregation
+STA_26 assigned a PSDU of size 64 after aggregation
+STA_39 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_2 assigned a PSDU of size 64 after aggregation
+STA_3 assigned a PSDU of size 64 after aggregation
+STA_21 assigned a PSDU of size 64 after aggregation
+STA_35 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 10 after aggregation
+STA_29 assigned a PSDU of size 10 after aggregation
+STA_24 assigned a PSDU of size 10 after aggregation
+STA_36 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_6 assigned a PSDU of size 64 after aggregation
+STA_32 assigned a PSDU of size 64 after aggregation
+STA_11 assigned a PSDU of size 64 after aggregation
+STA_18 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_12 assigned a PSDU of size 64 after aggregation
+STA_19 assigned a PSDU of size 64 after aggregation
+STA_7 assigned a PSDU of size 64 after aggregation
+STA_16 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 10 after aggregation
+STA_29 assigned a PSDU of size 10 after aggregation
+STA_24 assigned a PSDU of size 10 after aggregation
+STA_36 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_40 assigned a PSDU of size 64 after aggregation
+STA_22 assigned a PSDU of size 64 after aggregation
+STA_27 assigned a PSDU of size 64 after aggregation
+STA_33 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 64 after aggregation
+STA_29 assigned a PSDU of size 64 after aggregation
+STA_24 assigned a PSDU of size 64 after aggregation
+STA_36 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_13 assigned a PSDU of size 10 after aggregation
+STA_10 assigned a PSDU of size 10 after aggregation
+STA_15 assigned a PSDU of size 10 after aggregation
+STA_37 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_8 assigned a PSDU of size 64 after aggregation
+STA_20 assigned a PSDU of size 64 after aggregation
+STA_4 assigned a PSDU of size 64 after aggregation
+STA_17 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_13 assigned a PSDU of size 64 after aggregation
+STA_10 assigned a PSDU of size 64 after aggregation
+STA_15 assigned a PSDU of size 64 after aggregation
+STA_37 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_30 assigned a PSDU of size 10 after aggregation
+STA_25 assigned a PSDU of size 10 after aggregation
+STA_38 assigned a PSDU of size 10 after aggregation
+STA_9 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_14 assigned a PSDU of size 64 after aggregation
+STA_34 assigned a PSDU of size 64 after aggregation
+STA_28 assigned a PSDU of size 64 after aggregation
+STA_23 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_30 assigned a PSDU of size 64 after aggregation
+STA_5 assigned a PSDU of size 64 after aggregation
+STA_25 assigned a PSDU of size 64 after aggregation
+STA_31 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_38 assigned a PSDU of size 10 after aggregation
+STA_9 assigned a PSDU of size 10 after aggregation
+STA_26 assigned a PSDU of size 10 after aggregation
+STA_39 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_2 assigned a PSDU of size 64 after aggregation
+STA_3 assigned a PSDU of size 64 after aggregation
+STA_21 assigned a PSDU of size 64 after aggregation
+STA_35 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_38 assigned a PSDU of size 64 after aggregation
+STA_9 assigned a PSDU of size 64 after aggregation
+STA_26 assigned a PSDU of size 64 after aggregation
+STA_39 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_6 assigned a PSDU of size 10 after aggregation
+STA_32 assigned a PSDU of size 10 after aggregation
+STA_11 assigned a PSDU of size 10 after aggregation
+STA_18 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_12 assigned a PSDU of size 64 after aggregation
+STA_19 assigned a PSDU of size 64 after aggregation
+STA_7 assigned a PSDU of size 64 after aggregation
+STA_16 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_6 assigned a PSDU of size 64 after aggregation
+STA_32 assigned a PSDU of size 64 after aggregation
+STA_11 assigned a PSDU of size 64 after aggregation
+STA_18 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_40 assigned a PSDU of size 10 after aggregation
+STA_22 assigned a PSDU of size 10 after aggregation
+STA_27 assigned a PSDU of size 10 after aggregation
+STA_33 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 64 after aggregation
+STA_29 assigned a PSDU of size 64 after aggregation
+STA_24 assigned a PSDU of size 64 after aggregation
+STA_36 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_40 assigned a PSDU of size 64 after aggregation
+STA_22 assigned a PSDU of size 64 after aggregation
+STA_27 assigned a PSDU of size 64 after aggregation
+STA_33 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_8 assigned a PSDU of size 10 after aggregation
+STA_20 assigned a PSDU of size 10 after aggregation
+STA_4 assigned a PSDU of size 10 after aggregation
+STA_17 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_13 assigned a PSDU of size 64 after aggregation
+STA_10 assigned a PSDU of size 64 after aggregation
+STA_15 assigned a PSDU of size 64 after aggregation
+STA_37 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_8 assigned a PSDU of size 64 after aggregation
+STA_20 assigned a PSDU of size 64 after aggregation
+STA_4 assigned a PSDU of size 64 after aggregation
+STA_17 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_14 assigned a PSDU of size 10 after aggregation
+STA_34 assigned a PSDU of size 10 after aggregation
+STA_28 assigned a PSDU of size 10 after aggregation
+STA_23 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_30 assigned a PSDU of size 64 after aggregation
+STA_5 assigned a PSDU of size 64 after aggregation
+STA_25 assigned a PSDU of size 64 after aggregation
+STA_31 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_14 assigned a PSDU of size 64 after aggregation
+STA_34 assigned a PSDU of size 64 after aggregation
+STA_2 assigned a PSDU of size 64 after aggregation
+STA_3 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_28 assigned a PSDU of size 10 after aggregation
+STA_23 assigned a PSDU of size 10 after aggregation
+STA_21 assigned a PSDU of size 10 after aggregation
+STA_35 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_38 assigned a PSDU of size 64 after aggregation
+STA_9 assigned a PSDU of size 64 after aggregation
+STA_26 assigned a PSDU of size 64 after aggregation
+STA_39 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_12 assigned a PSDU of size 64 after aggregation
+STA_19 assigned a PSDU of size 64 after aggregation
+STA_7 assigned a PSDU of size 64 after aggregation
+STA_28 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_23 assigned a PSDU of size 10 after aggregation
+STA_21 assigned a PSDU of size 10 after aggregation
+STA_16 assigned a PSDU of size 10 after aggregation
+STA_35 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_6 assigned a PSDU of size 64 after aggregation
+STA_32 assigned a PSDU of size 64 after aggregation
+STA_11 assigned a PSDU of size 64 after aggregation
+STA_18 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_23 assigned a PSDU of size 64 after aggregation
+STA_21 assigned a PSDU of size 64 after aggregation
+STA_16 assigned a PSDU of size 64 after aggregation
+STA_35 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 10 after aggregation
+STA_29 assigned a PSDU of size 10 after aggregation
+STA_24 assigned a PSDU of size 10 after aggregation
+STA_36 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_40 assigned a PSDU of size 64 after aggregation
+STA_22 assigned a PSDU of size 64 after aggregation
+STA_27 assigned a PSDU of size 64 after aggregation
+STA_33 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 64 after aggregation
+STA_29 assigned a PSDU of size 64 after aggregation
+STA_24 assigned a PSDU of size 64 after aggregation
+STA_36 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_13 assigned a PSDU of size 10 after aggregation
+STA_10 assigned a PSDU of size 10 after aggregation
+STA_15 assigned a PSDU of size 10 after aggregation
+STA_37 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_8 assigned a PSDU of size 64 after aggregation
+STA_20 assigned a PSDU of size 64 after aggregation
+STA_4 assigned a PSDU of size 64 after aggregation
+STA_17 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_13 assigned a PSDU of size 64 after aggregation
+STA_10 assigned a PSDU of size 64 after aggregation
+STA_15 assigned a PSDU of size 64 after aggregation
+STA_37 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_30 assigned a PSDU of size 10 after aggregation
+STA_5 assigned a PSDU of size 10 after aggregation
+STA_25 assigned a PSDU of size 10 after aggregation
+STA_31 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_14 assigned a PSDU of size 64 after aggregation
+STA_34 assigned a PSDU of size 64 after aggregation
+STA_2 assigned a PSDU of size 64 after aggregation
+STA_3 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_30 assigned a PSDU of size 64 after aggregation
+STA_5 assigned a PSDU of size 64 after aggregation
+STA_25 assigned a PSDU of size 64 after aggregation
+STA_31 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_38 assigned a PSDU of size 10 after aggregation
+STA_9 assigned a PSDU of size 10 after aggregation
+STA_26 assigned a PSDU of size 10 after aggregation
+STA_39 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_12 assigned a PSDU of size 64 after aggregation
+STA_19 assigned a PSDU of size 64 after aggregation
+STA_7 assigned a PSDU of size 64 after aggregation
+STA_28 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_38 assigned a PSDU of size 64 after aggregation
+STA_9 assigned a PSDU of size 64 after aggregation
+STA_26 assigned a PSDU of size 64 after aggregation
+STA_39 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_6 assigned a PSDU of size 10 after aggregation
+STA_32 assigned a PSDU of size 10 after aggregation
+STA_11 assigned a PSDU of size 10 after aggregation
+STA_18 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_23 assigned a PSDU of size 64 after aggregation
+STA_21 assigned a PSDU of size 64 after aggregation
+STA_16 assigned a PSDU of size 64 after aggregation
+STA_35 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_6 assigned a PSDU of size 64 after aggregation
+STA_32 assigned a PSDU of size 64 after aggregation
+STA_11 assigned a PSDU of size 64 after aggregation
+STA_18 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_40 assigned a PSDU of size 10 after aggregation
+STA_22 assigned a PSDU of size 10 after aggregation
+STA_27 assigned a PSDU of size 10 after aggregation
+STA_33 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 64 after aggregation
+STA_29 assigned a PSDU of size 64 after aggregation
+STA_24 assigned a PSDU of size 64 after aggregation
+STA_36 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_40 assigned a PSDU of size 64 after aggregation
+STA_22 assigned a PSDU of size 64 after aggregation
+STA_27 assigned a PSDU of size 64 after aggregation
+STA_33 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_8 assigned a PSDU of size 10 after aggregation
+STA_20 assigned a PSDU of size 10 after aggregation
+STA_4 assigned a PSDU of size 10 after aggregation
+STA_17 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_13 assigned a PSDU of size 64 after aggregation
+STA_10 assigned a PSDU of size 64 after aggregation
+STA_15 assigned a PSDU of size 64 after aggregation
+STA_37 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_8 assigned a PSDU of size 64 after aggregation
+STA_20 assigned a PSDU of size 64 after aggregation
+STA_4 assigned a PSDU of size 64 after aggregation
+STA_17 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_14 assigned a PSDU of size 10 after aggregation
+STA_34 assigned a PSDU of size 10 after aggregation
+STA_2 assigned a PSDU of size 10 after aggregation
+STA_3 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_30 assigned a PSDU of size 64 after aggregation
+STA_5 assigned a PSDU of size 64 after aggregation
+STA_25 assigned a PSDU of size 64 after aggregation
+STA_31 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_12 assigned a PSDU of size 64 after aggregation
+STA_14 assigned a PSDU of size 64 after aggregation
+STA_34 assigned a PSDU of size 64 after aggregation
+STA_19 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_7 assigned a PSDU of size 10 after aggregation
+STA_2 assigned a PSDU of size 10 after aggregation
+STA_3 assigned a PSDU of size 10 after aggregation
+STA_28 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_38 assigned a PSDU of size 64 after aggregation
+STA_9 assigned a PSDU of size 64 after aggregation
+STA_26 assigned a PSDU of size 64 after aggregation
+STA_39 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_7 assigned a PSDU of size 64 after aggregation
+STA_2 assigned a PSDU of size 64 after aggregation
+STA_3 assigned a PSDU of size 64 after aggregation
+STA_28 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_23 assigned a PSDU of size 10 after aggregation
+STA_21 assigned a PSDU of size 10 after aggregation
+STA_16 assigned a PSDU of size 10 after aggregation
+STA_35 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_6 assigned a PSDU of size 64 after aggregation
+STA_32 assigned a PSDU of size 64 after aggregation
+STA_11 assigned a PSDU of size 64 after aggregation
+STA_18 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_23 assigned a PSDU of size 64 after aggregation
+STA_21 assigned a PSDU of size 64 after aggregation
+STA_16 assigned a PSDU of size 64 after aggregation
+STA_35 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 10 after aggregation
+STA_29 assigned a PSDU of size 10 after aggregation
+STA_24 assigned a PSDU of size 10 after aggregation
+STA_36 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_40 assigned a PSDU of size 64 after aggregation
+STA_22 assigned a PSDU of size 64 after aggregation
+STA_27 assigned a PSDU of size 64 after aggregation
+STA_33 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_1 assigned a PSDU of size 64 after aggregation
+STA_29 assigned a PSDU of size 64 after aggregation
+STA_24 assigned a PSDU of size 64 after aggregation
+STA_36 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_13 assigned a PSDU of size 10 after aggregation
+STA_10 assigned a PSDU of size 10 after aggregation
+STA_15 assigned a PSDU of size 10 after aggregation
+STA_37 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_8 assigned a PSDU of size 64 after aggregation
+STA_20 assigned a PSDU of size 64 after aggregation
+STA_4 assigned a PSDU of size 64 after aggregation
+STA_17 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_13 assigned a PSDU of size 64 after aggregation
+STA_10 assigned a PSDU of size 64 after aggregation
+STA_15 assigned a PSDU of size 64 after aggregation
+STA_37 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_30 assigned a PSDU of size 10 after aggregation
+STA_5 assigned a PSDU of size 10 after aggregation
+STA_25 assigned a PSDU of size 10 after aggregation
+STA_31 assigned a PSDU of size 10 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_12 assigned a PSDU of size 64 after aggregation
+STA_14 assigned a PSDU of size 64 after aggregation
+STA_34 assigned a PSDU of size 64 after aggregation
+STA_19 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========
+======= SCHEDULER BEGINS AGGREGATION ========
+STA_30 assigned a PSDU of size 64 after aggregation
+STA_5 assigned a PSDU of size 64 after aggregation
+STA_25 assigned a PSDU of size 64 after aggregation
+STA_31 assigned a PSDU of size 64 after aggregation
+======= SCHEDULER ENDS AGGREGATION ========

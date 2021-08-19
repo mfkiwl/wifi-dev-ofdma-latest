@@ -33,6 +33,8 @@
 #include "he-phy.h"
 #include <algorithm>
 #include <functional>
+#include <fstream>
+#include <sstream>
 
 #undef NS_LOG_APPEND_CONTEXT
 #define NS_LOG_APPEND_CONTEXT std::clog << "[mac=" << m_self << "] "
@@ -582,6 +584,25 @@ HeFrameExchangeManager::SendPsduMap (void)
             break;
         }
     }
+
+  // std::ostringstream oss;
+  // oss << "phy_forward_down_log_same1000.txt";
+  
+  // std::ofstream file;
+  // file.open(oss.str(), std::ios_base::app | std::ios_base::out);
+
+  // oss.str("");
+  // oss.clear();
+
+  // file << "======= MAP LOG START BEFORE FORWARDING DOWN ========\n";
+
+  // for (auto& psdu : psduMap) {
+
+  //     file << "STA_" << psdu.first << " assigned a PSDU of size " << psdu.second->GetSize() << " in the map\n";
+  // }
+
+  // file << "======= MAP LOG END BEFORE FORWARDING DOWN ========\n";
+  // file.close();
 
   // transmit the map of PSDUs
   ForwardPsduMapDown (psduMap, m_txParams.m_txVector);

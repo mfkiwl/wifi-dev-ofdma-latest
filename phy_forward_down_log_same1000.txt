@@ -1,0 +1,2832 @@
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_2 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_2 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_2 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_2 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_3 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_3 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_3 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_3 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_4 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_4 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_4 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_4 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_6 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_6 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_6 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_6 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_7 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_7 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_7 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_7 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_8 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_8 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_8 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_8 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_10 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_10 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_10 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_10 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_11 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_11 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_11 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_11 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_12 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_12 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_12 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_12 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_14 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_14 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_14 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_14 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_15 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_15 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_15 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_15 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_16 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_16 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_16 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_16 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_18 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_18 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_18 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_18 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_19 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_19 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_19 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_19 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_20 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_20 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_20 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_20 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_22 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_22 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_22 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_22 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_23 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_23 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_23 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_23 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_24 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_24 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_24 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_24 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_26 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_26 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_26 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_26 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_27 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_27 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_27 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_27 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_28 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_28 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_28 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_28 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_30 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_30 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_30 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_30 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_31 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_31 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_31 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_31 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_32 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_32 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_32 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_32 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_34 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_34 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_34 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_34 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_35 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_35 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_35 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_35 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_36 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_36 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_36 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_36 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_38 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_38 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_38 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_38 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_39 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_39 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_39 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_39 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_40 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_40 assigned a PSDU of size 115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_40 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_40 assigned a PSDU of size 171 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_9 assigned a PSDU of size 1115 in the map
+STA_10 assigned a PSDU of size 1115 in the map
+STA_11 assigned a PSDU of size 1115 in the map
+STA_12 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_13 assigned a PSDU of size 1115 in the map
+STA_14 assigned a PSDU of size 1115 in the map
+STA_15 assigned a PSDU of size 1115 in the map
+STA_16 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_17 assigned a PSDU of size 1115 in the map
+STA_18 assigned a PSDU of size 1115 in the map
+STA_19 assigned a PSDU of size 1115 in the map
+STA_20 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_21 assigned a PSDU of size 1115 in the map
+STA_22 assigned a PSDU of size 1115 in the map
+STA_23 assigned a PSDU of size 1115 in the map
+STA_24 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_25 assigned a PSDU of size 1115 in the map
+STA_26 assigned a PSDU of size 1115 in the map
+STA_27 assigned a PSDU of size 1115 in the map
+STA_28 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_29 assigned a PSDU of size 1115 in the map
+STA_30 assigned a PSDU of size 1115 in the map
+STA_31 assigned a PSDU of size 1115 in the map
+STA_32 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_33 assigned a PSDU of size 1115 in the map
+STA_34 assigned a PSDU of size 1115 in the map
+STA_35 assigned a PSDU of size 1115 in the map
+STA_36 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_37 assigned a PSDU of size 1115 in the map
+STA_38 assigned a PSDU of size 1115 in the map
+STA_39 assigned a PSDU of size 1115 in the map
+STA_40 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_1 assigned a PSDU of size 1115 in the map
+STA_2 assigned a PSDU of size 1115 in the map
+STA_3 assigned a PSDU of size 1115 in the map
+STA_4 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========
+======= MAP LOG START BEFORE FORWARDING DOWN ========
+STA_5 assigned a PSDU of size 1115 in the map
+STA_6 assigned a PSDU of size 1115 in the map
+STA_7 assigned a PSDU of size 1115 in the map
+STA_8 assigned a PSDU of size 1115 in the map
+======= MAP LOG END BEFORE FORWARDING DOWN ========

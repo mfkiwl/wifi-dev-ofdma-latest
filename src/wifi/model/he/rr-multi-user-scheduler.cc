@@ -27,6 +27,8 @@
 #include "he-configuration.h"
 #include "he-phy.h"
 #include <algorithm>
+#include <fstream>
+#include <sstream>
 
 namespace ns3 {
 
@@ -619,6 +621,23 @@ RrMultiUserScheduler::TrySendingDlMuPpdu (void)
       staIt++;
     }
 
+  // std::ostringstream oss;
+  // oss << "rr_schedule_log_same1000.txt";
+  
+  // std::ofstream file;
+  // file.open(oss.str(), std::ios_base::app | std::ios_base::out);
+
+  // oss.str("");
+  // oss.clear();
+
+  // file << "======= SCHEDULER CANDIDATES ========\n";
+  // for (const auto& candidate : m_candidates) {
+  //   file << "STA_" << candidate.first->aid << " scheduled\n";
+  // }
+
+  // file << "=======================================\n";
+  // file.close();
+
   if (m_candidates.empty ())
     {
       if (m_forceDlOfdma)
@@ -711,6 +730,17 @@ RrMultiUserScheduler::ComputeDlMuInfo (void)
   Ptr<WifiMacQueue> queue;
   Mac48Address receiver;
 
+  // std::ostringstream oss;
+  // oss << "rr_aggregation_log_same1000.txt";
+  
+  // std::ofstream file;
+  // file.open(oss.str(), std::ios_base::app | std::ios_base::out);
+
+  // oss.str("");
+  // oss.clear();
+
+  // file << "======= SCHEDULER BEGINS AGGREGATION ========\n";
+
   for (const auto& candidate : m_candidates)
     {
       // Let us try first A-MSDU aggregation if possible
@@ -745,14 +775,22 @@ RrMultiUserScheduler::ComputeDlMuInfo (void)
 
       if (mpduList.size () > 1)
         {
+          //file << "STA_" << candidate.first->aid << " assigned a PSDU of size " << mpduList.size() << " after aggregation\n";
+
           // A-MPDU aggregation succeeded, update psduMap
           dlMuInfo.psduMap[candidate.first->aid] = Create<WifiPsdu> (std::move (mpduList));
         }
       else
         {
+
+          //file << "STA_" << candidate.first->aid << " assigned a PSDU of size " << mpduList.size() << " without aggregation\n";
+
           dlMuInfo.psduMap[candidate.first->aid] = Create<WifiPsdu> (item, true);
         }
     }
+
+  // file << "======= SCHEDULER ENDS AGGREGATION ========\n";
+  // file.close();
 
   AcIndex primaryAc = m_edca->GetAccessCategory ();
 
