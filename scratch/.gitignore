@@ -4,3 +4,7 @@
 !subdir/
 !wifi-dl-qualcomm-cir.cc
 !scratch-simulator.cc
+!wifi-dl-ofdma-agg.cc
+!wifi-dl-ofdma-udp.cc
+!wifi-pf-dl.cc
+!wifi-dl-ofdma.cc
