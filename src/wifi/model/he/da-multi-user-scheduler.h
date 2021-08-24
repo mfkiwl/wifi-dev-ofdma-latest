@@ -18,29 +18,28 @@
  * Author: Stefano Avallone <stavallo@unina.it>
  */
 
-#ifndef PF_MULTI_USER_SCHEDULER_H
-#define PF_MULTI_USER_SCHEDULER_H
+#ifndef DA_MULTI_USER_SCHEDULER_H
+#define DA_MULTI_USER_SCHEDULER_H
 
 #include "multi-user-scheduler.h"
 #include <list>
-#include "ns3/Hungarian.h"
 
 namespace ns3 {
 
 /**
  * \ingroup wifi
  *
- * PfMultiUserScheduler is a simple OFDMA scheduler that indicates to perform a DL OFDMA
+ * DaMultiUserScheduler is a simple OFDMA scheduler that indicates to perform a DL OFDMA
  * transmission if the AP has frames to transmit to at least one station.
- * PfMultiUserScheduler assigns RUs in a proportionally fair manner.
- * 
- * Originally Implemented by: Naman Gupta & Abhishek Gupta
- * Ported to new version by: Harshal Dev
+ * DaMultiUserScheduler assigns RUs of equal size (in terms of tones) to stations to
+ * which the AP has frames to transmit belonging to the AC who gained access to the
+ * channel or higher. The maximum number of stations that can be granted an RU
+ * is configurable. Associated stations are served in a round robin fashion.
  *
  * \todo Take the supported channel width of the stations into account while selecting
  * stations and assigning RUs to them.
  */
-class PfMultiUserScheduler : public MultiUserScheduler
+class DaMultiUserScheduler : public MultiUserScheduler
 {
 public:
   /**
@@ -48,8 +47,37 @@ public:
    * \return the object TypeId
    */
   static TypeId GetTypeId (void);
-  PfMultiUserScheduler ();
-  virtual ~PfMultiUserScheduler ();
+  DaMultiUserScheduler ();
+  virtual ~DaMultiUserScheduler ();
+
+  /**
+   * \brief Check if Deadline Constrained Traffic has began
+   * \return True if it STA association has ended, and deadline constrained traffic has began
+   */
+  bool CheckDeadlineConstrainedTrafficStarted(void);
+
+  /**
+   * \brief Inform the scheduler that Deadline Constrained Traffic has began
+   *
+   */
+  void NotifyDeadlineConstrainedTrafficStarted(void);
+
+  /**
+   * \brief Set the Time Offset used to map Timestamps to Rounds
+   */ 
+  void SetRoundTimeOffset(double);
+
+  uint32_t GetRoundFromTimestamp(double);
+
+  void SetStaPacketInfo(std::map <uint32_t, std::vector<uint32_t>>);
+
+  uint32_t LCM(int[], int);
+
+  uint32_t GetRoundsPerSchedule(void);
+
+  uint32_t GetPacketsPerSchedule(void);
+
+  void GeneratePacketScheduleForSetRounds(void);
 
 protected:
   void DoDispose (void) override;
@@ -120,30 +148,17 @@ private:
     double credits;               //!< credits accumulated by the station
   };
 
-  struct DlPerStaInfo
-  {
-    uint16_t aid;                //!< association ID
-    uint8_t tid;                 //!< TID
-  };
-
-  struct CandInfo 
-  {
-    uint16_t aid;                 //!< station's AID
-    Mac48Address address;         //!< station's MAC Address
-    Ptr<const WifiMacQueueItem> mpdu;
-  };
-
   /**
    * Information stored for candidate stations
    */
   typedef std::pair<std::list<MasterInfo>::iterator, Ptr<const WifiMacQueueItem>> CandidateInfo;
 
-  bool loopOutput;
-  bool specificOutput;
-  uint8_t m_nStations;
-  uint32_t m_mcs;                                  //!< Number of stations/slots to fill
-  uint16_t m_startStation;
-  std::list<std::pair<Mac48Address, DlPerStaInfo>> m_staInfo;
+  uint16_t m_nStations;                                  //!< Number of stations/slots to fill
+  bool m_hasDeadlineConstrainedTrafficStarted;          //!< Has the deadline contrained traffic started or
+                                                        //!< still waiting for STAs to associate?
+  double roundTimeOffset;                               //!< Subtract this value from the current time to estimate round
+  uint32_t m_roundsPerSchedule;                         //!< No. of rounds for which the schedule is generated        
+  uint32_t m_packetsPerSchedule;                        //!< No. of packets for which the schedule is generated                              
   bool m_enableTxopSharing;                             //!< allow A-MPDUs of different TIDs in a DL MU PPDU
   bool m_forceDlOfdma;                                  //!< return DL_OFDMA even if no DL MU PPDU was built
   bool m_enableUlOfdma;                                 //!< enable the scheduler to also return UL_OFDMA
@@ -151,54 +166,15 @@ private:
   bool m_useCentral26TonesRus;                          //!< whether to allocate central 26-tone RUs
   uint32_t m_ulPsduSize;                                //!< the size in byte of the solicited PSDU
   std::map<AcIndex, std::list<MasterInfo>> m_staList;   //!< Per-AC list of stations (next to serve first)
-  std::list<CandInfo> m_simpleCandidates;
+  std::map <uint32_t /* AID */, std::vector<uint32_t> /* Packet Time period, Deadline, Penalty */> m_staPacketInfo;
+  std::vector<std::vector<uint32_t>> m_packetSchedule;
+  std::map <uint32_t /* PID */, uint32_t /* ROUND-RU ID */> m_packetToRuMap;
   std::list<CandidateInfo> m_candidates;                //!< Candidate stations for MU TX
   Time m_maxCredits;                                    //!< Max amount of credits a station can have
   Ptr<WifiMacQueueItem> m_trigger;                      //!< Trigger Frame to send
   Time m_tbPpduDuration;                                //!< Duration of the solicited TB PPDUs
   WifiTxParameters m_txParams;                          //!< TX parameters
   TriggerFrameType m_ulTriggerType;                     //!< Trigger Frame type for UL MU
-
-  // PF Scheduler
-  struct match
-  {
-    int a;
-    int b;
-    match(int x, int y)
-          : a(x), b(y){}
-    
-  };
-  struct map
-  {
-    int a;
-    HeRu::RuType b;
-    map(int x,HeRu::RuType  y)
-          : a(x), b(y){}
-  };
-  struct alloc
-  {
-    bool a;
-    std::vector<match>b;
-  };
-
-  std::list<std::pair<uint32_t, uint16_t>> dataStaPair;
-  std::vector<match> minRuAlloc;
-  std::vector<int> randomMCS;
-  std::vector<map> mappedRuAllocated;
-  std::list<std::pair<Mac48Address, DlPerStaInfo>> staAllocated;
-  std::map<uint16_t,double> dataTransmitted;
-  std::map<uint16_t,double> totalTime;
-  double MAX_COST=11111.0;
-  std::vector<std::vector<double> > costMatrix;
-    std::vector<int> assignment;
-  std::map<uint16_t,double>mapw;
-
-  int bestMCS=-1;
-  double timeReq(int dataSize,int rusize,int mcs_QAM);
-  double timeReq1(int dataSize,int rusize,int mcs);
-  double getDataRate(int mcs, int ru);
-  void MUTAX();
-  void ProportionalFair(std::vector<int> currRUset,int currMCS);
 };
 
 } //namespace ns3

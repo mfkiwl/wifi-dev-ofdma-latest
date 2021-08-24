@@ -114,6 +114,12 @@ HeFrameExchangeManager::SetMultiUserScheduler (const Ptr<MultiUserScheduler> muS
   m_muScheduler = muScheduler;
 }
 
+Ptr<MultiUserScheduler>
+HeFrameExchangeManager::GetMultiUserScheduler(void)
+{
+  return m_muScheduler;
+}
+
 bool
 HeFrameExchangeManager::StartFrameExchange (Ptr<QosTxop> edca, Time availableTime, bool initialFrame)
 {

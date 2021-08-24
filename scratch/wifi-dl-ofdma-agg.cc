@@ -469,6 +469,7 @@ WifiDlOfdma::Setup (void)
     {
       if ( m_scheduler == 1 ) {
         
+        // Reference to the scheduler can be obtain from the HeFrameExchangeManager::GetMultiUserScheduler method
         mac.SetMultiUserScheduler ("ns3::PfMultiUserScheduler",
                                 "NStations", UintegerValue(m_nStations),
                                 "mcs", UintegerValue(m_mcs),

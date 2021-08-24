@@ -72,6 +72,13 @@ public:
   void SetMultiUserScheduler (const Ptr<MultiUserScheduler> muScheduler);
 
   /**
+   * Get the Multi-user Scheduler associated with this Frame Exchange Manager.
+   *
+   * \return the Multi-user Scheduler associated with this Frame Exchange Manager
+   */
+  Ptr<MultiUserScheduler> GetMultiUserScheduler (void);
+
+  /**
    * Get the PSDU in the given PSDU map that is addressed to the given MAC address,
    * if any, or a null pointer, otherwise.
    *
