@@ -23,6 +23,13 @@
 
 #include "multi-user-scheduler.h"
 #include <list>
+#include <iostream>
+#include <vector>
+#include <string>
+#include <boost/graph/adjacency_list.hpp>
+#include <boost/graph/maximum_weighted_matching.hpp>
+
+using namespace boost;
 
 namespace ns3 {
 
@@ -78,6 +85,16 @@ public:
   uint32_t GetPacketsPerSchedule(void);
 
   void GeneratePacketScheduleForSetRounds(void);
+  
+  uint32_t GetRusPerRound(HeRu::RuType);
+
+  HeRu::RuType GetRuTypePerRound(void);
+  
+  uint32_t GetRoundFromVertexIndex(uint32_t vj, uint32_t rus);
+
+  void MaximumWeightedMatching(void);
+
+  void GenerateMpduToCurrPacketMap(void);
 
 protected:
   void DoDispose (void) override;
@@ -153,10 +170,14 @@ private:
    */
   typedef std::pair<std::list<MasterInfo>::iterator, Ptr<const WifiMacQueueItem>> CandidateInfo;
 
+  typedef property< edge_weight_t, float, property< edge_index_t, int > > EdgeProperty;
+  typedef adjacency_list< vecS, vecS, undirectedS, no_property, EdgeProperty > my_graph;
+
   uint16_t m_nStations;                                  //!< Number of stations/slots to fill
   bool m_hasDeadlineConstrainedTrafficStarted;          //!< Has the deadline contrained traffic started or
                                                         //!< still waiting for STAs to associate?
   double roundTimeOffset;                               //!< Subtract this value from the current time to estimate round
+  double currTimeMs;
   uint32_t m_roundsPerSchedule;                         //!< No. of rounds for which the schedule is generated        
   uint32_t m_packetsPerSchedule;                        //!< No. of packets for which the schedule is generated                              
   bool m_enableTxopSharing;                             //!< allow A-MPDUs of different TIDs in a DL MU PPDU
@@ -168,8 +189,10 @@ private:
   std::map<AcIndex, std::list<MasterInfo>> m_staList;   //!< Per-AC list of stations (next to serve first)
   std::map <uint32_t /* AID */, std::vector<uint32_t> /* Packet Time period, Deadline, Penalty */> m_staPacketInfo;
   std::vector<std::vector<uint32_t>> m_packetSchedule;
-  std::map <uint32_t /* PID */, uint32_t /* ROUND-RU ID */> m_packetToRuMap;
+  std::map <uint32_t /* PID */, uint32_t /* ROUND ID */> m_packetToRoundMap;
   std::list<CandidateInfo> m_candidates;                //!< Candidate stations for MU TX
+  std::list<CandidateInfo> m_roundCandidates;           //!< Candidate with packets to be scheduled this round
+  std::map<uint32_t, uint32_t> m_mpduToCurrPacketMap;   //!< This maps a user to the current packet index for mpdu assignment
   Time m_maxCredits;                                    //!< Max amount of credits a station can have
   Ptr<WifiMacQueueItem> m_trigger;                      //!< Trigger Frame to send
   Time m_tbPpduDuration;                                //!< Duration of the solicited TB PPDUs
