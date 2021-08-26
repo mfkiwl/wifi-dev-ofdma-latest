@@ -157,7 +157,7 @@ DaMultiUserScheduler::SetRoundTimeOffset(double offset) {
 
 uint32_t
 DaMultiUserScheduler::GetRoundFromTimestamp(double timestamp) {
-  return std::floor((timestamp - roundTimeOffset) / 1000.0);
+  return std::floor((timestamp - roundTimeOffset) / 10000.0);
 }
 
 void
@@ -937,7 +937,7 @@ DaMultiUserScheduler::TrySendingDlMuPpdu (void)
   }
 
   // I use the current time to track the rounds
-  currTimeMs = Simulator::Now().ToDouble(Time::MS);
+  currTimeMs = Simulator::Now().ToDouble(Time::US);
 
   // for (const auto& candidate : m_candidates) {
     
@@ -1009,7 +1009,8 @@ DaMultiUserScheduler::ComputeDlMuInfo (void)
       
       //for ( uint32_t p = 0; p < GetPacketsPerSchedule(); p++ ) { if ( m_packetSchedule[*p][3] == aid ) { }
    
-      NS_ASSERT( m_packetSchedule[*p][3] == aid );    
+      //NS_ASSERT( m_packetSchedule[*p][3] == aid );    
+      if ( m_packetSchedule[*p][3] == aid ) {
         
       auto it = m_packetToRoundMap.find(*p);
       if ( it != m_packetToRoundMap.end() ) { // This packet has been scheduled in some round
@@ -1034,6 +1035,7 @@ DaMultiUserScheduler::ComputeDlMuInfo (void)
         queue->Dequeue(queueIt.it);
 
         (*p)++; // The next mpdu should be mapped to the next packet index
+      }
       }
 
       if ( packetsThisRound == 0 )
@@ -1170,7 +1172,7 @@ DaMultiUserScheduler::ComputeDlMuInfo (void)
       NS_ASSERT (mpdu->IsQueued ());
       
       if ( mpdu->GetHeader().IsData() && m_hasDeadlineConstrainedTrafficStarted ) {
-        std::cout << "STA_" << candidate.first->aid << " is transmitting DATA in round " << GetRoundFromTimestamp(Simulator::Now ().ToDouble (Time::MS)) <<"\n";       
+        std::cout << "STA_" << candidate.first->aid << " is transmitting DATA in round " << GetRoundFromTimestamp(Simulator::Now ().ToDouble (Time::US)) <<"\n";       
       }
 
       WifiMacQueueItem::QueueIteratorPair queueIt = mpdu->GetQueueIteratorPairs ().front ();
