@@ -30,6 +30,7 @@
 #include <fstream>
 #include <sstream>
 #include <numeric>
+#include <cstdlib>
 
 using namespace boost;
 
@@ -50,7 +51,7 @@ DaMultiUserScheduler::GetTypeId (void)
                    "The maximum number of stations that can be granted an RU in a DL MU OFDMA transmission",
                    UintegerValue (4),
                    MakeUintegerAccessor (&DaMultiUserScheduler::m_nStations),
-                   MakeUintegerChecker<uint8_t> (1, 74))
+                   MakeUintegerChecker<uint16_t> (1, 74))
     .AddAttribute ("EnableTxopSharing",
                    "If enabled, allow A-MPDUs of different TIDs in a DL MU PPDU.",
                    BooleanValue (true),
@@ -96,7 +97,7 @@ DaMultiUserScheduler::GetTypeId (void)
 }
 
 DaMultiUserScheduler::DaMultiUserScheduler ()
-  : m_hasDeadlineConstrainedTrafficStarted(false), m_roundsPerSchedule(0), m_packetsPerSchedule(0), m_ulTriggerType (TriggerFrameType::BASIC_TRIGGER)
+  : m_hasDeadlineConstrainedTrafficStarted(false), isRoundOffsetSet(false), m_roundsPerSchedule(0), m_packetsPerSchedule(0), m_ulTriggerType (TriggerFrameType::BASIC_TRIGGER)
 {
   NS_LOG_FUNCTION (this);
 }
@@ -146,7 +147,6 @@ DaMultiUserScheduler::CheckDeadlineConstrainedTrafficStarted(void)
 void
 DaMultiUserScheduler::NotifyDeadlineConstrainedTrafficStarted(void)
 {
-  std::cout << "Deadline Constrained Traffic Started!\n";
   m_hasDeadlineConstrainedTrafficStarted = true;
 }
 
@@ -155,9 +155,14 @@ DaMultiUserScheduler::SetRoundTimeOffset(double offset) {
   roundTimeOffset = offset;
 }
 
+void 
+DaMultiUserScheduler::SetTimeQuantaForRound(double quanta) {
+  timeQuanta = quanta;
+}
+
 uint32_t
 DaMultiUserScheduler::GetRoundFromTimestamp(double timestamp) {
-  return std::floor((timestamp - roundTimeOffset) / 10000.0);
+  return std::floor((timestamp - roundTimeOffset) / timeQuanta );
 }
 
 void
@@ -267,7 +272,7 @@ DaMultiUserScheduler::GeneratePacketScheduleForSetRounds(void)
       int timePeriodFactor = 0;
       for ( uint32_t j = 0; j < packetsPerUser; j++ ) {
 
-        uint32_t arrivalRound = GetRoundFromTimestamp(currTimeMs) + timePeriodFactor * timePeriod;
+        uint32_t arrivalRound = GetRoundFromTimestamp(currTimeUs) + timePeriodFactor * timePeriod;
         uint32_t deadlineRound = arrivalRound + deadline;
         std::vector<uint32_t> schedule{ arrivalRound, deadlineRound, penalty, i /* AID */ };
 
@@ -276,6 +281,8 @@ DaMultiUserScheduler::GeneratePacketScheduleForSetRounds(void)
         timePeriodFactor++;
       }
     }
+
+    std::cout << "Packet schedule generated!" << std::endl;
 }
 
 HeRu::RuType
@@ -358,7 +365,7 @@ DaMultiUserScheduler::GetRusPerRound(HeRu::RuType ruType) {
 
 uint32_t
 DaMultiUserScheduler::GetRoundFromVertexIndex(uint32_t vj, uint32_t rus) {
-  return ( ( vj - GetPacketsPerSchedule() ) / rus ) + GetRoundFromTimestamp(currTimeMs);
+  return ( ( vj - GetPacketsPerSchedule() ) / rus ) + GetRoundFromTimestamp(currTimeUs);
 }
 
 void
@@ -374,15 +381,18 @@ DaMultiUserScheduler::MaximumWeightedMatching(void) {
   const int n_vertices = rus * rounds + packets;
   graph_traits< my_graph >::vertex_iterator vi, vi_end;
 
+  uint32_t roundOffset = GetRoundFromTimestamp(currTimeUs);
+  std::cout << "MWM invoked in round " << roundOffset << "\n";
+
   my_graph g(n_vertices);
 
   for ( uint32_t i = 0; i < packets; i++ ) {
-    for ( uint32_t j = GetRoundFromTimestamp(currTimeMs); j < GetRoundFromTimestamp(currTimeMs) + rounds; j++ ) {
+    for ( uint32_t j = GetRoundFromTimestamp(currTimeUs); j < GetRoundFromTimestamp(currTimeUs) + rounds; j++ ) {
 
       if ( j >= m_packetSchedule[i][0] && j <= m_packetSchedule[i][1] ) {
 
         // Not j - round leads to munmap_chunk(): invalid pointer error        
-        uint32_t firstIndex = packets + ((j - GetRoundFromTimestamp(currTimeMs))*rus);
+        uint32_t firstIndex = packets + ((j - GetRoundFromTimestamp(currTimeUs))*rus);
         for ( uint32_t k = firstIndex; k < firstIndex + rus; k++ ) {
 
             add_edge(i, k, EdgeProperty(m_packetSchedule[i][2]), g);
@@ -404,12 +414,137 @@ DaMultiUserScheduler::MaximumWeightedMatching(void) {
   for (boost::tie(vi, vi_end) = vertices(g); vi != vi_end; ++vi) {
     if (mate1[*vi] != graph_traits< my_graph >::null_vertex() && *vi < mate1[*vi]) {
       std::cout << "{" << *vi << ", " << mate1[*vi] << ", " << GetRoundFromVertexIndex(mate1[*vi], rus) << "}" << std::endl;
+
+      // Note that we are omitting information of the particular RU that is mapped in a particular round, since that isn't needed
+      // for the scheduler, it just assigns RUs sequentially to all the packets scheduled in a particular round
       m_packetToRoundMap.insert(std::make_pair (*vi, GetRoundFromVertexIndex(mate1[*vi], rus)));
     }
   }
 
   std::cout << std::endl;
 }
+
+void
+DaMultiUserScheduler::ILPSolver(void) {
+
+  uint32_t rounds = GetRoundsPerSchedule();
+  uint32_t packets = GetPacketsPerSchedule();
+  uint32_t ruType = 4; // Used to index the splits array in the ILP \todo
+  uint32_t totalTones = 242;
+  if ( m_apMac->GetWifiPhy()->GetChannelWidth() == 40 )
+    totalTones = 484;
+
+  // Offset to add and subtract when inputting to the ILP
+  // The ILP assumes that a map is being generated at the
+  // start of round 0
+  uint32_t roundOffset = GetRoundFromTimestamp(currTimeUs);
+  std::cout << "ILP invoked in round " << roundOffset << "\n";
+
+  std::ostringstream oss;
+  oss << "java -Djava.library.path=/opt/ibm/ILOG/CPLEX_Studio201/cplex/bin/x86-64_linux -classpath /opt/ibm/ILOG/CPLEX_Studio201/cplex/lib/cplex.jar: DeadlineAwareILP " << rounds << " " << packets << " " << ruType << " " << totalTones << " ";
+  for ( uint32_t i = 0; i < packets; i++ ) {
+      if ( i < packets - 1 )
+          oss << (m_packetSchedule[i][0] - roundOffset) << " " << (m_packetSchedule[i][1] - roundOffset) << " " << m_packetSchedule[i][2] << " ";
+      else
+          oss << (m_packetSchedule[i][0] - roundOffset) << " " << (m_packetSchedule[i][1] - roundOffset) << " " << m_packetSchedule[i][2];
+  }
+
+  std::string txt = oss.str();
+  uint32_t length = txt.length();
+    
+  char cmd[length];
+  std::copy(std::begin(txt), std::end(txt), cmd);
+  cmd[length] = 0;
+
+  std::cout << cmd;
+  std::cout << std::endl;
+
+  system(cmd);
+
+  // Extract the values from the output file written by the ILP
+  std::ifstream file;
+  file.open("ilp.output", std::ios::in);
+
+  std::string line;
+  while(std::getline(file, line))
+  {
+      std::stringstream lineStream(line);
+      uint32_t pos = lineStream.str().find(",");
+        
+      uint32_t packet = atoi(lineStream.str().substr(0, pos).c_str());
+      uint32_t round = atoi(lineStream.str().substr(pos + 1).c_str()) + roundOffset;
+
+      // This is all we need
+      m_packetToRoundMap.insert(std::make_pair(packet, round));
+
+      std::cout << "{" << packet << ", " << round << "}" << std::endl;
+  }
+}
+
+// void
+// DaMultiUserScheduler::ILPSolver(void) {
+//   IloEnv   env;
+//    try {
+//       IloModel model(env);
+
+//       IloNumVarArray var(env);
+//       IloRangeArray con(env);
+
+//       populatebyrow (model, var, con);
+
+//       IloCplex cplex(model);
+//       cplex.exportModel("lpex1.lp");
+
+//       // Optimize the problem and obtain solution.
+//       if ( !cplex.solve() ) {
+//          env.error() << "Failed to optimize LP" << std::endl;
+//          throw(-1);
+//       }
+
+//       IloNumArray vals(env);
+//       env.out() << "Solution status = " << cplex.getStatus() << std::endl;
+//       env.out() << "Solution value  = " << cplex.getObjValue() << std::endl;
+//       cplex.getValues(vals, var);
+//       env.out() << "Values        = " << vals << std::endl;
+//       cplex.getSlacks(vals, con);
+//       env.out() << "Slacks        = " << vals << std::endl;
+//       cplex.getDuals(vals, con);
+//       env.out() << "Duals         = " << vals << std::endl;
+//       cplex.getReducedCosts(vals, var);
+//       env.out() << "Reduced Costs = " << vals << std::endl;
+//    }
+//    catch (IloException& e) {
+//       std::cout << "Concert exception caught: " << e << std::endl;
+//    }
+//    catch (...) {
+//       std::cout << "Unknown exception caught" << std::endl;
+//    }
+
+//    env.end();
+// }
+
+// void
+// DaMultiUserScheduler::populatebyrow(IloModel model, IloNumVarArray x, IloRangeArray c)
+// {
+//    IloEnv env = model.getEnv();
+
+//    x.add(IloNumVar(env, 0.0, 40.0));
+//    x.add(IloNumVar(env));
+//    x.add(IloNumVar(env));
+
+//    model.add(IloMaximize(env, x[0] + 2 * x[1] + 3 * x[2]));
+
+//    c.add( - x[0] +     x[1] + x[2] <= 20);
+//    c.add(   x[0] - 3 * x[1] + x[2] <= 30);
+
+//    x[0].setName("x1");
+//    x[1].setName("x2");
+//    x[2].setName("x3");
+
+//    c[0].setName("c1");
+//    c[1].setName("c2");
+//    model.add(c);
+// }
 
 void
 DaMultiUserScheduler::GenerateMpduToCurrPacketMap(void)
@@ -825,6 +960,8 @@ DaMultiUserScheduler::TrySendingDlMuPpdu (void)
   std::size_t nCentral26TonesRus;
   HeRu::RuType ruType = HeRu::GetEqualSizedRusForStations (m_apMac->GetWifiPhy ()->GetChannelWidth (), count,
                                                            nCentral26TonesRus);
+
+  count = m_nStations; //GetEqualSizedRusForStations changes the value of count since it is passed by reference                                                           
   NS_ASSERT (count >= 1);
 
   if (!m_useCentral26TonesRus)
@@ -937,17 +1074,23 @@ DaMultiUserScheduler::TrySendingDlMuPpdu (void)
   }
 
   // I use the current time to track the rounds
-  currTimeMs = Simulator::Now().ToDouble(Time::US);
-
-  // for (const auto& candidate : m_candidates) {
-    
-  //   std::cout << "STA_" << candidate.first->aid << " has a packet to transmit in round " << GetRoundFromTimestamp(Simulator::Now ().ToDouble (Time::MS)) <<"\n";       
-  // }      
+  currTimeUs = Simulator::Now().ToDouble(Time::US);
   
-  if ( m_hasDeadlineConstrainedTrafficStarted && m_packetToRoundMap.empty() && !m_candidates.empty() ) {
+  if ( m_hasDeadlineConstrainedTrafficStarted && !m_candidates.empty() && !isRoundOffsetSet ) {
+    SetRoundTimeOffset(currTimeUs);
+    isRoundOffsetSet = true; // Although the deadline constrained traffic had started arriving, we know that now the first packet has arrived
+  }
+ 
+                                                                                // This is important, otherwise if the packet to be transmitted in 
+                                                                                // this round has been transmitted, and the next incoming packet is 
+                                                                                // only scheduled to be dropped, then m_packetToRoundMap is empty and 
+                                                                                // as soon as the next packet arrives, m_candidates is not empty, 
+                                                                                // forcing the generated of a new packetSchedule in this round itself.
+  if ( m_hasDeadlineConstrainedTrafficStarted && m_packetToRoundMap.empty() && ( GetRoundFromTimestamp(currTimeUs) % GetRoundsPerSchedule() == 0 ) && !m_candidates.empty() ) {
 
     GeneratePacketScheduleForSetRounds(); // m_packetSchedule
-    MaximumWeightedMatching(); // m_packetToRoundMap
+    //MaximumWeightedMatching(); // m_packetToRoundMap
+    ILPSolver();
     GenerateMpduToCurrPacketMap(); // m_mpduToCurrPacketMap
 
     for ( std::vector<uint32_t> x : m_packetSchedule ) {
@@ -974,14 +1117,22 @@ DaMultiUserScheduler::ComputeDlMuInfo (void)
 {
   NS_LOG_FUNCTION (this);
 
-  if ( m_hasDeadlineConstrainedTrafficStarted ) {
+  // The second condition is important, otherwise for scenarios where 
+  // deadline constrained traffic is started, but the m_packetToRoundMap
+  // has not been generated because one of the conditions for generation
+  // of the map was not satisfied (particularly m_candidates is empty)
+  // multi-user-scheduler.cc calls ComputeDlMuInfo() and that leads to
+  // an attempt to index a map which has not yet been generated (m_packetToRoundMap)
+  // However we can be sure that if isRoundOffSet is true, the map has been
+  // generated because a candidate's packet arrived in the queue
+  if ( m_hasDeadlineConstrainedTrafficStarted && isRoundOffsetSet ) {
 
     // Search the packetToRoundMap to find the packets scheduled
     // in this round, if you find one, find the AID of the sta
     // corresponding to the packet, then assign appropriate RU type to those
     // STAs, if no packet is scheduled in the current round,
     // return an empty DlMuInfo()
-    uint32_t currRound = GetRoundFromTimestamp(currTimeMs);
+    uint32_t currRound = GetRoundFromTimestamp(currTimeUs);
     uint32_t unscheduledThisRound = 0;
     m_roundCandidates.clear();
 
@@ -1008,9 +1159,12 @@ DaMultiUserScheduler::ComputeDlMuInfo (void)
       // of user packets. 
       
       //for ( uint32_t p = 0; p < GetPacketsPerSchedule(); p++ ) { if ( m_packetSchedule[*p][3] == aid ) { }
-   
-      //NS_ASSERT( m_packetSchedule[*p][3] == aid );    
-      if ( m_packetSchedule[*p][3] == aid ) {
+
+      // If this assertion fails, it's because the new packet schedule has not been generated yet
+      // This implies a mismatch in the packet generation rate and the schedule generation time
+      // period, verify your rates.
+      NS_ASSERT( m_packetSchedule[*p][3] == aid );    
+      //if ( m_packetSchedule[*p][3] == aid ) {
         
       auto it = m_packetToRoundMap.find(*p);
       if ( it != m_packetToRoundMap.end() ) { // This packet has been scheduled in some round
@@ -1034,9 +1188,10 @@ DaMultiUserScheduler::ComputeDlMuInfo (void)
         NS_ASSERT (queueIt.queue != nullptr);
         queue->Dequeue(queueIt.it);
 
+        std::cout << "Dropped STA_" << (aid + 1) << " packet in round " << GetRoundFromTimestamp(currTimeUs) << std::endl;
         (*p)++; // The next mpdu should be mapped to the next packet index
       }
-      }
+      //}
 
       if ( packetsThisRound == 0 )
         unscheduledThisRound++;
@@ -1064,14 +1219,14 @@ DaMultiUserScheduler::ComputeDlMuInfo (void)
 
   // compute how many stations can be granted an RU and the RU size
   std::size_t nRusAssigned;
-  if ( !m_hasDeadlineConstrainedTrafficStarted )
+  if ( !m_hasDeadlineConstrainedTrafficStarted || !isRoundOffsetSet )
     nRusAssigned = m_txParams.GetPsduInfoMap ().size ();
   else  
     nRusAssigned = m_candidates.size();
 
   std::size_t nCentral26TonesRus;
   HeRu::RuType ruType;
-  if ( !m_hasDeadlineConstrainedTrafficStarted )
+  if ( !m_hasDeadlineConstrainedTrafficStarted || !isRoundOffsetSet )
     ruType = HeRu::GetEqualSizedRusForStations (bw, nRusAssigned, nCentral26TonesRus);
   else
     ruType = GetRuTypePerRound();
@@ -1101,7 +1256,9 @@ DaMultiUserScheduler::ComputeDlMuInfo (void)
   std::vector<HeRu::RuSpec> ruSet = HeRu::GetRusOfType(m_apMac->GetWifiPhy()->GetChannelWidth(), ruType);  
   auto ruSetIt = ruSet.begin();
 
-  for (std::size_t i = 0; i < nRusAssigned + nCentral26TonesRus; i++)
+  std::cout << "nRusAssigned = " << nRusAssigned << " m_candidates = " << m_candidates.size() << std::endl;
+
+  for (uint16_t i = 0; i < nRusAssigned + nCentral26TonesRus; i++)
     {
       NS_ASSERT (candidateIt != m_candidates.end ());
 
@@ -1113,7 +1270,7 @@ DaMultiUserScheduler::ComputeDlMuInfo (void)
                                                       m_txParams.m_txVector.GetNss (staId)});
                                                    
       
-      if ( m_hasDeadlineConstrainedTrafficStarted ) {
+      if ( m_hasDeadlineConstrainedTrafficStarted && isRoundOffsetSet ) {
         dlMuInfo.txParams.m_txVector.SetRu(*ruSetIt, staId);
         ruSetIt++; // It is important to increment this, because an RuSpec represents a distinct RU from the given bandwidth
       }
@@ -1124,7 +1281,7 @@ DaMultiUserScheduler::ComputeDlMuInfo (void)
   // remove candidates that will not be served
   m_candidates.erase (candidateIt, m_candidates.end ());
 
-  if ( !m_hasDeadlineConstrainedTrafficStarted ) // Otherwise we set RUs when constructing the DlMuInfo map in the above loop
+  if ( !m_hasDeadlineConstrainedTrafficStarted || !isRoundOffsetSet ) // Otherwise we set RUs when constructing the DlMuInfo map in the above loop
     AssignRuIndices (dlMuInfo.txParams.m_txVector);
 
   m_txParams.Clear ();
@@ -1171,7 +1328,7 @@ DaMultiUserScheduler::ComputeDlMuInfo (void)
 
       NS_ASSERT (mpdu->IsQueued ());
       
-      if ( mpdu->GetHeader().IsData() && m_hasDeadlineConstrainedTrafficStarted ) {
+      if ( mpdu->GetHeader().IsData() && m_hasDeadlineConstrainedTrafficStarted && isRoundOffsetSet ) {
         std::cout << "STA_" << candidate.first->aid << " is transmitting DATA in round " << GetRoundFromTimestamp(Simulator::Now ().ToDouble (Time::US)) <<"\n";       
       }
 
@@ -1216,7 +1373,7 @@ DaMultiUserScheduler::ComputeDlMuInfo (void)
   // file << "======= SCHEDULER ENDS AGGREGATION ========\n";
   // file.close();
 
-  if ( !m_hasDeadlineConstrainedTrafficStarted ) {
+  if ( !m_hasDeadlineConstrainedTrafficStarted || m_packetToRoundMap.empty() ) {
     AcIndex primaryAc = m_edca->GetAccessCategory ();
 
     // The amount of credits received by each station equals the TX duration (in

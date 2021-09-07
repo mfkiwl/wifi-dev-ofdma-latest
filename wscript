@@ -592,6 +592,23 @@ def configure(conf):
 
     env = conf.env
 
+    #env.append_value('CXXFLAGS', ['-g',
+	#			                 '-m64',
+	#			                 '-fPIC',
+	#			                 '-fno-strict-aliasing',
+	#			                 '-fexceptions'])
+    #Removed DNDEBUG flag
+    #env.append_value('INCLUDES', ['-I/opt/ibm/ILOG/CPLEX_Studio201/cplex/include', 
+    #                              '-I/opt/ibm/ILOG/CPLEX_Studio201/concert/include'])
+    #env.append_value('LINKFLAGS', ['-L/opt/ibm/ILOG/CPLEX_Studio201/cplex/lib/x86-64_linux/static_pic',
+    #                               '-L/opt/ibm/ILOG/CPLEX_Studio201/concert/lib/x86-64_linux/static_pic' 
+    #                               '-lconcert',
+	#			                   '-lilocplex',
+	#			                   '-lcplex',
+	#			                   '-lm',
+	#			                   '-lpthread',
+	#			                   '-ldl'])
+
     if Options.options.enable_gcov:
         env['GCOV_ENABLED'] = True
         env.append_value('CCFLAGS', '-fprofile-arcs')

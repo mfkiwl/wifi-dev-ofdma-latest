@@ -28,6 +28,7 @@
 #include <string>
 #include <boost/graph/adjacency_list.hpp>
 #include <boost/graph/maximum_weighted_matching.hpp>
+//#include <ilcplex/ilocplex.h>
 
 using namespace boost;
 
@@ -74,14 +75,27 @@ public:
    */ 
   void SetRoundTimeOffset(double);
 
+  void SetTimeQuantaForRound(double quanta); 
+
   uint32_t GetRoundFromTimestamp(double);
 
+  /**
+   * \brief Receive information related to packet generation rate from
+   * the simulation, this is used to generate the packet schedule for
+   * a set of rounds
+   */
   void SetStaPacketInfo(std::map <uint32_t, std::vector<uint32_t>>);
 
   uint32_t LCM(int[], int);
-
+  
+  /**
+   * \brief For how many rounds should a packet schedule be generated?
+   */
   uint32_t GetRoundsPerSchedule(void);
-
+  
+  /**
+   * \brief How many packets are there in a generated schedule?
+   */
   uint32_t GetPacketsPerSchedule(void);
 
   void GeneratePacketScheduleForSetRounds(void);
@@ -90,10 +104,24 @@ public:
 
   HeRu::RuType GetRuTypePerRound(void);
   
+  /**
+   * \brief The Maximum Weighted Matching algorithm maps packet
+   * index to ru index, this utility function is used to get the
+   * round index from the ru index.
+   */
   uint32_t GetRoundFromVertexIndex(uint32_t vj, uint32_t rus);
 
   void MaximumWeightedMatching(void);
 
+  void ILPSolver(void);
+
+  //void populatebyrow(IloModel, IloNumVarArray, IloRangeArray);
+  
+  /**
+   * \brief Generates the Map for mapping incoming MPDU to
+   * a specific packet index, see definition for a detailed
+   * example
+   */
   void GenerateMpduToCurrPacketMap(void);
 
 protected:
@@ -170,14 +198,16 @@ private:
    */
   typedef std::pair<std::list<MasterInfo>::iterator, Ptr<const WifiMacQueueItem>> CandidateInfo;
 
-  typedef property< edge_weight_t, float, property< edge_index_t, int > > EdgeProperty;
+  typedef property< edge_weight_t, float, property< edge_index_t, int > > EdgeProperty; // Maximum Weighted Matching uses these
   typedef adjacency_list< vecS, vecS, undirectedS, no_property, EdgeProperty > my_graph;
 
   uint16_t m_nStations;                                  //!< Number of stations/slots to fill
   bool m_hasDeadlineConstrainedTrafficStarted;          //!< Has the deadline contrained traffic started or
                                                         //!< still waiting for STAs to associate?
   double roundTimeOffset;                               //!< Subtract this value from the current time to estimate round
-  double currTimeMs;
+  double currTimeUs;                                    //!< The current time expressed in microseconds
+  double timeQuanta;
+  bool isRoundOffsetSet;
   uint32_t m_roundsPerSchedule;                         //!< No. of rounds for which the schedule is generated        
   uint32_t m_packetsPerSchedule;                        //!< No. of packets for which the schedule is generated                              
   bool m_enableTxopSharing;                             //!< allow A-MPDUs of different TIDs in a DL MU PPDU

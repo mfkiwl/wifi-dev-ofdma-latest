@@ -26,6 +26,7 @@
 #include "qos-txop.h"
 #include "ns3/nstime.h"
 #include <vector>
+#include <map>
 
 namespace ns3 {
 
@@ -125,7 +126,11 @@ public:
   std::vector<Ptr<WifiMacQueueItem>> GetNextAmpdu (Ptr<WifiMacQueueItem> mpdu,
                                                    WifiTxParameters& txParams,
                                                    Time availableTime,
-                                                   WifiMacQueueItem::QueueIteratorPair queueIt) const;
+                                                   WifiMacQueueItem::QueueIteratorPair queueIt);
+  
+  std::map<Mac48Address, std::vector<uint64_t>> GetAggregationStats(void);
+
+  std::map<Mac48Address, std::vector<uint64_t>> GetAggregationStopReasons(void);
 
   /**
    * Set the MAC layer to use.
@@ -159,6 +164,9 @@ protected:
 
 private:
   Ptr<RegularWifiMac> m_mac;   //!< the MAC of this station
+
+  std::map <Mac48Address, std::vector<uint64_t>> m_aggregationStats;
+  std::map <Mac48Address, std::vector<uint64_t>> m_aggregationStopReasons;
 };
 
 }  //namespace ns3

@@ -82,6 +82,11 @@ public:
   void StartTraffic (void);
 
   /**
+   * Start generating client traffic for this On Off Applications
+   */
+  void StartClientTraffic(Ptr<Application> clientApp);
+
+  /**
    * Start collecting statistics.
    */
   void StartStatistics (void);
@@ -862,6 +867,64 @@ WifiDlOfdma::Run (void)
                                       << m_maxAmpduRatio << ", "
                                       << m_avgAmpduRatio << ")" << std::endl;
 
+  Ptr<WifiNetDevice> dev = DynamicCast<WifiNetDevice> (m_apDevices.Get (0));
+  std::map<Mac48Address, std::vector<uint64_t>> aggStatsMap;
+  std::map<Mac48Address, std::vector<uint64_t>> aggStopReasonsMap;
+
+  if ( m_enableDlOfdma ) {
+    Ptr<HeFrameExchangeManager> fem = DynamicCast<HeFrameExchangeManager>(DynamicCast<RegularWifiMac> (dev->GetMac ())->GetFrameExchangeManager());
+    aggStatsMap = fem->GetMpduAggregator()->GetAggregationStats();
+    aggStopReasonsMap = fem->GetMpduAggregator()->GetAggregationStopReasons();
+  }
+  else {
+    Ptr<HtFrameExchangeManager> fem = DynamicCast<HtFrameExchangeManager>(DynamicCast<RegularWifiMac> (dev->GetMac ())->GetFrameExchangeManager());
+    aggStatsMap = fem->GetMpduAggregator()->GetAggregationStats(); 
+    aggStopReasonsMap = fem->GetMpduAggregator()->GetAggregationStopReasons(); 
+  }  
+    
+  std::cout << std::endl << std::endl << "Aggregation Statistics" << std::endl
+                         << "-----------" << std::endl;
+  for (uint32_t i = 0; i < m_staNodes.GetN (); i++)
+    {
+      std::cout << "STA_" << i << ": " << std::endl;
+
+      auto it = aggStatsMap.find (DynamicCast<WifiNetDevice> (m_staDevices.Get (i))->GetMac ()->GetAddress ());
+      NS_ASSERT (it != aggStatsMap.end ());
+
+      double totalAggCount = (std::accumulate (it->second.begin (), it->second.end (), 0));
+      for ( uint16_t l = 0; l < 64; l++ ) {
+        if ( it->second[l] > 0) {
+          std::cout << "Size " << (l + 1) << " A-MPDUs = " << it->second[l] << ", " << ((it->second[l] / totalAggCount) * 100.0 ) << "%" << std::endl;
+        }
+      }
+      
+    }
+
+  std::cout << std::endl << std::endl << "Aggregation Stop Reasons" << std::endl
+                         << "-----------" << std::endl;
+  for (uint32_t i = 0; i < m_staNodes.GetN (); i++)
+    {
+      std::cout << "STA_" << i << ": " << std::endl;
+
+      auto it = aggStopReasonsMap.find (DynamicCast<WifiNetDevice> (m_staDevices.Get (i))->GetMac ()->GetAddress ());
+      NS_ASSERT (it != aggStopReasonsMap.end ());
+
+      for ( uint16_t l = 0; l < 3; l++ ) {
+        
+        if ( l == 0 )
+          std::cout << "MPDUS FINISHED = " << it->second[l] << std::endl;
+        else if ( l == 1 ) 
+          std::cout << "MPDUS TXOP EXCEEDED/SEQ NO. FINISHED = " << it->second[l] << std::endl;
+        else
+          std::cout << "OTHER = " << it->second[l] << std::endl; 
+      }
+        
+    }  
+
+  std::cout << std::endl;
+
+  aggStatsMap.clear();
+  aggStopReasonsMap.clear();
 
   m_macPacketTxMap.clear ();
   m_appPacketTxMap.clear();
@@ -938,9 +1001,11 @@ WifiDlOfdma::EstablishBaAgreement (Mac48Address bssid)
     client.SetAttribute ("Remote", AddressValue (dest));
     uint64_t startTime = std::ceil (Simulator::Now ().ToDouble (Time::MS) / offInterval) * offInterval;
 
-    Simulator::Schedule (MilliSeconds (static_cast<uint64_t> (startTime) + 110) - Simulator::Now (),
+    Time time = MilliSeconds (static_cast<uint64_t> (startTime) + 110);
+    Simulator::Schedule (time - Simulator::Now (),
                        &WifiDlOfdma::StartOnOffClient, this, client);
 
+    std::cout << "Application " << m_currentSta << " install time scheduled at " << time.ToDouble(Time::MS) << std::endl;                   
   }   
 
   if (++m_currentSta < m_nStations) {
@@ -965,15 +1030,27 @@ WifiDlOfdma::StartTraffic (void)
 {
   NS_LOG_FUNCTION (this);
 
+  Time delay = MilliSeconds(0);
   for (uint32_t i = 0; i < m_nStations; i++) {
       
     Ptr<Application> clientApp = m_OnOffApps.Get (i);
-      
-    clientApp->SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=1]"));
-    clientApp->SetAttribute ("OffTime", StringValue ("ns3::ConstantRandomVariable[Constant=0]"));    
+
+    Simulator::Schedule (delay, &WifiDlOfdma::StartClientTraffic, this, clientApp);
+    delay = delay + MilliSeconds(10);
+    //clientApp->SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=1]"));
+    //clientApp->SetAttribute ("OffTime", StringValue ("ns3::ConstantRandomVariable[Constant=0]"));
+
   }
 
   Simulator::Schedule (Seconds (m_warmup), &WifiDlOfdma::StartStatistics, this);
+}
+
+void WifiDlOfdma::StartClientTraffic(Ptr<Application> clientApp) {
+
+  std::cout << "An Application was started at time " << Simulator::Now().ToDouble(Time::MS) << std::endl;
+
+  clientApp->SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=1]"));
+  clientApp->SetAttribute ("OffTime", StringValue ("ns3::ConstantRandomVariable[Constant=0]"));
 }
 
 void
