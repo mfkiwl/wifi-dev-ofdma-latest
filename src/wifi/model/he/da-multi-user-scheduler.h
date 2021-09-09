@@ -26,6 +26,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "ns3/application-container.h"
+#include "ns3/on-demand-application.h"
 #include <boost/graph/adjacency_list.hpp>
 #include <boost/graph/maximum_weighted_matching.hpp>
 //#include <ilcplex/ilocplex.h>
@@ -79,12 +81,16 @@ public:
 
   uint32_t GetRoundFromTimestamp(double);
 
+  uint32_t GetCurrRound(void);
+
   /**
    * \brief Receive information related to packet generation rate from
    * the simulation, this is used to generate the packet schedule for
    * a set of rounds
    */
   void SetStaPacketInfo(std::map <uint32_t, std::vector<uint32_t>>);
+  
+  void PassReferenceToOnDemandApps(ApplicationContainer);
 
   uint32_t LCM(int[], int);
   
@@ -100,9 +106,11 @@ public:
 
   void GeneratePacketScheduleForSetRounds(void);
   
-  uint32_t GetRusPerRound(HeRu::RuType);
-
   HeRu::RuType GetRuTypePerRound(void);
+
+  uint32_t GetRusPerRound(HeRu::RuType);
+  
+  uint32_t GetRuTypeIndex(HeRu::RuType);
   
   /**
    * \brief The Maximum Weighted Matching algorithm maps packet
@@ -123,6 +131,8 @@ public:
    * example
    */
   void GenerateMpduToCurrPacketMap(void);
+
+  void StartNextRound(bool beginning = false);
 
 protected:
   void DoDispose (void) override;
@@ -206,8 +216,12 @@ private:
                                                         //!< still waiting for STAs to associate?
   double roundTimeOffset;                               //!< Subtract this value from the current time to estimate round
   double currTimeUs;                                    //!< The current time expressed in microseconds
+  uint32_t m_currRound;                                   //!< The current round
   double timeQuanta;
   bool isRoundOffsetSet;
+  double m_lastRoundTimestamp;
+  std::vector<uint32_t> m_arrivingUsers;                //!< A record of the users for whom packets are arriving in this round
+  uint32_t m_arrivingUsersCount;
   uint32_t m_roundsPerSchedule;                         //!< No. of rounds for which the schedule is generated        
   uint32_t m_packetsPerSchedule;                        //!< No. of packets for which the schedule is generated                              
   bool m_enableTxopSharing;                             //!< allow A-MPDUs of different TIDs in a DL MU PPDU
@@ -223,6 +237,7 @@ private:
   std::list<CandidateInfo> m_candidates;                //!< Candidate stations for MU TX
   std::list<CandidateInfo> m_roundCandidates;           //!< Candidate with packets to be scheduled this round
   std::map<uint32_t, uint32_t> m_mpduToCurrPacketMap;   //!< This maps a user to the current packet index for mpdu assignment
+  ApplicationContainer m_OnDemandApps;
   Time m_maxCredits;                                    //!< Max amount of credits a station can have
   Ptr<WifiMacQueueItem> m_trigger;                      //!< Trigger Frame to send
   Time m_tbPpduDuration;                                //!< Duration of the solicited TB PPDUs

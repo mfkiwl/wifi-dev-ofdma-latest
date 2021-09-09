@@ -5,6 +5,7 @@ def build(bld):
     module.source = [
         'model/bulk-send-application.cc',
         'model/onoff-application.cc',
+        'model/on-demand-application.cc',
         'model/packet-sink.cc',
         'model/udp-client.cc',
         'model/udp-server.cc',
@@ -22,6 +23,7 @@ def build(bld):
         'model/three-gpp-http-variables.cc', 
         'helper/bulk-send-helper.cc',
         'helper/on-off-helper.cc',
+        'helper/on-demand-helper.cc',
         'helper/packet-sink-helper.cc',
         'helper/udp-client-server-helper.cc',
         'helper/udp-echo-helper.cc',
@@ -46,6 +48,7 @@ def build(bld):
     headers.source = [
         'model/bulk-send-application.h',
         'model/onoff-application.h',
+        'model/on-demand-application.h',
         'model/packet-sink.h',
         'model/udp-client.h',
         'model/udp-server.h',
@@ -63,6 +66,7 @@ def build(bld):
         'model/three-gpp-http-variables.h',
         'helper/bulk-send-helper.h',
         'helper/on-off-helper.h',
+        'helper/on-demand-helper.h',
         'helper/packet-sink-helper.h',
         'helper/udp-client-server-helper.h',
         'helper/udp-echo-helper.h',
