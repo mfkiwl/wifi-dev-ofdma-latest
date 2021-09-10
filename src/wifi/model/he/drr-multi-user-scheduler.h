@@ -19,8 +19,8 @@
  * Adapted from RrMultiUserScheduler
  */
 
-#ifndef DA_MULTI_USER_SCHEDULER_H
-#define DA_MULTI_USER_SCHEDULER_H
+#ifndef DRR_MULTI_USER_SCHEDULER_H
+#define DRR_MULTI_USER_SCHEDULER_H
 
 #include "multi-user-scheduler.h"
 #include <list>
@@ -29,28 +29,26 @@
 #include <string>
 #include "ns3/application-container.h"
 #include "ns3/on-demand-application.h"
-#include <boost/graph/adjacency_list.hpp>
-#include <boost/graph/maximum_weighted_matching.hpp>
-//#include <ilcplex/ilocplex.h>
-
-using namespace boost;
 
 namespace ns3 {
 
 /**
  * \ingroup wifi
  *
- * DaMultiUserScheduler is a simple OFDMA scheduler that indicates to perform a DL OFDMA
+ * DrrMultiUserScheduler is a Deadline based OFDMA scheduler that indicates to perform a DL OFDMA
  * transmission if the AP has frames to transmit to at least one station.
- * DaMultiUserScheduler uses a Maximum Weighted Matching solver to create
- * a schedule for a set number of rounds that gives priority to stations
- * with a higher penalty for drops. The schedule generated for the set number of rounds
- * is then used for those many rounds to schedule packets. Compared to other
- * schedulers, the DA scheduler always leads to the least number of drops
- * in high density scenarios for stations running critical applications.
+ * DrrMultiUserScheduler assigns RUs of equal size (in terms of tones) to stations to
+ * which the AP has frames to transmit belonging to the AC who gained access to the
+ * channel or higher. The maximum number of stations that can be granted an RU
+ * is configurable. Associated stations are served in a round robin fashion.
+ * 
+ * DrrMultiUser Scheduler is different from RrMultiUserScheduler in the sense that it
+ * drops packets whose deadlines have expired at the end of a round
  *
+ * \todo Take the supported channel width of the stations into account while selecting
+ * stations and assigning RUs to them.
  */
-class DaMultiUserScheduler : public MultiUserScheduler
+class DrrMultiUserScheduler : public MultiUserScheduler
 {
 public:
   /**
@@ -58,8 +56,8 @@ public:
    * \return the object TypeId
    */
   static TypeId GetTypeId (void);
-  DaMultiUserScheduler ();
-  virtual ~DaMultiUserScheduler ();
+  DrrMultiUserScheduler ();
+  virtual ~DrrMultiUserScheduler ();
 
   /**
    * \brief Inform the scheduler that Deadline Constrained Traffic has began
@@ -97,26 +95,6 @@ public:
   uint32_t GetRusPerRound(HeRu::RuType);
   
   uint32_t GetRuTypeIndex(HeRu::RuType);
-  
-  /**
-   * \brief The Maximum Weighted Matching algorithm maps packet
-   * index to ru index, this utility function is used to get the
-   * round index from the ru index.
-   */
-  uint32_t GetRoundFromVertexIndex(uint32_t vj, uint32_t rus);
-
-  void MaximumWeightedMatching(void);
-
-  void ILPSolver(void);
-
-  //void populatebyrow(IloModel, IloNumVarArray, IloRangeArray);
-  
-  /**
-   * \brief Generates the Map for mapping incoming MPDU to
-   * a specific packet index, see definition for a detailed
-   * example
-   */
-  void GenerateMpduToCurrPacketMap(void);
 
   void StartNextRound(bool beginning = false);
 
@@ -194,9 +172,6 @@ private:
    */
   typedef std::pair<std::list<MasterInfo>::iterator, Ptr<const WifiMacQueueItem>> CandidateInfo;
 
-  typedef property< edge_weight_t, float, property< edge_index_t, int > > EdgeProperty; // Maximum Weighted Matching uses these
-  typedef adjacency_list< vecS, vecS, undirectedS, no_property, EdgeProperty > my_graph;
-
   uint16_t m_nStations;                                  //!< Number of stations/slots to fill
   bool m_hasDeadlineConstrainedTrafficStarted;          //!< Has the deadline contrained traffic started or
                                                         //!< still waiting for STAs to associate?
@@ -214,10 +189,8 @@ private:
   std::map<AcIndex, std::list<MasterInfo>> m_staList;   //!< Per-AC list of stations (next to serve first)
   std::map <uint32_t /* AID */, std::vector<uint32_t> /* Packet Time period, Deadline, Penalty */> m_staPacketInfo;
   std::vector<std::vector<uint32_t>> m_packetSchedule;
-  std::map <uint32_t /* PID */, uint32_t /* ROUND ID */> m_packetToRoundMap;
   std::list<CandidateInfo> m_candidates;                //!< Candidate stations for MU TX
-  std::list<CandidateInfo> m_roundCandidates;           //!< Candidate with packets to be scheduled this round
-  std::map<uint32_t, uint32_t> m_mpduToCurrPacketMap;   //!< This maps a user to the current packet index for mpdu assignment
+  std::list<CandidateInfo> m_pendingCandidates;
   ApplicationContainer m_OnDemandApps;
   Time m_maxCredits;                                    //!< Max amount of credits a station can have
   Ptr<WifiMacQueueItem> m_trigger;                      //!< Trigger Frame to send
