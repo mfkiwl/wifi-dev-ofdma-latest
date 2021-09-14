@@ -95,7 +95,7 @@ DrrMultiUserScheduler::GetTypeId (void)
 }
 
 DrrMultiUserScheduler::DrrMultiUserScheduler ()
-  : m_hasDeadlineConstrainedTrafficStarted(false), m_currRound(0), m_havePacketsArrived(false), m_lastRoundTimestamp(0), m_roundsPerSchedule(0), m_packetsPerSchedule(0), m_ulTriggerType (TriggerFrameType::BASIC_TRIGGER)
+  : m_hasDeadlineConstrainedTrafficStarted(false), m_currRound(0), m_havePacketsArrived(false), m_lastRoundTimestamp(0), m_roundsPerSchedule(0), m_packetsPerSchedule(0), m_nextStaIndex(1), m_ulTriggerType (TriggerFrameType::BASIC_TRIGGER)
 {
   NS_LOG_FUNCTION (this);
 }
@@ -272,33 +272,31 @@ DrrMultiUserScheduler::GeneratePacketScheduleForSetRounds(void)
 }
 
 HeRu::RuType
-DrrMultiUserScheduler::GetRuTypePerRound(void) {
+DrrMultiUserScheduler::GetRuTypePerRound(uint32_t users) {
 
-  //return HeRu::RU_484_TONE; // Testing
-
-  uint32_t packetsPerSchedule = GetPacketsPerSchedule();
+  return HeRu::RU_484_TONE; // Testing
 
   switch(m_apMac->GetWifiPhy()->GetChannelWidth()) {
     case 20: {
       
-      if ( packetsPerSchedule == 1 ) 
+      if ( users == 1 ) 
         return HeRu::RU_242_TONE;
-      else if ( packetsPerSchedule == 2 )
+      else if ( users == 2 )
         return HeRu::RU_106_TONE;
-      else if ( packetsPerSchedule >= 3 && packetsPerSchedule <= 4 )
+      else if ( users >= 3 && users <= 4 )
         return HeRu::RU_52_TONE;
       else
         return HeRu::RU_26_TONE;    
     }
     case 40: {
 
-      if ( packetsPerSchedule == 1 ) 
+      if ( users == 1 ) 
         return HeRu::RU_484_TONE;
-      else if ( packetsPerSchedule == 2 )
+      else if ( users == 2 )
         return HeRu::RU_242_TONE;
-      else if ( packetsPerSchedule >= 3 && packetsPerSchedule <= 4 )
+      else if ( users >= 3 && users <= 4 )
         return HeRu::RU_106_TONE;
-      else if ( packetsPerSchedule >= 5 && packetsPerSchedule <= 8 )
+      else if ( users >= 5 && users <= 8 )
         return HeRu::RU_52_TONE;
       else
         return HeRu::RU_26_TONE;        
@@ -314,7 +312,7 @@ DrrMultiUserScheduler::GetRuTypePerRound(void) {
 uint32_t
 DrrMultiUserScheduler::GetRusPerRound(HeRu::RuType ruType) {
 
-  //return 1; // Testing
+  return 1; // Testing
 
   switch(m_apMac->GetWifiPhy()->GetChannelWidth()) {
     case 20: {
@@ -340,42 +338,6 @@ DrrMultiUserScheduler::GetRusPerRound(HeRu::RuType ruType) {
         return 8;
       else if ( ruType == HeRu::RU_26_TONE )
         return 18;    
-    }
-    default: {
-      NS_FATAL_ERROR("Only 40 Mhz and 20 Mhz supported with Deadline Aware Scheduler");
-    }
-  }
-
-  return 0; // Never called
-}
-
-uint32_t
-DrrMultiUserScheduler::GetRuTypeIndex(HeRu::RuType ruType) {
-
-  switch(m_apMac->GetWifiPhy()->GetChannelWidth()) {
-    case 20: {
-
-      if ( ruType == HeRu::RU_242_TONE )
-        return 3;
-      else if ( ruType == HeRu::RU_106_TONE )
-        return 2;
-      else if ( ruType == HeRu::RU_52_TONE )
-        return 1;
-      else if ( ruType == HeRu::RU_26_TONE )
-        return 0;  
-    }
-    case 40: {
-
-      if ( ruType == HeRu::RU_484_TONE )
-        return 4;
-      else if ( ruType == HeRu::RU_242_TONE )
-        return 3;
-      else if ( ruType == HeRu::RU_106_TONE )
-        return 2;
-      else if ( ruType == HeRu::RU_52_TONE )
-        return 1;
-      else if ( ruType == HeRu::RU_26_TONE )
-        return 0;    
     }
     default: {
       NS_FATAL_ERROR("Only 40 Mhz and 20 Mhz supported with Deadline Aware Scheduler");
@@ -803,9 +765,13 @@ DrrMultiUserScheduler::TrySendingDlMuPpdu (void)
   /**
    * \todo This method is weird, if you have 3 STAs then instead of splitting the
    * the BW in 4 RUs, it splits it into 2 RUs, making the 3rd station wait for
-   * an RU in the next round, in order to better compare this with out DA scheduler
+   * an RU in the next round, in order to better compare this with our DA scheduler
    * I believe we should be performing the splits exactly as the DA scheduler does,
-   * so change this.
+   * Also the ruType should be decided using the GetRuTypePerRound using the number
+   * of packets specified by GetPacketsPerSchedule() note that finding this value
+   * before every round and splitting based on the number of users scheduled in that
+   * round makes no sense, because our packets are very small so it doesn't matter,
+   * focus should be on comparing the two schedulers in the same manner.
    */ 
   HeRu::RuType ruType = HeRu::GetEqualSizedRusForStations (m_apMac->GetWifiPhy ()->GetChannelWidth (), count,
                                                            nCentral26TonesRus);
@@ -879,15 +845,28 @@ DrrMultiUserScheduler::TrySendingDlMuPpdu (void)
   // For the moment, we are considering just one MPDU per receiver.
   Time actualAvailableTime = (m_initialFrame ? Time::Min () : m_availableTime); 
 
+  m_nextStaIt = m_staList[primaryAc].begin();
+  for (uint32_t index = 1; index < m_staList[primaryAc].size(); index++) {
+    if ( index == m_nextStaIndex )
+      break;
+
+    m_nextStaIt++;  
+  }
+
+  // This may be the first invocation or the starting station left
+  if (m_nextStaIt == m_staList[primaryAc].end ())
+    {
+      m_nextStaIt = m_staList[primaryAc].begin ();
+      m_nextStaIndex = m_nextStaIt->aid;
+    }
+ 
   // iterate over the associated stations until an enough number of stations is identified
-  auto staIt = m_staList[primaryAc].begin ();
   m_candidates.clear ();
 
-  while (staIt != m_staList[primaryAc].end ()
-         && m_candidates.size () < std::min (static_cast<std::size_t> (m_nStations), count + nCentral26TonesRus))
+  do
   {
-      NS_LOG_DEBUG ("Next candidate STA (MAC=" << staIt->address << ", AID=" << staIt->aid << ")");
-
+      NS_LOG_DEBUG ("Next candidate STA (MAC=" << m_nextStaIt->address << ", AID=" << m_nextStaIt->aid << ")");
+      
       HeRu::RuType currRuType = (m_candidates.size () < count ? ruType : HeRu::RU_26_TONE);
 
       // check if the AP has at least one frame to be sent to the current station
@@ -897,9 +876,9 @@ DrrMultiUserScheduler::TrySendingDlMuPpdu (void)
           NS_ASSERT (ac >= primaryAc);
           // check that a BA agreement is established with the receiver for the
           // considered TID, since ack sequences for DL MU PPDUs require block ack
-          if (m_apMac->GetQosTxop (ac)->GetBaAgreementEstablished (staIt->address, tid))
+          if (m_apMac->GetQosTxop (ac)->GetBaAgreementEstablished (m_nextStaIt->address, tid))
             {
-              mpdu = m_apMac->GetQosTxop (ac)->PeekNextMpdu (tid, staIt->address);
+              mpdu = m_apMac->GetQosTxop (ac)->PeekNextMpdu (tid, m_nextStaIt->address);
 
               // we only check if the first frame of the current TID meets the size
               // and duration constraints. We do not explore the queues further.
@@ -912,7 +891,8 @@ DrrMultiUserScheduler::TrySendingDlMuPpdu (void)
                   WifiTxVector suTxVector = GetWifiRemoteStationManager ()->GetDataTxVector (mpdu->GetHeader ()),
                                txVectorCopy = m_txParams.m_txVector;
 
-                  m_txParams.m_txVector.SetHeMuUserInfo (staIt->aid,
+                  //m_txParams.m_txVector.SetHeMuUserInfo (staIt->aid,
+                  m_txParams.m_txVector.SetHeMuUserInfo (m_nextStaIt->aid,
                                                          {{currRuType, 1, false},
                                                           suTxVector.GetMode (),
                                                           suTxVector.GetNss ()});
@@ -925,22 +905,26 @@ DrrMultiUserScheduler::TrySendingDlMuPpdu (void)
                   else
                     {
                       // the frame meets the constraints
-                      NS_LOG_DEBUG ("Adding candidate STA (MAC=" << staIt->address << ", AID="
-                                    << staIt->aid << ") TID=" << +tid);
-                      m_candidates.push_back ({staIt, mpdu});
+                       NS_LOG_DEBUG ("Adding candidate STA (MAC=" << m_nextStaIt->address << ", AID="
+                                    << m_nextStaIt->aid << ") TID=" << +tid);
+                      m_candidates.push_back ({m_nextStaIt, mpdu});
+
                       break;    // terminate the for loop
                     }
                 }
               else
                 {
-                  NS_LOG_DEBUG ("No frames to send to " << staIt->address << " with TID=" << +tid);
+                  NS_LOG_DEBUG ("No frames to send to " << m_nextStaIt->address << " with TID=" << +tid);
                 }
             }
         }
 
-      // move to the next station in the list
-      staIt++;
-  }
+      // move to the next station in the map
+      m_nextStaIt++;
+      if (m_nextStaIt == m_staList[primaryAc].end ())
+          m_nextStaIt = m_staList[primaryAc].begin ();
+
+  } while (m_candidates.size () < std::min (static_cast<std::size_t> (m_nStations), count + nCentral26TonesRus) && m_nextStaIt->aid != m_nextStaIndex);
 
   if ( m_hasDeadlineConstrainedTrafficStarted && !m_candidates.empty() && !m_havePacketsArrived ) {
     
@@ -965,6 +949,8 @@ DrrMultiUserScheduler::TrySendingDlMuPpdu (void)
       return SU_TX;
     }
 
+  m_nextStaIndex = m_nextStaIt->aid;
+
   return TxFormat::DL_MU_TX;
 }
 
@@ -975,16 +961,17 @@ DrrMultiUserScheduler::ComputeDlMuInfo (void)
 
   if (m_candidates.empty ())
     {
-      /**
-       * \todo
-       */
-      // This made me wonder, if the packet time periods are such that
-      // no packets are generated in certain rounds and the MAC queue
-      // is also empty, would the simulation keep running or would it
-      // stop? If the first condition is true, but second isn't, then
-      // the line below is necessary to keep it going, but if both the
-      // conditions are true then it seems the simulation could stop,
-      // so need to see about this
+      // No users were there with packets scheduled in this round.
+      // This can only happen if the original m_candidates
+      // did not contain any users OR the users in m_candidates
+      // were the ones with buffered packets not supposed to be
+      // transmitted in this particular round.
+      // The former is not really possible since that means the MAC
+      // queue is empty, and when that is the case the TrySendingDlMuPpdu()
+      // is never called.
+      // For the latter case, this ensure that the next round is started.
+      // For the former case, the next round is started by the StartNextRound()
+      // method itself.
 
       if ( m_hasDeadlineConstrainedTrafficStarted && m_havePacketsArrived )
         StartNextRound();
@@ -995,9 +982,39 @@ DrrMultiUserScheduler::ComputeDlMuInfo (void)
   uint16_t bw = m_apMac->GetWifiPhy ()->GetChannelWidth ();
 
   // compute how many stations can be granted an RU and the RU size
-  std::size_t nRusAssigned = m_txParams.GetPsduInfoMap ().size ();
+  /**
+   * Contrary to the DA scheduler, nRusAssigned cannot simply be
+   * the equal to m_candidates.size() here, because at this point in 
+   * the DA scheduler, m_candidates only contains users whose packets are
+   * scheduled in this round by the scheduler, and the scheduler
+   * never puts more candidates into the list than the number of RUs 
+   * available per round. Whereas in the RR scheduler
+   * at this point, m_candidates just contains the users whose
+   * packets are in the MAC queue, no processing of this list has been done.
+   * So I propose this, based on the number of users in m_candidates
+   * find out the RUs required/possible in this round, call GetRusPerRound
+   * using the size of m_candidates as input instead of m_packetsPerSchedule,
+   * then based on the return value 2 possibilities
+   * m_candidates > GetRusPerRound(), so nRusAssigned = GetRusPerRound()
+   * m_candidates <= GetRusPerRound(), so nRusAssigned = m_candidates.size()
+   */
+
+  std::size_t nRusAssigned;
+  if ( !m_hasDeadlineConstrainedTrafficStarted || !m_havePacketsArrived )
+    nRusAssigned = m_txParams.GetPsduInfoMap ().size ();
+  else {
+    if ( m_candidates.size() > GetRusPerRound(GetRuTypePerRound(m_candidates.size())) )
+      nRusAssigned = GetRusPerRound(GetRuTypePerRound(m_candidates.size()));
+    else
+      nRusAssigned = m_candidates.size();  
+  }
+
+  HeRu::RuType ruType;
   std::size_t nCentral26TonesRus;
-  HeRu::RuType ruType = HeRu::GetEqualSizedRusForStations (bw, nRusAssigned, nCentral26TonesRus);
+  if ( !m_hasDeadlineConstrainedTrafficStarted || !m_havePacketsArrived )
+    ruType = HeRu::GetEqualSizedRusForStations (bw, nRusAssigned, nCentral26TonesRus);
+  else
+    ruType = GetRuTypePerRound(m_candidates.size());  
 
   NS_LOG_DEBUG (nRusAssigned << " stations are being assigned a " << ruType << " RU");
 
@@ -1021,6 +1038,9 @@ DrrMultiUserScheduler::ComputeDlMuInfo (void)
 
   auto candidateIt = m_candidates.begin (); // iterator over the list of candidate receivers
 
+   std::vector<HeRu::RuSpec> ruSet = HeRu::GetRusOfType(m_apMac->GetWifiPhy()->GetChannelWidth(), ruType);  
+  auto ruSetIt = ruSet.begin();
+
   for (uint16_t i = 0; i < nRusAssigned + nCentral26TonesRus; i++)
     {
       NS_ASSERT (candidateIt != m_candidates.end ());
@@ -1033,7 +1053,46 @@ DrrMultiUserScheduler::ComputeDlMuInfo (void)
                                                       m_txParams.m_txVector.GetNss (staId)});
 
       candidateIt++;
+
+       if ( m_hasDeadlineConstrainedTrafficStarted && m_havePacketsArrived ) {
+
+        dlMuInfo.txParams.m_txVector.SetRu(*ruSetIt, staId);
+        ruSetIt++; // It is important to increment this, because an RuSpec represents a distinct RU from the given bandwidth
+      }
     }
+
+  // The next station to serve is the last station not served in
+  // this round, note that if we have 2 RUs only and 4 STAs: 1, 2, 3, 4
+  // and in this round packets arrived for STA 1, 3 and 4
+  // then if initially the pointer was at 1, 1 and 3 were served
+  // and 4 was left, the pointer was thus placed on 4
+  // if in the next round, packets are available for 2 and 3 and 4,
+  // then 4 followed by 2 would be served, and pointer would be placed
+  // on STA 3.
+  // So you can say the this RR scheduler 'SKIPS' over a STA (2) if
+  // their packets do not arrive in a round, but their successor's (3) packets
+  // arrive in a round and they are granted an RU.
+
+  // The next station to serve is the successor of the last station serve
+  // successor in the m_staList.
+  if ( nRusAssigned < m_candidates.size() ) {
+    auto tempIt = m_candidates.end();
+    tempIt--;
+    for ( uint32_t i = (m_candidates.size() - (uint32_t)nRusAssigned); i > 0; i-- )
+      tempIt--;
+
+    m_nextStaIndex = tempIt->first->aid + 1;
+    if ( m_nextStaIndex > m_staList[m_edca->GetAccessCategory()].size())
+      m_nextStaIndex = 1;
+    
+    //m_nextStaIndex = candidateIt->first->aid;
+  }
+  
+  // No need to add an else clause here, we only compare
+  // RR to our DA scheduler when you have a lot more candidates
+  // with packets than the number of RUs. If we have sufficient
+  // RUs to serve all our candidates in each round then both DA 
+  // and RR will perform the same.
 
   // Remove candidates that will not be served in this round
   // And move them to pending list to check which of them
@@ -1045,7 +1104,6 @@ DrrMultiUserScheduler::ComputeDlMuInfo (void)
     auto tempIt = candidateIt;
     while ( tempIt != m_candidates.end() ) {
       m_pendingCandidates.push_back({tempIt->first, tempIt->second});
-      std::cout << "STA_" << tempIt->first->aid << " is a pending candidate in round " << GetCurrRound() << std::endl;
       tempIt++;
     }
 
@@ -1082,7 +1140,8 @@ DrrMultiUserScheduler::ComputeDlMuInfo (void)
 
   m_candidates.erase (candidateIt, m_candidates.end ());
 
-  AssignRuIndices (dlMuInfo.txParams.m_txVector);
+  if ( !m_hasDeadlineConstrainedTrafficStarted || !m_havePacketsArrived ) // Otherwise we set RUs when constructing the DlMuInfo map in the above loop
+    AssignRuIndices (dlMuInfo.txParams.m_txVector);
 
   m_txParams.Clear ();
 
@@ -1155,56 +1214,9 @@ DrrMultiUserScheduler::ComputeDlMuInfo (void)
         }
     }
 
-  /**
-    * \todo This credit/debit system is bogus, instead of running a true round robin cycle,
-    * it keeps running errand cycles, rewrite this code
-    */
+  NS_LOG_DEBUG("Next station to serve has AID=" << m_nextStaIndex);
 
-  AcIndex primaryAc = m_edca->GetAccessCategory ();
-
-  // The amount of credits received by each station equals the TX duration (in
-  // microseconds) divided by the number of stations.
-  double creditsPerSta = dlMuInfo.txParams.m_txDuration.ToDouble (Time::US)
-                        / m_staList[primaryAc].size ();
-  // Transmitting stations have to pay a number of credits equal to the TX duration
-  // (in microseconds) times the allocated bandwidth share.
-  double debitsPerMhz = dlMuInfo.txParams.m_txDuration.ToDouble (Time::US)
-                        / (nRusAssigned * HeRu::GetBandwidth (ruType)
-                           + nCentral26TonesRus * HeRu::GetBandwidth (HeRu::RU_26_TONE));
-
-  // assign credits to all stations
-  for (auto& sta : m_staList[primaryAc])
-    {
-      sta.credits += creditsPerSta;
-      sta.credits = std::min (sta.credits, m_maxCredits.ToDouble (Time::US));
-    }
-
-  // subtract debits to the selected stations
-  candidateIt = m_candidates.begin ();
-
-  for (std::size_t i = 0; i < nRusAssigned + nCentral26TonesRus; i++)
-    {
-      NS_ASSERT (candidateIt != m_candidates.end ());
-
-      candidateIt->first->credits -= debitsPerMhz * HeRu::GetBandwidth (i < nRusAssigned ? ruType : HeRu::RU_26_TONE);
-
-      candidateIt++;
-    }
-
-  // sort the list in decreasing order of credits
-  m_staList[primaryAc].sort ([] (const MasterInfo& a, const MasterInfo& b)
-                                { return a.credits > b.credits; });
-
-  NS_LOG_DEBUG ("Next station to serve has AID=" << m_staList[primaryAc].front ().aid);
-  
-  // This is for the scenario where after the Tx is completed, some packets are still
-  // in the queue waiting for scheduling in the next round, so we should now go to the next
-  // round to allow their scheduling since all the expected user packets have arrived in
-  // this round
-  // Not just that, you see TrySendingDlMuPpdu() is not called unless there is atleast one 
-  // packet in the MAC queue, so if after this Tx, the MAC queue us emptied, the simulation
-  // will stop. In order to allow it to keep going, we must generate the next batch of packets
-  // before this round ends, otherwise the next round will never begin!
+  std::cout << "Next station to serve has AID=" << m_nextStaIndex << std::endl;
 
   if ( m_hasDeadlineConstrainedTrafficStarted && m_havePacketsArrived )
      StartNextRound();

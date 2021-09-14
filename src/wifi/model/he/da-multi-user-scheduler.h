@@ -1,19 +1,7 @@
-/* -*- Mode:C++; c-file-style:"gnu"; indent-tabs-mode:nil; -*- */
-/*
- * Copyright (c) 2020 Universita' degli Studi di Napoli Federico II
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 2 as
- * published by the Free Software Foundation;
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+/* The contents of this file are part of an 
+ * unpublished work, and must NOT be shared with
+ * anyone without the permission of Dr. Mukulika Maity,
+ * Indraprastha Institute of Information Technology.
  *
  * Author: Harshal Dev <harshal20086@iiitd.ac.in>
  * Adapted from RrMultiUserScheduler
@@ -40,8 +28,9 @@ namespace ns3 {
 /**
  * \ingroup wifi
  *
- * DaMultiUserScheduler is a simple OFDMA scheduler that indicates to perform a DL OFDMA
+ * DaMultiUserScheduler is a OFDMA scheduler that indicates to perform a DL OFDMA
  * transmission if the AP has frames to transmit to at least one station.
+ * 
  * DaMultiUserScheduler uses a Maximum Weighted Matching solver to create
  * a schedule for a set number of rounds that gives priority to stations
  * with a higher penalty for drops. The schedule generated for the set number of rounds
@@ -67,8 +56,6 @@ public:
    */
   void NotifyDeadlineConstrainedTrafficStarted(void);
 
-  uint32_t GetCurrRound(void);
-
   /**
    * \brief Receive information related to packet generation rate from
    * the simulation, this is used to generate the packet schedule for
@@ -76,7 +63,28 @@ public:
    */
   void SetStaPacketInfo(std::map <uint32_t, std::vector<uint32_t>>);
   
+  /**
+   * \brief Pointer to the OnDemandApps container on the
+   * created on the simulation side.
+   */
   void PassReferenceToOnDemandApps(ApplicationContainer);
+
+  /**
+   * \brief Increment the round counter and generate
+   * packets for the next round, this method is vital
+   * to keep the simulation running, if this method is
+   * not called after a particular round, the simulation
+   * stops
+   */
+  void StartNextRound(bool beginning = false);
+
+protected:
+  void DoDispose (void) override;
+  void DoInitialize (void) override;
+
+private:
+
+  uint32_t GetCurrRound(void);
 
   uint32_t LCM(int[], int);
   
@@ -90,12 +98,33 @@ public:
    */
   uint32_t GetPacketsPerSchedule(void);
 
+  /**
+   * \brief Generate the schedule detailing the
+   * arrival and deadline round for each packet
+   * in the t rounds
+   */
   void GeneratePacketScheduleForSetRounds(void);
   
+  /**
+   * \brief Get the RU Type to be used in each round
+   */
   HeRu::RuType GetRuTypePerRound(void);
 
+  /**
+   * \brief Get the numbers of RUs to be used
+   * in each round, calculated from the total
+   * numbers of packets to be scheduled in the
+   * t rounds
+   */
   uint32_t GetRusPerRound(HeRu::RuType);
   
+  /**
+   * \brief Used by the ILP solver to index into
+   * the splits array
+   * 
+   * \return The index to be used to index into
+   * the splits array
+   */
   uint32_t GetRuTypeIndex(HeRu::RuType);
   
   /**
@@ -118,13 +147,6 @@ public:
    */
   void GenerateMpduToCurrPacketMap(void);
 
-  void StartNextRound(bool beginning = false);
-
-protected:
-  void DoDispose (void) override;
-  void DoInitialize (void) override;
-
-private:
   TxFormat SelectTxFormat (void) override;
   DlMuInfo ComputeDlMuInfo (void) override;
   UlMuInfo ComputeUlMuInfo (void) override;

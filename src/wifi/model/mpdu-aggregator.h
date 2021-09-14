@@ -132,6 +132,8 @@ public:
 
   std::map<Mac48Address, std::vector<uint64_t>> GetAggregationStopReasons(void);
 
+  void EnableAggregationStats(bool);
+
   /**
    * Set the MAC layer to use.
    *
@@ -167,6 +169,8 @@ private:
 
   std::map <Mac48Address, std::vector<uint64_t>> m_aggregationStats;
   std::map <Mac48Address, std::vector<uint64_t>> m_aggregationStopReasons;
+
+  bool m_aggregationStatsEnabled;
 };
 
 }  //namespace ns3

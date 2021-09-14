@@ -60,6 +60,7 @@ MpduAggregator::GetTypeId (void)
 }
 
 MpduAggregator::MpduAggregator ()
+ : m_aggregationStatsEnabled(false)
 {
 }
 
@@ -224,25 +225,32 @@ MpduAggregator::GetNextAmpdu (Ptr<WifiMacQueueItem> mpdu, WifiTxParameters& txPa
   std::vector<Ptr<WifiMacQueueItem>> mpduList;
   Mac48Address recipient = mpdu->GetHeader ().GetAddr1 ();
 
-  auto statsIt = m_aggregationStats.find(recipient);
-  if ( statsIt == m_aggregationStats.end() ) {
+  if ( m_aggregationStatsEnabled ) {
 
-    std::vector<uint64_t> distributionVec;
-    distributionVec.assign(64, 0);
-    
-   m_aggregationStats.insert(std::make_pair(recipient, distributionVec));
+    // Initilaize the maps for storing the aggregation statistics
+    // for each user
+    auto statsIt = m_aggregationStats.find(recipient);
+    if ( statsIt == m_aggregationStats.end() ) {
+
+      std::vector<uint64_t> distributionVec;
+      distributionVec.assign(64, 0);
+      
+      m_aggregationStats.insert(std::make_pair(recipient, distributionVec));
+    }
+
+    auto reasonsIt = m_aggregationStopReasons.find(recipient);
+    if ( reasonsIt == m_aggregationStopReasons.end() ) {
+
+      std::vector<uint64_t> distributionVec;
+      distributionVec.assign(3, 0);
+      
+      m_aggregationStopReasons.insert(std::make_pair(recipient, distributionVec));
+    }
   }
 
-  auto reasonsIt = m_aggregationStopReasons.find(recipient);
-  if ( reasonsIt == m_aggregationStopReasons.end() ) {
-
-    std::vector<uint64_t> distributionVec;
-    distributionVec.assign(3, 0);
-    
-   m_aggregationStopReasons.insert(std::make_pair(recipient, distributionVec));
-  }
-
-  std::vector<uint64_t> *reasonsVec = &(m_aggregationStopReasons.at(recipient));
+  std::vector<uint64_t> *reasonsVec;
+  if ( m_aggregationStatsEnabled) 
+    reasonsVec = &(m_aggregationStopReasons.at(recipient));
   
   NS_ASSERT (mpdu->GetHeader ().IsQosData () && !recipient.IsBroadcast ());
   uint8_t tid = mpdu->GetHeader ().GetQosTid ();
@@ -302,11 +310,13 @@ MpduAggregator::GetNextAmpdu (Ptr<WifiMacQueueItem> mpdu, WifiTxParameters& txPa
               nextMpdu = qosTxop->GetNextMpdu (peekedMpdu, txParams, availableTime, false, queueIt);
               if ( nextMpdu == 0 ) {
                 
-                (*reasonsVec)[1]++; // Aggregation stopped because aggregating more MPDUs violated TXOP limit/Sequence no. space full
+                if ( m_aggregationStatsEnabled )
+                  (*reasonsVec)[1]++; // Aggregation stopped because aggregating more MPDUs violated TXOP limit/Sequence no. space full
               }
             }
             else {
-              (*reasonsVec)[0]++; // Aggregation stopped because no more MPDUs to aggregate
+              if ( m_aggregationStatsEnabled )
+                (*reasonsVec)[0]++; // Aggregation stopped because no more MPDUs to aggregate
             }
         }
 
@@ -318,8 +328,11 @@ MpduAggregator::GetNextAmpdu (Ptr<WifiMacQueueItem> mpdu, WifiTxParameters& txPa
       // oss.str("");
       // oss.clear();
 
-      std::vector<uint64_t> *statsVec = &(m_aggregationStats.at(recipient));
-      (*statsVec)[mpduList.size() - 1]++;
+      std::vector<uint64_t> *statsVec;
+      if ( m_aggregationStatsEnabled) {
+        statsVec = &(m_aggregationStats.at(recipient));
+        (*statsVec)[mpduList.size() - 1]++;
+      }
 
       if (mpduList.size () == 1)
         {
@@ -341,6 +354,11 @@ std::map<Mac48Address, std::vector<uint64_t>>
 MpduAggregator::GetAggregationStopReasons(void)
 {
   return m_aggregationStopReasons;
+}
+
+void
+MpduAggregator::EnableAggregationStats(bool enable) {
+  m_aggregationStatsEnabled = enable;
 }
 
 } //namespace ns3

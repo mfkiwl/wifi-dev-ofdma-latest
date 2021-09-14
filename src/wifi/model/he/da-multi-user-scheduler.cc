@@ -1,21 +1,10 @@
-/* -*- Mode:C++; c-file-style:"gnu"; indent-tabs-mode:nil; -*- */
-/*
- * Copyright (c) 2020 Universita' degli Studi di Napoli Federico II
+/* The contents of this file are part of an 
+ * unpublished work, and must NOT be shared with
+ * anyone without the permission of Dr. Mukulika Maity,
+ * Indraprastha Institute of Information Technology.
  *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 2 as
- * published by the Free Software Foundation;
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- *
- * Author: Stefano Avallone <stavallo@unina.it>
+ * Author: Harshal Dev <harshal20086@iiitd.ac.in>
+ * Adapted from RrMultiUserScheduler
  */
 
 #include "ns3/log.h"
@@ -276,7 +265,7 @@ DaMultiUserScheduler::GeneratePacketScheduleForSetRounds(void)
 HeRu::RuType
 DaMultiUserScheduler::GetRuTypePerRound(void) {
 
-  //return HeRu::RU_484_TONE; // Testing
+  return HeRu::RU_484_TONE; // Testing
 
   uint32_t packetsPerSchedule = GetPacketsPerSchedule();
 
@@ -316,7 +305,7 @@ DaMultiUserScheduler::GetRuTypePerRound(void) {
 uint32_t
 DaMultiUserScheduler::GetRusPerRound(HeRu::RuType ruType) {
 
-  //return 1; // Testing
+  return 1; // Testing
 
   switch(m_apMac->GetWifiPhy()->GetChannelWidth()) {
     case 20: {
@@ -640,6 +629,14 @@ DaMultiUserScheduler::StartNextRound(bool beginning) {
       }
     }
   }
+
+  /**
+   * \todo If this round generated no packets, immediately go to the
+   * next round by calling yourself, I cannot do this in the code below
+   * because if in a certain round no packets are generated, then neither
+   * TrySendingDlMuPpdu() nor ComputeDlMuInfo() are ever called, since
+   * The MAC queue is empty
+   */
 
   //Simulator::Schedule(MilliSeconds(1), &DaMultiUserScheduler::StartNextRound, this, false);
 }
@@ -1027,10 +1024,9 @@ DaMultiUserScheduler::TrySendingDlMuPpdu (void)
   // to the AP and have packets to receive, only 18 would be 
   // added to m_candidates we do not want this, we want all
   // STAs that have packets to receive should be considered
-  // candidates right now, in ComputeDlMuInfo() we will
-  // assign the RUs to the first 18 stations and move
-  // the remaining 2 in the pending list, checking for
-  // drops (if any)
+  // candidates right now so that in ComputeDlMuInfo() we will
+  // be able to update the mpduToCurrPacket pointer for 
+  // each of these candidates
   // Also do not use havePacketsArrived condition here,
   // because that condition is set later, so for the first round
   // not having that set would lead to count being decided by
@@ -1165,7 +1161,8 @@ DaMultiUserScheduler::TrySendingDlMuPpdu (void)
                                                                                 // only scheduled to be dropped, then m_packetToRoundMap is empty and 
                                                                                 // as soon as the next packet arrives, m_candidates is not empty, 
                                                                                 // forcing the generated of a new packetSchedule in this round itself.
-  //if ( m_hasDeadlineConstrainedTrafficStarted && m_packetToRoundMap.empty() && ( GetRoundFromTimestamp(currTimeUs) % GetRoundsPerSchedule() == 0 ) && !m_candidates.empty() ) {
+                                                                                // and causing the incoming packet to fail the assertion given below
+                                                                                // NS_ASSERT( m_packetSchedule[*p][3] == aid )
   if ( m_hasDeadlineConstrainedTrafficStarted && m_packetToRoundMap.empty() && ( GetCurrRound() % GetRoundsPerSchedule() == 0 ) && !m_candidates.empty() ) {
 
     GeneratePacketScheduleForSetRounds(); // m_packetSchedule
@@ -1203,16 +1200,15 @@ DaMultiUserScheduler::ComputeDlMuInfo (void)
   // of the map was not satisfied (particularly m_candidates is empty)
   // multi-user-scheduler.cc calls ComputeDlMuInfo() and that leads to
   // an attempt to index a map which has not yet been generated (m_packetToRoundMap)
-  // However we can be sure that if isRoundOffSet is true, the map has been
+  // However we can be sure that if m_havePacketsArrived is true, the map has been
   // generated because a candidate's packet arrived in the queue
   if ( m_hasDeadlineConstrainedTrafficStarted && m_havePacketsArrived ) {
 
     // Search the packetToRoundMap to find the packets scheduled
     // in this round, if you find one, find the AID of the sta
     // corresponding to the packet, then assign appropriate RU type to those
-    // STAs, if no packet is scheduled in the current round,
-    // return an empty DlMuInfo()
-    //uint32_t currRound = GetRoundFromTimestamp(currTimeUs);
+    // STAs by adding them to m_roundCandidates, if no packet 
+    // is scheduled in the current round, return an empty DlMuInfo()
     uint32_t currRound = GetCurrRound();
     uint32_t unscheduledThisRound = 0;
     m_roundCandidates.clear();
@@ -1290,13 +1286,17 @@ DaMultiUserScheduler::ComputeDlMuInfo (void)
 
   if (m_candidates.empty ())
     {
-      // No users were there with packets scheduled in this round
-      // and we are not expecting any more user packets to
-      // arrive in this round, so the round has ended it means
+      // No users were there with packets scheduled in this round.
       // This can only happen if the original m_candidates
-      // did not contain any users, which is not really possible
-      // with the OnDemandApplication, since the packets are generated
-      // instantaneously
+      // did not contain any users OR the users in m_candidates
+      // were the ones with buffered packets not supposed to be
+      // transmitted in this particular round.
+      // The former is not really possible since that means the MAC
+      // queue is empty, and when that is the case the TrySendingDlMuPpdu()
+      // is never called.
+      // For the latter case, this ensure that the next round is started.
+      // For the former case, the next round is started by the StartNextRound()
+      // method itself.
 
       if ( m_hasDeadlineConstrainedTrafficStarted && m_havePacketsArrived )
          StartNextRound();
@@ -1483,11 +1483,11 @@ DaMultiUserScheduler::ComputeDlMuInfo (void)
 
   // This is for the scenario where after the Tx is completed, some packets are still
   // in the queue waiting for scheduling in the next round, so we should now go to the next
-  // round to allow their scheduling since all the expected user packets have arrived in
-  // this round
+  // round to allow their scheduling.
   // Not just that, you see TrySendingDlMuPpdu() is not called unless there is atleast one 
-  // packet in the MAC queue, so if after this Tx, the MAC queue us emptied, the simulation
-  // will stop. In order to allow it to keep going, we must generate the next batch of packets
+  // packet in the MAC queue, so if after this Tx, the MAC queue is emptied, the simulation
+  // will stop if we place this line in that method. 
+  // In order to allow it to keep going, we must generate the next batch of packets
   // before this round ends, otherwise the next round will never begin!
 
   if ( m_hasDeadlineConstrainedTrafficStarted && m_havePacketsArrived )

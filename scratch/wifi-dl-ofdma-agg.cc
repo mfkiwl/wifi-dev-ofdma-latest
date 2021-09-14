@@ -33,7 +33,7 @@
 #include <sstream>
 #include <numeric>
 
-// ./waf --run "wifi-dl-ofdma-udp --nStations=6 --warmup=2 --simulationTime=5 --dlAckType=3 --channelWidth=20 --mcs=6  --radius=5 --scheduler=0 --saturateChannel=true"
+// ./waf --run "wifi-dl-ofdma-agg --nStations=40 --warmup=2 --simulationTime=10 --dlAckType=3 --channelWidth=40 --mcs=11 --radius=5 --enableDlOfdma=false --saturateChannel=false --dataRate=1.5 --txopLimit=2528 --payloadSize=1000"
 
 using namespace ns3;
 
@@ -882,8 +882,10 @@ WifiDlOfdma::Run (void)
     aggStopReasonsMap = fem->GetMpduAggregator()->GetAggregationStopReasons(); 
   }  
     
-  std::cout << std::endl << std::endl << "Aggregation Statistics" << std::endl
+  std::cout << std::endl << std::endl << "STA wise Aggregation Statistics" << std::endl
                          << "-----------" << std::endl;
+
+  uint64_t totalAmpdusOfAllSizes = 0;                       
   for (uint32_t i = 0; i < m_staNodes.GetN (); i++)
     {
       std::cout << "STA_" << i << ": " << std::endl;
@@ -895,9 +897,31 @@ WifiDlOfdma::Run (void)
       for ( uint16_t l = 0; l < 64; l++ ) {
         if ( it->second[l] > 0) {
           std::cout << "Size " << (l + 1) << " A-MPDUs = " << it->second[l] << ", " << ((it->second[l] / totalAggCount) * 100.0 ) << "%" << std::endl;
+          totalAmpdusOfAllSizes++;
         }
       }
       
+    }
+
+    std::cout << std::endl << std::endl << "Overall Aggregation Statistics" << std::endl
+                         << "-----------" << std::endl;
+    for ( uint16_t q = 0; q < 64; q++ ) { 
+
+      uint64_t sizeQAmpuds = 0;
+      for (uint32_t i = 0; i < m_staNodes.GetN (); i++) {
+        
+        auto it = aggStatsMap.find (DynamicCast<WifiNetDevice> (m_staDevices.Get (i))->GetMac ()->GetAddress ());
+        NS_ASSERT (it != aggStatsMap.end ());
+
+         if ( it->second[q] > 0) {
+           
+           sizeQAmpuds = sizeQAmpuds + it->second[q];
+         }
+      }
+
+      if ( sizeQAmpuds > 0 ) {
+        std::cout << "Size " << (q + 1) << " A-MPDUs = " << sizeQAmpuds << ", " << ((sizeQAmpuds / totalAmpdusOfAllSizes) * 100.0 ) << "%" << std::endl;
+      }
     }
 
   std::cout << std::endl << std::endl << "Aggregation Stop Reasons" << std::endl
@@ -1005,7 +1029,7 @@ WifiDlOfdma::EstablishBaAgreement (Mac48Address bssid)
     Simulator::Schedule (time - Simulator::Now (),
                        &WifiDlOfdma::StartOnOffClient, this, client);
 
-    std::cout << "Application " << m_currentSta << " install time scheduled at " << time.ToDouble(Time::MS) << std::endl;                   
+    //std::cout << "Application " << m_currentSta << " install time scheduled at " << time.ToDouble(Time::MS) << std::endl;                   
   }   
 
   if (++m_currentSta < m_nStations) {
@@ -1035,10 +1059,12 @@ WifiDlOfdma::StartTraffic (void)
       
     Ptr<Application> clientApp = m_OnOffApps.Get (i);
 
-    Simulator::Schedule (delay, &WifiDlOfdma::StartClientTraffic, this, clientApp);
-    delay = delay + MilliSeconds(10);
-    //clientApp->SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=1]"));
-    //clientApp->SetAttribute ("OffTime", StringValue ("ns3::ConstantRandomVariable[Constant=0]"));
+    // Uncomment these two lines and comment the other two lines to make sure not all
+    // apps are started at exactly the same moment.
+    //Simulator::Schedule (delay, &WifiDlOfdma::StartClientTraffic, this, clientApp);
+    //delay = delay + MilliSeconds(10);
+    clientApp->SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=1]"));
+    clientApp->SetAttribute ("OffTime", StringValue ("ns3::ConstantRandomVariable[Constant=0]"));
 
   }
 
@@ -1066,10 +1092,12 @@ WifiDlOfdma::StartStatistics (void)
   if ( m_enableDlOfdma ) {
       Ptr<HeFrameExchangeManager> fem = DynamicCast<HeFrameExchangeManager>(DynamicCast<RegularWifiMac> (dev->GetMac ())->GetFrameExchangeManager());
       fem->TraceConnectWithoutContext("PsduMapForwardDown", MakeCallback(&WifiDlOfdma::NotifyPsduMapForwardedDown, this));
+      fem->GetMpduAggregator()->EnableAggregationStats(true);
   }
   else {
       Ptr<HtFrameExchangeManager> fem = DynamicCast<HtFrameExchangeManager>(DynamicCast<RegularWifiMac> (dev->GetMac ())->GetFrameExchangeManager());
       fem->TraceConnectWithoutContext("PsduForwardDown", MakeCallback(&WifiDlOfdma::NotifyPsduForwardedDown, this));
+      fem->GetMpduAggregator()->EnableAggregationStats(true);
   }
   
   // Correct, simply update the global counter for AP MPDU Drops
@@ -1128,10 +1156,12 @@ WifiDlOfdma::StopStatistics (void)
   if ( m_enableDlOfdma ) {
       Ptr<HeFrameExchangeManager> fem = DynamicCast<HeFrameExchangeManager>(DynamicCast<RegularWifiMac> (dev->GetMac ())->GetFrameExchangeManager());
       fem->TraceDisconnectWithoutContext("PsduMapForwardDown", MakeCallback(&WifiDlOfdma::NotifyPsduMapForwardedDown, this));
+      fem->GetMpduAggregator()->EnableAggregationStats(false);
   }
   else {
       Ptr<HtFrameExchangeManager> fem = DynamicCast<HtFrameExchangeManager>(DynamicCast<RegularWifiMac> (dev->GetMac ())->GetFrameExchangeManager());
       fem->TraceDisconnectWithoutContext("PsduForwardDown", MakeCallback(&WifiDlOfdma::NotifyPsduForwardedDown, this));
+      fem->GetMpduAggregator()->EnableAggregationStats(false);
   }
 
   DynamicCast<RegularWifiMac> (dev->GetMac ())->TraceDisconnectWithoutContext ("DroppedMpdu", MakeCallback (&WifiDlOfdma::NotifyApDroppedMpdu, this));

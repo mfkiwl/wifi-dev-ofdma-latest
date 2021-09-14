@@ -90,7 +90,7 @@ public:
 
   void GeneratePacketScheduleForSetRounds(void);
   
-  HeRu::RuType GetRuTypePerRound(void);
+  HeRu::RuType GetRuTypePerRound(uint32_t);
 
   uint32_t GetRusPerRound(HeRu::RuType);
   
@@ -191,6 +191,8 @@ private:
   std::vector<std::vector<uint32_t>> m_packetSchedule;
   std::list<CandidateInfo> m_candidates;                //!< Candidate stations for MU TX
   std::list<CandidateInfo> m_pendingCandidates;
+  std::list<MasterInfo>::iterator m_nextStaIt;
+  uint32_t m_nextStaIndex;
   ApplicationContainer m_OnDemandApps;
   Time m_maxCredits;                                    //!< Max amount of credits a station can have
   Ptr<WifiMacQueueItem> m_trigger;                      //!< Trigger Frame to send
