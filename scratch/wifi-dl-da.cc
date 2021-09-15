@@ -16,10 +16,13 @@
 #include "ns3/packet-sink-helper.h"
 #include "ns3/packet-sink.h"
 #include "ns3/on-off-helper.h"
+#include "ns3/on-demand-helper.h"
 #include "ns3/v4ping-helper.h"
 #include "ns3/wifi-acknowledgment.h"
 #include "ns3/multi-model-spectrum-channel.h"
 #include "ns3/he-frame-exchange-manager.h"
+#include "ns3/da-multi-user-scheduler.h"
+#include "ns3/drr-multi-user-scheduler.h"
 #include "ns3/ht-frame-exchange-manager.h"
 #include "ns3/wifi-mac-queue.h"
 #include "ns3/wifi-psdu.h"
@@ -33,7 +36,7 @@
 #include <sstream>
 #include <numeric>
 
-// ./waf --run "wifi-dl-ofdma-agg --nStations=40 --warmup=2 --simulationTime=10 --dlAckType=3 --channelWidth=40 --mcs=11 --radius=5 --enableDlOfdma=false --saturateChannel=false --dataRate=1.5 --txopLimit=2528 --payloadSize=1000"
+//./waf --run "wifi-dl-da --nStations=3 --warmup=2 --simulationTime=2 --dlAckType=3 --channelWidth=40 --mcs=11 --radius=5 --scheduler=1 --saturateChannel=false --dataRate=1.5"
 
 using namespace ns3;
 
@@ -72,19 +75,19 @@ public:
   void EstablishBaAgreement (Mac48Address bssid);
 
   /**
-   * Start On Off Client application. (Doesn't start sending traffic yet)
+   * Install On Off Client application. (Doesn't start sending traffic yet)
    */
-  void StartOnOffClient (OnOffHelper client);
+  void InstallOnOffClient (OnOffHelper client);
+
+  /**
+   * Install On Demand Client application. (Doesn't start sending traffic yet)
+   */
+  void InstallOnDemandClient (OnDemandHelper client);
 
   /**
    * Start generating traffic for On Off Applications
    */
   void StartTraffic (void);
-
-  /**
-   * Start generating client traffic for this On Off Applications
-   */
-  void StartClientTraffic(Ptr<Application> clientApp);
 
   /**
    * Start collecting statistics.
@@ -229,6 +232,8 @@ private:
   std::map <uint32_t /* nodeId */, std::vector<Time>  /* array of latencies */> m_appLatencyMap;
   std::map <uint32_t /* nodeId */, std::vector<uint64_t> /* array of drop with reasons */> m_phyRxDropMap;
   std::map <uint32_t /* nodeId */, std::vector<uint64_t> /* array of drop with reasons */> m_staMacDropMap;
+  std::vector <std::vector<uint32_t>> m_globalSchedule;
+  std::map <uint32_t /* nodeId */, std::vector<uint32_t> /* Array of Packet Time period and Deadline */> m_staPacketInfo; 
 
   // Map for App layer packets corresponding to each station, 
   // this is necessary to avoid Seq no. collisions between packets of different STAs
@@ -254,23 +259,22 @@ private:
 };
 
 WifiDlOfdma::WifiDlOfdma ()
-  : m_payloadSize (1000),
+  : m_payloadSize (30),
     m_ulPsduSize(0),
     m_simulationTime (5),
     m_scheduler(0),
-    m_saturateChannel(true),
     m_nStations (6),
     m_radius (5),
     m_enableDlOfdma (true),
     m_enableUlOfdma(false),
-    m_channelWidth (20),
-    m_channelNumber (36),
+    m_channelWidth (40),
+    m_channelNumber (38),
     m_channelCenterFrequency (0),
     m_guardInterval (3200),
     m_maxNRus (4),
     m_mcs (0),
     m_maxAmsduSize (0),
-    m_maxAmpduSize (256000),
+    m_maxAmpduSize (0),
     m_txopLimit (5440),
     m_macQueueSize (0),  // invalid value
     m_msduLifetime (0),  // invalid value
@@ -291,10 +295,7 @@ WifiDlOfdma::WifiDlOfdma ()
     phyRxDrop(0),
     m_maxQueueSizeReached(0),
     macApTxDrop(0),
-    phyApTxDrop(0),
-    m_randomizePacketSize(false),
-    m_minSampleRange(30),
-    m_maxSampleRange(250)
+    phyApTxDrop(0)
 {
 }
 
@@ -307,7 +308,7 @@ WifiDlOfdma::Config (int argc, char *argv[])
   cmd.AddValue ("payloadSize", "Payload size in bytes", m_payloadSize);
   cmd.AddValue ("ulPsduSize", "Maximum size of UL PSDU", m_ulPsduSize);
   cmd.AddValue ("simulationTime", "Simulation time in seconds", m_simulationTime);
-  cmd.AddValue ("scheduler", "0 = Round Robin (Default), 1 = Proportionally Fair", m_scheduler);
+  cmd.AddValue ("scheduler", "0 = Deadline Round Robin (Default), 1 = Deadline Aware", m_scheduler);
   cmd.AddValue ("saturateChannel", "true = dataRate > channelCapacity, false = dataRate < channelCapacity", m_saturateChannel);
   cmd.AddValue ("nStations", "Number of non-AP stations", m_nStations);
   cmd.AddValue ("radius", "Radius of the disc centered in the AP and containing all the non-AP STAs", m_radius);
@@ -327,51 +328,10 @@ WifiDlOfdma::Config (int argc, char *argv[])
   cmd.AddValue ("dataRate", "Per-station data rate (Mb/s)", m_dataRate); //application layer
   cmd.AddValue ("transport", "Transport layer protocol (Udp/Tcp)", m_transport);
   cmd.AddValue ("warmup", "Duration of the warmup period (seconds)", m_warmup);
-  cmd.AddValue ("randomPacketSize", "(True/False) Pick packet size from a uniform random variable", m_randomizePacketSize);
-  cmd.AddValue ("minSampleRange", "Lowerbound for the UniformRandomVariable used to sample packet size.", m_minSampleRange);
-  cmd.AddValue ("maxSampleRange", "Upperbound for the UniformRandomVariable used to sample packet size.", m_maxSampleRange);
   cmd.Parse (argc, argv);
 
-  uint64_t phyRate = HePhy::GetHeMcs (m_mcs).GetDataRate (m_channelWidth, m_guardInterval, 1);
-
-  // Estimate the A-MPDU size as the number of bytes transmitted at the PHY rate in
-  // an interval equal to the maximum PPDU duration
-  uint32_t ampduSize = phyRate * GetPpduMaxTime (WIFI_PREAMBLE_HE_SU).GetSeconds () / 8;  // bytes
-
-  // Estimate the number of MSDUs per A-MPDU as the ratio of the A-MPDU size to the MSDU size
-  uint32_t nMsdus = ampduSize / m_payloadSize;
-
-  // AP's EDCA queue must contain the number of MSDUs per A-MPDU times the number of stations,
-  // times a surplus coefficient
-  uint32_t queueSize = nMsdus * m_nStations * 2 /* surplus */;
-
-// The MSDU lifetime must exceed the time taken by the AP to empty its EDCA queue at the PHY rate
-  uint32_t msduLifetime = queueSize * m_payloadSize * 8 * 1000. / phyRate * 2 /* surplus */;
-
-  if (m_macQueueSize == 0)
-    {
-      m_macQueueSize = queueSize;
-    }
-  if (m_msduLifetime == 0)
-    {
-      m_msduLifetime = msduLifetime;
-    }
-  if (m_dataRate == 0)
-    {
-      m_dataRate = phyRate * 1.2 /* surplus */ / 1e6 / m_nStations;
-    }
-
-  if (m_saturateChannel) {
-    m_macQueueSize = 10000; // Restrict the Queue Size, otherwise it will keep on extending in length.
-    //m_msduLifetime = (m_warmup + m_simulationTime + 100) * 1000; // MSDU must not expire for the duration of the simulation
-  }
-  else { // Non-saturated
-    if ( m_dataRate == 0 )
-      m_dataRate = m_dataRate / 3;
-  }
-  
-  m_macQueueSize = 50000; // Large Queue Size causes packet queing. 
-  m_msduLifetime = (m_warmup + m_simulationTime + 100) * 1000; // MSDU must not expire for the duration of the simulation  
+  m_macQueueSize = 5000;
+  m_msduLifetime = (m_warmup + m_simulationTime + 100) * 1000; 
 
   switch (m_channelWidth)
     {
@@ -400,10 +360,7 @@ WifiDlOfdma::Config (int argc, char *argv[])
             << "Data rate = " << m_dataRate << " Mbps" << std::endl
             << "EDCA queue max size = " << m_macQueueSize << " MSDUs" << std::endl
             << "MSDU lifetime = " << m_msduLifetime << " ms" << std::endl
-            << "BA buffer size = " << m_baBufferSize << std::endl
-            << "Randomize Packet Size = " << m_randomizePacketSize << std::endl
-            << "Lowerbound of Packet Size = " << m_minSampleRange << std::endl
-            << "Upperbound of Packet Size = " << m_maxSampleRange << std::endl;
+            << "BA buffer size = " << m_baBufferSize << std::endl;
 
   if (m_enableDlOfdma) {
       std::cout << "Ack sequence = " << m_dlAckSeqType << std::endl;
@@ -419,9 +376,6 @@ void
 WifiDlOfdma::Setup (void)
 {
   NS_LOG_FUNCTION (this);
-
-  if ( m_randomizePacketSize )
-    m_randomVar = CreateObject<UniformRandomVariable>();
 
   Config::SetDefault ("ns3::WifiRemoteStationManager::RtsCtsThreshold", StringValue ("999999"));
   Config::SetDefault ("ns3::HeConfiguration::GuardInterval", TimeValue (NanoSeconds (m_guardInterval)));
@@ -475,9 +429,8 @@ WifiDlOfdma::Setup (void)
       if ( m_scheduler == 1 ) {
         
         // Reference to the scheduler can be obtain from the HeFrameExchangeManager::GetMultiUserScheduler method
-        mac.SetMultiUserScheduler ("ns3::PfMultiUserScheduler",
+        mac.SetMultiUserScheduler ("ns3::DaMultiUserScheduler",
                                 "NStations", UintegerValue(m_nStations),
-                                "mcs", UintegerValue(m_mcs),
                                 "ForceDlOfdma", BooleanValue (true),
                                 "EnableUlOfdma", BooleanValue (false),
                                 "UlPsduSize", UintegerValue (0),
@@ -486,11 +439,11 @@ WifiDlOfdma::Setup (void)
       }
       else {
 
-        mac.SetMultiUserScheduler ("ns3::RrMultiUserScheduler",
-                                "NStations", UintegerValue(m_maxNRus),
+        mac.SetMultiUserScheduler ("ns3::DrrMultiUserScheduler",
+                                "NStations", UintegerValue(m_nStations),
                                 "ForceDlOfdma", BooleanValue (true),
-                                "EnableUlOfdma", BooleanValue (m_enableUlOfdma),
-                                "UlPsduSize", UintegerValue (m_ulPsduSize),
+                                "EnableUlOfdma", BooleanValue (false),
+                                "UlPsduSize", UintegerValue (0),
                                 "EnableBsrp", BooleanValue(false),
                                 "UseCentral26TonesRus", BooleanValue(false));
       }
@@ -511,10 +464,82 @@ WifiDlOfdma::Setup (void)
   dev->GetMac ()->SetAttribute ("BE_MaxAmpduSize", UintegerValue (m_maxAmpduSize));
   
   m_channelCenterFrequency = dev->GetPhy ()->GetFrequency ();
+
+  for ( uint16_t i = 0; i < m_nStations; i++ ) {
+      m_staPacketInfo.insert(std::make_pair(i, std::vector<uint32_t>()));
+      auto itz = m_staPacketInfo.find(i);
+      NS_ASSERT(itz != m_staPacketInfo.end());
+      itz->second.assign(3, 0);
+  }
+
+  // Assign Packet Generation Time periods, Deadlines and Penalities for each station
+  // This map will be passed to the Deadline Aware Scheduler later
+  // The minimum of all time periods (measured in ms) is also set as 
+  // the TXOP Limit.
+  // TXOP Limit = min(T1, T2, .. TN)
+  // Packet Size = f(TXOP Limit) [18 packets should be transmissible in the set TXOP Limit]
+  // Time Quanta = TXOP Limit [For time to round mapping]
+  // These restrictions imply that one TXOP can span at most one round
+  
+  // Deadline < Time Period, this is a strict requirement
+  uint32_t schedules[][3] = { { 1, 0, 5 },    { 2, 0, 10 },   { 4, 0, 15 } };
+                              // { 1, 0, 60 },   { 5, 3, 45},    { 3, 0, 40 },
+                              // { 6, 5, 12 },   { 20, 15, 50 }, { 12, 6, 100 },
+                              // { 6, 5, 5 },    { 20, 15, 9 },  { 5, 2, 10 },
+                              // { 12, 10, 16 }, { 12, 5, 31 },  { 4, 2, 31 },
+                              // { 12, 10, 37 }, { 2, 0, 56 },  { 3, 1, 58 },
+                              // { 6, 5, 64 },  { 12, 6, 93 } };
+
+  // uint32_t schedules[][3] = { { 1, 0, 5 },    { 1, 0, 10 },   { 1, 0, 15 },
+  //                             { 1, 0, 60 },   { 1, 0, 45},    { 1, 0, 40 },
+  //                             { 1, 0, 12 },   { 1, 0, 50 }, { 1, 0, 100 },
+  //                             { 1, 0, 5 },    { 1, 0, 9 },  { 1, 0, 10 },
+  //                             { 1, 0, 16 }, { 1, 0, 31 },  { 1, 0, 31 },
+  //                             { 1, 0, 37 }, { 1, 0, 56 },  { 1, 0, 58 },
+  //                             { 1, 0, 64 },  { 1, 0, 93 } };                            
+
+  m_globalSchedule.assign(m_nStations, std::vector<uint32_t>());
+
+
+  for ( uint16_t i = 0; i < m_nStations; i++ ) {
+    auto it = m_staPacketInfo.find(i);
+    NS_ASSERT( it != m_staPacketInfo.end() );
+
+    it->second[0] = schedules[i][0]; 
+    it->second[1] = schedules[i][1];
+    it->second[2] = schedules[i][2];
+
+    m_globalSchedule[i].assign(3, 0);
+    m_globalSchedule[i][0] = schedules[i][0];
+    m_globalSchedule[i][1] = schedules[i][1];
+    m_globalSchedule[i][2] = schedules[i][2];
+  }
+  
+  // for ( uint16_t i = 0; i < m_nStations; i++ ) {
+  //     double timePeriod = m_staPacketInfo.at(i)[0] * 1000; // convert to us
+      
+  //     if ( timePeriod < m_txopLimit )
+  //       m_txopLimit = timePeriod;
+  // }
+
+  // uint16_t remainder = 0;
+  // if ( m_txopLimit < 5440 ) {
+  //   uint64_t intTxop = m_txopLimit;
+  //   remainder = intTxop % 32;
+  //   if ( remainder != 0 )
+  //     m_txopLimit = m_txopLimit - remainder; // Do not allow the TXOP Limit to exceed the round duration
+  // }
+
   // Configure TXOP Limit on the AP
   PointerValue ptr;
   dev->GetMac ()->GetAttribute ("BE_Txop", ptr);
   ptr.Get<QosTxop> ()->SetTxopLimit (MicroSeconds (m_txopLimit));
+  std::cout << "TXOP Limit set to " << m_txopLimit << " microseconds" << std::endl;
+
+  // if ( m_txopLimit < 5440 )
+  //   m_txopLimit = m_txopLimit + remainder; // Reset since this value will now be used as the time quanta to define the duration of the round
+  // else
+  m_txopLimit = 10000; // time quanta in us, 10 ms 
 
   // Configure max A-MSDU size and max A-MPDU size on the stations
   for (uint32_t i = 0; i < m_staNodes.GetN (); i++)
@@ -537,35 +562,6 @@ WifiDlOfdma::Setup (void)
   mobility.SetPositionAllocator ("ns3::UniformDiscPositionAllocator",
                                  "rho", DoubleValue (m_radius));
   mobility.Install (m_staNodes);
-
-  std::ofstream myfile1;
-  myfile1.open("d.txt");
-  for (uint32_t i =  1; i <= m_staNodes.GetN(); i++) {
-      myfile1<<mobility.GetDistanceSquaredBetween(m_staNodes.Get(i-1),m_apNodes.Get(0))<<" ";
-  }
-
-  myfile1.close();
-  std::ofstream myfile;
-
-  myfile.open("wt.txt");
-  for (uint32_t i =  1; i <= m_staNodes.GetN(); i++) {
-    
-    myfile<<"0"<<" ";
-    std::cout<<"0"<<" ";
-  }
-
-  std::cout<<"\n";
-  myfile<<"\n";
-  for (uint32_t i =  1; i <= m_staNodes.GetN(); i++) {
-      
-    myfile<<"0"<<" ";
-	std::cout<<"0"<<" ";
-  }
-
-  std::cout<<"\n";
-  myfile<<"\n";
-  
-  myfile.close();
 
   /* Internet stack */
   InternetStackHelper stack;
@@ -818,22 +814,6 @@ WifiDlOfdma::Run (void)
       
       overallMacLatency += average_latency_ms;
       std::cout << "STA_" << i << ": " << average_latency_ms << " ";
-
-      // if ( i == 14 || i == 24 || i == 25 || i == 35 ) {
-        
-      //   std::ostringstream oss;
-      //   oss << "STA_" << i << "_rr.txt";
-
-      //   std::ofstream file;
-      //   file.open(oss.str(), std::ios_base::app | std::ios_base::out);
-      //   for ( uint32_t j = 0; j < it->second.size(); j++ ) {
-      //     file << "Packet_" << j << " latency = " << (it->second[j]).ToDouble (Time::MS) << "\n";
-      //   }
-      //   file.close();
-
-      //   oss.str("");
-      //   oss.clear();
-      // }
     }
   
   double averageOverallMacLatency = overallMacLatency / m_nStations;
@@ -867,88 +847,6 @@ WifiDlOfdma::Run (void)
                                       << m_maxAmpduRatio << ", "
                                       << m_avgAmpduRatio << ")" << std::endl;
 
-  Ptr<WifiNetDevice> dev = DynamicCast<WifiNetDevice> (m_apDevices.Get (0));
-  std::map<Mac48Address, std::vector<uint64_t>> aggStatsMap;
-  std::map<Mac48Address, std::vector<uint64_t>> aggStopReasonsMap;
-
-  if ( m_enableDlOfdma ) {
-    Ptr<HeFrameExchangeManager> fem = DynamicCast<HeFrameExchangeManager>(DynamicCast<RegularWifiMac> (dev->GetMac ())->GetFrameExchangeManager());
-    aggStatsMap = fem->GetMpduAggregator()->GetAggregationStats();
-    aggStopReasonsMap = fem->GetMpduAggregator()->GetAggregationStopReasons();
-  }
-  else {
-    Ptr<HtFrameExchangeManager> fem = DynamicCast<HtFrameExchangeManager>(DynamicCast<RegularWifiMac> (dev->GetMac ())->GetFrameExchangeManager());
-    aggStatsMap = fem->GetMpduAggregator()->GetAggregationStats(); 
-    aggStopReasonsMap = fem->GetMpduAggregator()->GetAggregationStopReasons(); 
-  }  
-    
-  std::cout << std::endl << std::endl << "STA wise Aggregation Statistics" << std::endl
-                         << "-----------" << std::endl;
-
-  double totalAmpdusOfAllSizes = 0;                       
-  for (uint32_t i = 0; i < m_staNodes.GetN (); i++)
-    {
-      std::cout << "STA_" << i << ": " << std::endl;
-
-      auto it = aggStatsMap.find (DynamicCast<WifiNetDevice> (m_staDevices.Get (i))->GetMac ()->GetAddress ());
-      NS_ASSERT (it != aggStatsMap.end ());
-
-      double totalAggCount = (std::accumulate (it->second.begin (), it->second.end (), 0));
-      for ( uint16_t l = 0; l < 64; l++ ) {
-        if ( it->second[l] > 0) {
-          std::cout << "Size " << (l + 1) << " A-MPDUs = " << it->second[l] << ", " << ((it->second[l] / totalAggCount) * 100.0 ) << "%" << std::endl;
-          totalAmpdusOfAllSizes = totalAmpdusOfAllSizes + it->second[l];
-        }
-      }
-      
-    }
-
-    std::cout << std::endl << std::endl << "Overall Aggregation Statistics" << std::endl
-                         << "-----------" << std::endl;
-    for ( uint16_t q = 0; q < 64; q++ ) { 
-
-      uint64_t sizeQAmpuds = 0;
-      for (uint32_t i = 0; i < m_staNodes.GetN (); i++) {
-        
-        auto it = aggStatsMap.find (DynamicCast<WifiNetDevice> (m_staDevices.Get (i))->GetMac ()->GetAddress ());
-        NS_ASSERT (it != aggStatsMap.end ());
-
-         if ( it->second[q] > 0) {
-           
-           sizeQAmpuds = sizeQAmpuds + it->second[q];
-         }
-      }
-
-      if ( sizeQAmpuds > 0 ) {
-        std::cout << "Size " << (q + 1) << " A-MPDUs = " << sizeQAmpuds << ", " << ((sizeQAmpuds / totalAmpdusOfAllSizes) * 100.0 ) << "%" << std::endl;
-      }
-    }
-
-  std::cout << std::endl << std::endl << "Aggregation Stop Reasons" << std::endl
-                         << "-----------" << std::endl;
-  for (uint32_t i = 0; i < m_staNodes.GetN (); i++)
-    {
-      std::cout << "STA_" << i << ": " << std::endl;
-
-      auto it = aggStopReasonsMap.find (DynamicCast<WifiNetDevice> (m_staDevices.Get (i))->GetMac ()->GetAddress ());
-      NS_ASSERT (it != aggStopReasonsMap.end ());
-
-      for ( uint16_t l = 0; l < 3; l++ ) {
-        
-        if ( l == 0 )
-          std::cout << "MPDUS FINISHED/SEQ NO. FINISHED = " << it->second[l] << std::endl;
-        else if ( l == 1 ) 
-          std::cout << "MPDUS TXOP EXCEEDED = " << it->second[l] << std::endl;
-        else
-          std::cout << "OTHER = " << it->second[l] << std::endl; 
-      }
-        
-    }  
-
-  std::cout << std::endl;
-
-  aggStatsMap.clear();
-  aggStopReasonsMap.clear();
 
   m_macPacketTxMap.clear ();
   m_appPacketTxMap.clear();
@@ -968,7 +866,7 @@ WifiDlOfdma::StartAssociation (void)
 
   m_aidMap[DynamicCast<WifiNetDevice> (m_staDevices.Get (m_currentSta))->GetMac()->GetAddress()] = ++lastAid;
 
-  std::cout << "Station no. " << m_currentSta << " is associated with the AP\n";
+  std::cout << "Station no. " << m_currentSta << " is associating with the AP\n";
   Ptr<WifiNetDevice> dev = DynamicCast<WifiNetDevice> (m_staDevices.Get (m_currentSta));
   NS_ASSERT (dev != 0);
   dev->GetMac ()->SetSsid (m_ssid); 
@@ -1004,19 +902,12 @@ WifiDlOfdma::EstablishBaAgreement (Mac48Address bssid)
 
     std::cout << "Installing On Off App on AP\n";
 
-    OnOffHelper client (socketType, Ipv4Address::GetAny ());
-    client.SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=0]"));
-    client.SetAttribute ("OffTime", StringValue (ss.str ()));
+    //OnOffHelper client (socketType, Ipv4Address::GetAny ());
+    OnDemandHelper client (socketType, Ipv4Address::GetAny ());
+    //client.SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=0]"));
+    //client.SetAttribute ("OffTime", StringValue (ss.str ()));
     client.SetAttribute ("DataRate", DataRateValue (DataRate (m_dataRate * 1e6)));
-
-    if ( m_randomizePacketSize ) {
-      uint32_t packetSize = m_randomVar->GetInteger(m_minSampleRange, m_maxSampleRange);
-      client.SetAttribute ("PacketSize", UintegerValue (packetSize));
-      std::cout << "STA " << m_currentSta << " Payload size set to random sampled value of " << packetSize << std::endl;
-    }
-    else 
-      client.SetAttribute ("PacketSize", UintegerValue (m_payloadSize));
-
+    client.SetAttribute ("PacketSize", UintegerValue (m_payloadSize));
     client.SetAttribute ("EnableSeqTsSizeHeader", BooleanValue(true));
 
 
@@ -1025,11 +916,11 @@ WifiDlOfdma::EstablishBaAgreement (Mac48Address bssid)
     client.SetAttribute ("Remote", AddressValue (dest));
     uint64_t startTime = std::ceil (Simulator::Now ().ToDouble (Time::MS) / offInterval) * offInterval;
 
-    Time time = MilliSeconds (static_cast<uint64_t> (startTime) + 110);
-    Simulator::Schedule (time - Simulator::Now (),
-                       &WifiDlOfdma::StartOnOffClient, this, client);
+    //Simulator::Schedule (MilliSeconds (static_cast<uint64_t> (startTime) + 110) - Simulator::Now (),
+    //                   &WifiDlOfdma::InstallOnOffClient, this, client);
 
-    //std::cout << "Application " << m_currentSta << " install time scheduled at " << time.ToDouble(Time::MS) << std::endl;                   
+    Simulator::Schedule (MilliSeconds (static_cast<uint64_t> (startTime) + 110) - Simulator::Now (),
+                       &WifiDlOfdma::InstallOnDemandClient, this, client);
   }   
 
   if (++m_currentSta < m_nStations) {
@@ -1041,7 +932,16 @@ WifiDlOfdma::EstablishBaAgreement (Mac48Address bssid)
 }
 
 void
-WifiDlOfdma::StartOnOffClient (OnOffHelper client)
+WifiDlOfdma::InstallOnOffClient (OnOffHelper client)
+{
+  NS_LOG_FUNCTION (this << m_currentSta);
+
+  m_OnOffApps.Add (client.Install (m_apNodes));
+  m_OnOffApps.Stop (Seconds (m_warmup + m_simulationTime + 100)); // let clients be active for a long time
+}
+
+void
+WifiDlOfdma::InstallOnDemandClient (OnDemandHelper client)
 {
   NS_LOG_FUNCTION (this << m_currentSta);
 
@@ -1054,36 +954,47 @@ WifiDlOfdma::StartTraffic (void)
 {
   NS_LOG_FUNCTION (this);
 
-  Time delay = MilliSeconds(0);
-  for (uint32_t i = 0; i < m_nStations; i++) {
+  // for (uint32_t i = 0; i < m_nStations; i++) {
       
-    Ptr<Application> clientApp = m_OnOffApps.Get (i);
+  //   Ptr<Application> clientApp = m_OnOffApps.Get (i);
+    
+  //   clientApp->SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=0.0002]"));
+  //   std::stringstream ss;
+  //   ss << "ns3::ConstantRandomVariable[Constant=" << std::fixed << static_cast<double> (( m_globalSchedule[i][0] / 1000.) - 0.0002) << "]";
+  //   std::cout << " off interval = " << ss.str() << std::endl;
 
-    // Uncomment these two lines and comment the other two lines to make sure not all
-    // apps are started at exactly the same moment.
-    //Simulator::Schedule (delay, &WifiDlOfdma::StartClientTraffic, this, clientApp);
-    //delay = delay + MilliSeconds(10);
-    clientApp->SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=1]"));
-    clientApp->SetAttribute ("OffTime", StringValue ("ns3::ConstantRandomVariable[Constant=0]"));
-
+  //   clientApp->SetAttribute ("OffTime", StringValue (ss.str())); // after x ms
+  // }
+      
+  
+  Ptr<HeFrameExchangeManager> heFem = DynamicCast<HeFrameExchangeManager>(DynamicCast<RegularWifiMac>(DynamicCast<WifiNetDevice>(m_apDevices.Get(0))->GetMac())->GetFrameExchangeManager());
+  if ( m_scheduler == 1 ) {
+    Ptr<DaMultiUserScheduler> muScheduler = DynamicCast<DaMultiUserScheduler>(heFem->GetMultiUserScheduler());
+    muScheduler->SetStaPacketInfo(m_staPacketInfo);
+    muScheduler->PassReferenceToOnDemandApps(m_OnOffApps);
+    muScheduler->StartNextRound(true);
+    muScheduler->NotifyDeadlineConstrainedTrafficStarted();
+  }
+  else {
+    Ptr<DrrMultiUserScheduler> muScheduler = DynamicCast<DrrMultiUserScheduler>(heFem->GetMultiUserScheduler());
+    muScheduler->SetStaPacketInfo(m_staPacketInfo);
+    muScheduler->PassReferenceToOnDemandApps(m_OnOffApps);
+    muScheduler->StartNextRound(true);
+    muScheduler->NotifyDeadlineConstrainedTrafficStarted();
   }
 
-  Simulator::Schedule (Seconds (m_warmup), &WifiDlOfdma::StartStatistics, this);
-}
-
-void WifiDlOfdma::StartClientTraffic(Ptr<Application> clientApp) {
-
-  std::cout << "An Application was started at time " << Simulator::Now().ToDouble(Time::MS) << std::endl;
-
-  clientApp->SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=1]"));
-  clientApp->SetAttribute ("OffTime", StringValue ("ns3::ConstantRandomVariable[Constant=0]"));
+  //double m_actualWarmup = m_warmup + Simulator::Now().ToDouble(Time::S);
+  //Simulator::Schedule (Seconds(m_actualWarmup), &WifiDlOfdma::StartStatistics, this);
+  StartStatistics();
 }
 
 void
 WifiDlOfdma::StartStatistics (void)
 {
   NS_LOG_FUNCTION (this);
-  Simulator::Schedule (Seconds (m_simulationTime), &WifiDlOfdma::StopStatistics, this);
+  double m_actualSimulationTime = m_simulationTime + Simulator::Now().ToDouble(Time::S);
+  std::cout << "m_actualSimulationTime " << m_actualSimulationTime << "\n";
+  Simulator::Schedule (Seconds (m_actualSimulationTime), &WifiDlOfdma::StopStatistics, this);
 
   std::cout << "============== START STATISTICS ============== \n";
 
@@ -1092,12 +1003,10 @@ WifiDlOfdma::StartStatistics (void)
   if ( m_enableDlOfdma ) {
       Ptr<HeFrameExchangeManager> fem = DynamicCast<HeFrameExchangeManager>(DynamicCast<RegularWifiMac> (dev->GetMac ())->GetFrameExchangeManager());
       fem->TraceConnectWithoutContext("PsduMapForwardDown", MakeCallback(&WifiDlOfdma::NotifyPsduMapForwardedDown, this));
-      fem->GetMpduAggregator()->EnableAggregationStats(true);
   }
   else {
       Ptr<HtFrameExchangeManager> fem = DynamicCast<HtFrameExchangeManager>(DynamicCast<RegularWifiMac> (dev->GetMac ())->GetFrameExchangeManager());
       fem->TraceConnectWithoutContext("PsduForwardDown", MakeCallback(&WifiDlOfdma::NotifyPsduForwardedDown, this));
-      fem->GetMpduAggregator()->EnableAggregationStats(true);
   }
   
   // Correct, simply update the global counter for AP MPDU Drops
@@ -1122,7 +1031,8 @@ WifiDlOfdma::StartStatistics (void)
 
       std::ostringstream oss;
       oss << "/NodeList/" << i << "/ApplicationList/" << i << "/";
-      DynamicCast<OnOffApplication>(m_OnOffApps.Get(i))->TraceConnect("TxWithSeqTsSize", oss.str(),  MakeCallback (&WifiDlOfdma::NotifyApplicationTx, this));
+      //DynamicCast<OnOffApplication>(m_OnOffApps.Get(i))->TraceConnect("TxWithSeqTsSize", oss.str(),  MakeCallback (&WifiDlOfdma::NotifyApplicationTx, this));
+      DynamicCast<OnDemandApplication>(m_OnOffApps.Get(i))->TraceConnect("TxWithSeqTsSize", oss.str(),  MakeCallback (&WifiDlOfdma::NotifyApplicationTx, this));
       DynamicCast<PacketSink>(m_sinkApps.Get(i))->TraceConnect("RxWithSeqTsSize", oss.str(),  MakeCallback (&WifiDlOfdma::NotifyApplicationRx, this));
   }
 
@@ -1150,18 +1060,17 @@ WifiDlOfdma::StopStatistics (void)
   NS_LOG_FUNCTION (this);
 
   std::cout << "============== STOP STATISTICS ============== \n";
+  std::cout << "Current Time: " << Simulator::Now().ToDouble(Time::S) << "\n";
 
   Ptr<WifiNetDevice> dev = DynamicCast<WifiNetDevice> (m_apDevices.Get (0));
   
   if ( m_enableDlOfdma ) {
       Ptr<HeFrameExchangeManager> fem = DynamicCast<HeFrameExchangeManager>(DynamicCast<RegularWifiMac> (dev->GetMac ())->GetFrameExchangeManager());
       fem->TraceDisconnectWithoutContext("PsduMapForwardDown", MakeCallback(&WifiDlOfdma::NotifyPsduMapForwardedDown, this));
-      fem->GetMpduAggregator()->EnableAggregationStats(false);
   }
   else {
       Ptr<HtFrameExchangeManager> fem = DynamicCast<HtFrameExchangeManager>(DynamicCast<RegularWifiMac> (dev->GetMac ())->GetFrameExchangeManager());
       fem->TraceDisconnectWithoutContext("PsduForwardDown", MakeCallback(&WifiDlOfdma::NotifyPsduForwardedDown, this));
-      fem->GetMpduAggregator()->EnableAggregationStats(false);
   }
 
   DynamicCast<RegularWifiMac> (dev->GetMac ())->TraceDisconnectWithoutContext ("DroppedMpdu", MakeCallback (&WifiDlOfdma::NotifyApDroppedMpdu, this));
@@ -1184,7 +1093,8 @@ WifiDlOfdma::StopStatistics (void)
 
       std::ostringstream oss;
       oss << "/NodeList/" << i << "/ApplicationList/" << i << "/";
-      DynamicCast<OnOffApplication>(m_OnOffApps.Get(i))->TraceDisconnect("TxWithSeqTsSize", oss.str(),  MakeCallback (&WifiDlOfdma::NotifyApplicationTx, this));
+      //DynamicCast<OnOffApplication>(m_OnOffApps.Get(i))->TraceDisconnect("TxWithSeqTsSize", oss.str(),  MakeCallback (&WifiDlOfdma::NotifyApplicationTx, this));
+      DynamicCast<OnDemandApplication>(m_OnOffApps.Get(i))->TraceDisconnect("TxWithSeqTsSize", oss.str(),  MakeCallback (&WifiDlOfdma::NotifyApplicationTx, this));
       DynamicCast<PacketSink>(m_sinkApps.Get(i))->TraceDisconnect("RxWithSeqTsSize", oss.str(),  MakeCallback (&WifiDlOfdma::NotifyApplicationRx, this));
   }
 

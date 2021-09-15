@@ -311,12 +311,12 @@ MpduAggregator::GetNextAmpdu (Ptr<WifiMacQueueItem> mpdu, WifiTxParameters& txPa
               if ( nextMpdu == 0 ) {
                 
                 if ( m_aggregationStatsEnabled )
-                  (*reasonsVec)[1]++; // Aggregation stopped because aggregating more MPDUs violated TXOP limit/Sequence no. space full
+                  (*reasonsVec)[1]++; // Aggregation stopped because aggregating more MPDUs violated TXOP limit
               }
             }
             else {
               if ( m_aggregationStatsEnabled )
-                (*reasonsVec)[0]++; // Aggregation stopped because no more MPDUs to aggregate
+                (*reasonsVec)[0]++; // Aggregation stopped because Sequence no. space full or because no more MPDUs to aggregate
             }
         }
 
