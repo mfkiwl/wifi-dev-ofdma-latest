@@ -1442,7 +1442,7 @@ DaMultiUserScheduler::ComputeDlMuInfo (void)
         }
     }
 
-  if ( !m_hasDeadlineConstrainedTrafficStarted || m_packetToRoundMap.empty() ) {
+  if ( !m_hasDeadlineConstrainedTrafficStarted || !m_havePacketsArrived ) {
     AcIndex primaryAc = m_edca->GetAccessCategory ();
 
     // The amount of credits received by each station equals the TX duration (in
