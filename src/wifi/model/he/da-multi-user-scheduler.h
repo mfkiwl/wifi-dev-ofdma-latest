@@ -136,6 +136,8 @@ private:
 
   void MaximumWeightedMatching(void);
 
+  void MinimumCostFlow(void);
+  
   void ILPSolver(void);
 
   //void populatebyrow(IloModel, IloNumVarArray, IloRangeArray);

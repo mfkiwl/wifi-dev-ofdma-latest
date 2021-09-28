@@ -265,7 +265,7 @@ DaMultiUserScheduler::GeneratePacketScheduleForSetRounds(void)
 HeRu::RuType
 DaMultiUserScheduler::GetRuTypePerRound(void) {
 
-  return HeRu::RU_484_TONE; // Testing
+  //return HeRu::RU_484_TONE; // Testing
 
   uint32_t packetsPerSchedule = GetPacketsPerSchedule();
 
@@ -305,7 +305,7 @@ DaMultiUserScheduler::GetRuTypePerRound(void) {
 uint32_t
 DaMultiUserScheduler::GetRusPerRound(HeRu::RuType ruType) {
 
-  return 1; // Testing
+  //return 1; // Testing
 
   switch(m_apMac->GetWifiPhy()->GetChannelWidth()) {
     case 20: {
@@ -433,6 +433,61 @@ DaMultiUserScheduler::MaximumWeightedMatching(void) {
   }
 
   std::cout << std::endl;
+}
+
+void DaMultiUserScheduler::MinimumCostFlow(void) {
+  uint32_t rounds = GetRoundsPerSchedule();
+  uint32_t packets = GetPacketsPerSchedule();
+  uint32_t ruType = GetRuTypeIndex(GetRuTypePerRound());
+  uint32_t totalTones = 242;
+  if ( m_apMac->GetWifiPhy()->GetChannelWidth() == 40 )
+    totalTones = 484; // Note that the MCF currently only supports 40 Mhz, if you enter 20 Mhz it will malfunction
+
+  // Offset to add and subtract when inputting to the MCF
+  // MCF assumes that a map is being generated at the
+  // start of round 0
+  uint32_t roundOffset = GetCurrRound();
+  std::cout << "MCF invoked in round " << roundOffset << "\n";
+
+  std::ostringstream oss;
+  oss << "./or-tools/bin/maximum_weighted_matching " << rounds << " " << packets << " " << ruType << " " << totalTones << " ";
+  for ( uint32_t i = 0; i < packets; i++ ) {
+      if ( i < packets - 1 )
+          oss << (m_packetSchedule[i][0] - roundOffset) << " " << (m_packetSchedule[i][1] - roundOffset) << " " << m_packetSchedule[i][2] << " ";
+      else
+          oss << (m_packetSchedule[i][0] - roundOffset) << " " << (m_packetSchedule[i][1] - roundOffset) << " " << m_packetSchedule[i][2];
+  }
+
+  std::string txt = oss.str();
+  uint32_t length = txt.length();
+    
+  char cmd[length];
+  std::copy(std::begin(txt), std::end(txt), cmd);
+  cmd[length] = 0;
+
+  std::cout << cmd;
+  std::cout << std::endl;
+
+  system(cmd);
+
+  // Extract the values from the output file written by the ILP
+  std::ifstream file;
+  file.open("mcf.output", std::ios::in);
+
+  std::string line;
+  while(std::getline(file, line))
+  {
+      std::stringstream lineStream(line);
+      uint32_t pos = lineStream.str().find(",");
+        
+      uint32_t packet = atoi(lineStream.str().substr(0, pos).c_str());
+      uint32_t round = atoi(lineStream.str().substr(pos + 1).c_str()) + roundOffset;
+
+      // This is all we need
+      m_packetToRoundMap.insert(std::make_pair(packet, round));
+
+      std::cout << "{" << packet << ", " << round << "}" << std::endl;
+  }
 }
 
 void
@@ -603,7 +658,7 @@ DaMultiUserScheduler::StartNextRound(bool beginning) {
 
   m_lastRoundTimestamp = Simulator::Now().ToDouble(Time::US);
   
-  if ( m_currRound >= 60) { // Only run for these many rounds
+  if ( m_currRound >= 120) { // Only run for these many rounds
 
     m_hasDeadlineConstrainedTrafficStarted = false;
     return;
@@ -1166,7 +1221,8 @@ DaMultiUserScheduler::TrySendingDlMuPpdu (void)
   if ( m_hasDeadlineConstrainedTrafficStarted && m_packetToRoundMap.empty() && ( GetCurrRound() % GetRoundsPerSchedule() == 0 ) && !m_candidates.empty() ) {
 
     GeneratePacketScheduleForSetRounds(); // m_packetSchedule
-    MaximumWeightedMatching(); // m_packetToRoundMap
+    //MaximumWeightedMatching(); // m_packetToRoundMap
+    MinimumCostFlow();
     //ILPSolver();
     GenerateMpduToCurrPacketMap(); // m_mpduToCurrPacketMap
 

@@ -370,7 +370,7 @@ WifiDlOfdma::Config (int argc, char *argv[])
       m_dataRate = m_dataRate / 3;
   }
   
-  m_macQueueSize = 50000; // Large Queue Size causes packet queing. 
+  m_macQueueSize = 6000; // Large Queue Size causes packet queing. 
   m_msduLifetime = (m_warmup + m_simulationTime + 100) * 1000; // MSDU must not expire for the duration of the simulation  
 
   switch (m_channelWidth)
@@ -637,18 +637,28 @@ WifiDlOfdma::Run (void)
   Simulator::Run ();
 
   double totalTput = 0.0;
+  double fairnessDen = 0.0;
   double tput;
   std::cout << "Throughput (Mbps)" << std::endl
             << "-----------------" << std::endl;
   for (uint32_t i = 0; i < m_staNodes.GetN (); i++)
     {
       tput = ((m_rxStop[i] - m_rxStart[i]) * 8.) / (m_simulationTime * 1e6);
+
+      fairnessDen += tput*tput;
       totalTput += tput;
+
       std::cout << "STA_" << i << ": " << tput << "  ";
       std::cout<< "total Bytes tx:"<< m_rxStart[i] <<"   ";
       std::cout<< "total Bytes rx:"<<m_rxStop[i]<<"\n";
     }
   std::cout << std::endl << std::endl << "Total throughput: " << totalTput << std::endl;
+
+  if ( fairnessDen > 0.0 ) {
+
+    double fairnessIndex = (totalTput * totalTput) / (fairnessDen * m_nStations);
+    std::cout << "Total Fairness Index: " << fairnessIndex << std::endl;
+  }
 
   uint64_t totalApDropped = 0;
   uint64_t apDropped;
@@ -818,22 +828,6 @@ WifiDlOfdma::Run (void)
       
       overallMacLatency += average_latency_ms;
       std::cout << "STA_" << i << ": " << average_latency_ms << " ";
-
-      // if ( i == 14 || i == 24 || i == 25 || i == 35 ) {
-        
-      //   std::ostringstream oss;
-      //   oss << "STA_" << i << "_rr.txt";
-
-      //   std::ofstream file;
-      //   file.open(oss.str(), std::ios_base::app | std::ios_base::out);
-      //   for ( uint32_t j = 0; j < it->second.size(); j++ ) {
-      //     file << "Packet_" << j << " latency = " << (it->second[j]).ToDouble (Time::MS) << "\n";
-      //   }
-      //   file.close();
-
-      //   oss.str("");
-      //   oss.clear();
-      // }
     }
   
   double averageOverallMacLatency = overallMacLatency / m_nStations;
@@ -1061,10 +1055,10 @@ WifiDlOfdma::StartTraffic (void)
 
     // Uncomment these two lines and comment the other two lines to make sure not all
     // apps are started at exactly the same moment.
-    //Simulator::Schedule (delay, &WifiDlOfdma::StartClientTraffic, this, clientApp);
-    //delay = delay + MilliSeconds(10);
-    clientApp->SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=1]"));
-    clientApp->SetAttribute ("OffTime", StringValue ("ns3::ConstantRandomVariable[Constant=0]"));
+    Simulator::Schedule (delay, &WifiDlOfdma::StartClientTraffic, this, clientApp);
+    delay = delay + MilliSeconds(10);
+    //clientApp->SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=1]"));
+    //clientApp->SetAttribute ("OffTime", StringValue ("ns3::ConstantRandomVariable[Constant=0]"));
 
   }
 
