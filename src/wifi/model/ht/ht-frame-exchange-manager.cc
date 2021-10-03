@@ -51,6 +51,10 @@ HtFrameExchangeManager::GetTypeId (void)
                      "The PSDU forwarded down to the PHY along with the TX vector.",
                      MakeTraceSourceAccessor (&HtFrameExchangeManager::m_forwardDown),
                      "ns3::WifiTxVector::TracedCallback")
+    .AddTraceSource ("HtChannelAccessGranted",
+                     "Channel Access was granted.",
+                     MakeTraceSourceAccessor (&HtFrameExchangeManager::m_channelAccessGranted),
+                     "ns3::HtChannelAccessGranted::TracedCallback")                    
   ;
   return tid;
 }
@@ -337,7 +341,8 @@ bool
 HtFrameExchangeManager::StartFrameExchange (Ptr<QosTxop> edca, Time availableTime, bool initialFrame)
 {
   NS_LOG_FUNCTION (this << edca << availableTime << initialFrame);
-
+  m_channelAccessGranted();
+  
   // First, check if there is a BAR to be transmitted
   if (SendMpduFromBaManager (edca, availableTime, initialFrame))
     {

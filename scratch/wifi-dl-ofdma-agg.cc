@@ -96,6 +96,7 @@ public:
    */
   void StopStatistics (void);
 
+  void NotifyChannelAccessGranted(void);
   /**
    * Report that an MPDU was not correctly received.
    */
@@ -173,6 +174,7 @@ public:
 
 private:
   uint32_t m_payloadSize;   // bytes
+  uint64_t m_channelAccessCount;
   uint32_t m_ulPsduSize; // Bytes
   double m_simulationTime;  // seconds
   uint32_t m_scheduler;
@@ -181,6 +183,7 @@ private:
   double m_radius;          // meters
   bool m_enableDlOfdma;
   bool m_enableUlOfdma;
+  bool m_useCentral26TonesRus;
   uint16_t m_channelWidth;  // channel bandwidth
   uint8_t m_channelNumber;
   uint16_t m_channelCenterFrequency;
@@ -255,6 +258,7 @@ private:
 
 WifiDlOfdma::WifiDlOfdma ()
   : m_payloadSize (1000),
+    m_channelAccessCount(0),
     m_ulPsduSize(0),
     m_simulationTime (5),
     m_scheduler(0),
@@ -263,6 +267,7 @@ WifiDlOfdma::WifiDlOfdma ()
     m_radius (5),
     m_enableDlOfdma (true),
     m_enableUlOfdma(false),
+    m_useCentral26TonesRus(false),
     m_channelWidth (20),
     m_channelNumber (36),
     m_channelCenterFrequency (0),
@@ -313,6 +318,7 @@ WifiDlOfdma::Config (int argc, char *argv[])
   cmd.AddValue ("radius", "Radius of the disc centered in the AP and containing all the non-AP STAs", m_radius);
   cmd.AddValue ("enableDlOfdma", "Enable/disable DL OFDMA", m_enableDlOfdma);
   cmd.AddValue ("enableUlOfdma", "Enable/disable UL OFDMA", m_enableUlOfdma);
+  cmd.AddValue ("central26Tones", "Enable use of central 26 tones", m_useCentral26TonesRus);
   cmd.AddValue ("dlAckType", "Ack sequence type for DL OFDMA (1-3)", m_dlAckSeqType);
   cmd.AddValue ("channelWidth", "Channel bandwidth (20, 40, 80, 160)", m_channelWidth);
   cmd.AddValue ("guardInterval", "Guard Interval (800, 1600, 3200)", m_guardInterval);
@@ -396,6 +402,7 @@ WifiDlOfdma::Config (int argc, char *argv[])
             << "Simulation Time = " << m_simulationTime << std::endl
             << "TXOP Limit = " << m_txopLimit << std::endl
             << "Number of stations = " << m_nStations << std::endl
+            << "Use central 26 tones = " << m_useCentral26TonesRus << std::endl
             << "Channel Saturated = " << m_saturateChannel << std::endl
             << "Data rate = " << m_dataRate << " Mbps" << std::endl
             << "EDCA queue max size = " << m_macQueueSize << " MSDUs" << std::endl
@@ -482,7 +489,7 @@ WifiDlOfdma::Setup (void)
                                 "EnableUlOfdma", BooleanValue (false),
                                 "UlPsduSize", UintegerValue (0),
                                 "EnableBsrp", BooleanValue(false),
-                                "UseCentral26TonesRus", BooleanValue(false));
+                                "UseCentral26TonesRus", BooleanValue(m_useCentral26TonesRus));
       }
       else {
 
@@ -492,7 +499,7 @@ WifiDlOfdma::Setup (void)
                                 "EnableUlOfdma", BooleanValue (m_enableUlOfdma),
                                 "UlPsduSize", UintegerValue (m_ulPsduSize),
                                 "EnableBsrp", BooleanValue(false),
-                                "UseCentral26TonesRus", BooleanValue(false));
+                                "UseCentral26TonesRus", BooleanValue(m_useCentral26TonesRus));
       }
     }
 
@@ -659,6 +666,8 @@ WifiDlOfdma::Run (void)
     double fairnessIndex = (totalTput * totalTput) / (fairnessDen * m_nStations);
     std::cout << "Total Fairness Index: " << fairnessIndex << std::endl;
   }
+
+  std::cout << "Channel Access Count: " << m_channelAccessCount << std::endl;
 
   uint64_t totalApDropped = 0;
   uint64_t apDropped;
@@ -1055,10 +1064,10 @@ WifiDlOfdma::StartTraffic (void)
 
     // Uncomment these two lines and comment the other two lines to make sure not all
     // apps are started at exactly the same moment.
-    Simulator::Schedule (delay, &WifiDlOfdma::StartClientTraffic, this, clientApp);
-    delay = delay + MilliSeconds(10);
-    //clientApp->SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=1]"));
-    //clientApp->SetAttribute ("OffTime", StringValue ("ns3::ConstantRandomVariable[Constant=0]"));
+    //Simulator::Schedule (delay, &WifiDlOfdma::StartClientTraffic, this, clientApp);
+    //delay = delay + MilliSeconds(10);
+    clientApp->SetAttribute ("OnTime", StringValue ("ns3::ConstantRandomVariable[Constant=1]"));
+    clientApp->SetAttribute ("OffTime", StringValue ("ns3::ConstantRandomVariable[Constant=0]"));
 
   }
 
@@ -1086,11 +1095,13 @@ WifiDlOfdma::StartStatistics (void)
   if ( m_enableDlOfdma ) {
       Ptr<HeFrameExchangeManager> fem = DynamicCast<HeFrameExchangeManager>(DynamicCast<RegularWifiMac> (dev->GetMac ())->GetFrameExchangeManager());
       fem->TraceConnectWithoutContext("PsduMapForwardDown", MakeCallback(&WifiDlOfdma::NotifyPsduMapForwardedDown, this));
+      fem->TraceConnectWithoutContext("HeChannelAccessGranted", MakeCallback(&WifiDlOfdma::NotifyChannelAccessGranted, this));
       fem->GetMpduAggregator()->EnableAggregationStats(true);
   }
   else {
       Ptr<HtFrameExchangeManager> fem = DynamicCast<HtFrameExchangeManager>(DynamicCast<RegularWifiMac> (dev->GetMac ())->GetFrameExchangeManager());
       fem->TraceConnectWithoutContext("PsduForwardDown", MakeCallback(&WifiDlOfdma::NotifyPsduForwardedDown, this));
+      fem->TraceConnectWithoutContext("HtChannelAccessGranted", MakeCallback(&WifiDlOfdma::NotifyChannelAccessGranted, this));
       fem->GetMpduAggregator()->EnableAggregationStats(true);
   }
   
@@ -1150,11 +1161,13 @@ WifiDlOfdma::StopStatistics (void)
   if ( m_enableDlOfdma ) {
       Ptr<HeFrameExchangeManager> fem = DynamicCast<HeFrameExchangeManager>(DynamicCast<RegularWifiMac> (dev->GetMac ())->GetFrameExchangeManager());
       fem->TraceDisconnectWithoutContext("PsduMapForwardDown", MakeCallback(&WifiDlOfdma::NotifyPsduMapForwardedDown, this));
+      fem->TraceDisconnectWithoutContext("HeChannelAccessGranted", MakeCallback(&WifiDlOfdma::NotifyChannelAccessGranted, this));
       fem->GetMpduAggregator()->EnableAggregationStats(false);
   }
   else {
       Ptr<HtFrameExchangeManager> fem = DynamicCast<HtFrameExchangeManager>(DynamicCast<RegularWifiMac> (dev->GetMac ())->GetFrameExchangeManager());
       fem->TraceDisconnectWithoutContext("PsduForwardDown", MakeCallback(&WifiDlOfdma::NotifyPsduForwardedDown, this));
+      fem->TraceDisconnectWithoutContext("HtChannelAccessGranted", MakeCallback(&WifiDlOfdma::NotifyChannelAccessGranted, this));
       fem->GetMpduAggregator()->EnableAggregationStats(false);
   }
 
@@ -1203,6 +1216,12 @@ WifiDlOfdma::StopStatistics (void)
     {
       m_OnOffApps.Get (i)->Dispose ();
     }
+}
+
+void
+WifiDlOfdma::NotifyChannelAccessGranted(void) {
+  
+  m_channelAccessCount++;
 }
 
 void

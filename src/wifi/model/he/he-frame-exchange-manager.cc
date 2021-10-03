@@ -56,6 +56,10 @@ HeFrameExchangeManager::GetTypeId (void)
                      "The PSDU map forwarded down to the PHY along with the TX vector.",
                      MakeTraceSourceAccessor (&HeFrameExchangeManager::m_forwardDown),
                      "ns3::WifiTxVector::TracedCallback")
+    .AddTraceSource ("HeChannelAccessGranted",
+                     "Channel Access was granted.",
+                     MakeTraceSourceAccessor (&HeFrameExchangeManager::m_channelAccessGranted),
+                     "ns3::HeChannelAccessGranted::TracedCallback")                 
   ;
   return tid;
 }
@@ -143,6 +147,7 @@ HeFrameExchangeManager::StartFrameExchange (Ptr<QosTxop> edca, Time availableTim
               && edca->GetBaAgreementEstablished (mpdu->GetHeader ().GetAddr1 (), mpdu->GetHeader ().GetQosTid ()))))
     {
       txFormat = m_muScheduler->NotifyAccessGranted (edca, availableTime, initialFrame);
+      m_channelAccessGranted();
     }
 
   if (txFormat == MultiUserScheduler::SU_TX)

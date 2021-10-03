@@ -563,9 +563,11 @@ RrMultiUserScheduler::TrySendingDlMuPpdu (void)
   m_candidates.clear ();
 
   while (staIt != m_staList[primaryAc].end ()
-         && m_candidates.size () < std::min (static_cast<std::size_t> (m_nStations), count + nCentral26TonesRus))
+         && m_candidates.size () < std::max (static_cast<std::size_t> (m_nStations), count + nCentral26TonesRus))
+        //&& m_candidates.size () < std::min (static_cast<std::size_t> (m_nStations), count + nCentral26TonesRus))
     {
       NS_LOG_DEBUG ("Next candidate STA (MAC=" << staIt->address << ", AID=" << staIt->aid << ")");
+      //std::cout << "Next candidate STA (MAC=" << staIt->address << ", AID=" << staIt->aid << ")" << std::endl;
 
       HeRu::RuType currRuType = (m_candidates.size () < count ? ruType : HeRu::RU_26_TONE);
 
@@ -599,6 +601,7 @@ RrMultiUserScheduler::TrySendingDlMuPpdu (void)
                   if (!m_heFem->TryAddMpdu (mpdu, m_txParams, actualAvailableTime))
                     {
                       NS_LOG_DEBUG ("Adding the peeked frame violates the time constraints");
+                      //std::cout << "Adding the peeked frame violates the time constraints" << std::endl;
                       m_txParams.m_txVector = txVectorCopy;
                     }
                   else
@@ -607,6 +610,7 @@ RrMultiUserScheduler::TrySendingDlMuPpdu (void)
                       NS_LOG_DEBUG ("Adding candidate STA (MAC=" << staIt->address << ", AID="
                                     << staIt->aid << ") TID=" << +tid);
                       m_candidates.push_back ({staIt, mpdu});
+                      //std::cout << "Adding station " << staIt->aid << " to candidates" << std::endl;
                       break;    // terminate the for loop
                     }
                 }
@@ -670,7 +674,8 @@ RrMultiUserScheduler::ComputeDlMuInfo (void)
   HeRu::RuType ruType = HeRu::GetEqualSizedRusForStations (bw, nRusAssigned, nCentral26TonesRus);
 
   NS_LOG_DEBUG (nRusAssigned << " stations are being assigned a " << ruType << " RU");
-
+  //std::cout << nRusAssigned << " stations are being assigned a " << ruType << " RU" << std::endl;
+ 
   if (!m_useCentral26TonesRus || m_candidates.size () == nRusAssigned)
     {
       nCentral26TonesRus = 0;
@@ -679,6 +684,7 @@ RrMultiUserScheduler::ComputeDlMuInfo (void)
     {
       nCentral26TonesRus = std::min (m_candidates.size () - nRusAssigned, nCentral26TonesRus);
       NS_LOG_DEBUG (nCentral26TonesRus << " stations are being assigned a 26-tones RU");
+      //std::cout << nCentral26TonesRus << " stations are being assigned a 26-tones RU" << std::endl;
     }
 
   DlMuInfo dlMuInfo;

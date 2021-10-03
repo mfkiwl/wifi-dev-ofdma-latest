@@ -232,6 +232,7 @@ private:
   bool m_triggerFrameInAmpdu;                         //!< True if the received A-MPDU contains an MU-BAR
   
   TracedCallback<WifiConstPsduMap, WifiTxVector> m_forwardDown; // A tracer for when PSDU map is forwarded down, to allow us to infer information related to MPDU aggregation
+  TracedCallback<> m_channelAccessGranted;
 };
 
 } //namespace ns3
